@@ -33,7 +33,8 @@ const MobileMenu = () => {
     <div className="mobile-wrapper">
       {/* Top Header */}
       <div className="mobile-header">
-        <img src="/white.png" alt="Logo" className="mobile-logo" />
+        <Link to='/'><img src="/white.png" alt="Logo" className="mobile-logo" /></Link>
+        
         <RiMenu3Line className="mobile-menu-icon" onClick={() => setIsMenuOpen(true)} />
       </div>
 
@@ -41,7 +42,8 @@ const MobileMenu = () => {
       <div className={`mobile-sidebar ${isMenuOpen ? "open" : ""}`}>
         {/* Logo & Close Button */}
         <div className="mobile-sidebar-header">
-          <img src="/white.png" alt="Logo" className="mobile-sidebar-logo" />
+        <Link to='/'><img src="/white.png" alt="Logo" className="mobile-sidebar-logo" /></Link>
+          
           <RiCloseLine className="mobile-close-icon" onClick={() => setIsMenuOpen(false)} />
         </div>
 

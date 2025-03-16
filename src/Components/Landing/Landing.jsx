@@ -4,6 +4,7 @@ import "./Landing.css";
 import Three from "../../assets/images/massage2.webp";
 import Seven from "../../assets/images/massage3.jpg";
 import Nine from "../../assets/images/nine.jpg";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -52,9 +53,14 @@ const Landing = () => {
             <p key={`desc-${currentSlide}`} className="description animated">
               {slide.description}
             </p>
-            <button key={`btn-${currentSlide}`} className="book-landing animated">
-              Book Now
-            </button>
+            <Link to="/book">
+              <button
+                key={`btn-${currentSlide}`}
+                className="book-landing animated"
+              >
+                Book Now
+              </button>
+            </Link>
           </div>
         </div>
       ))}

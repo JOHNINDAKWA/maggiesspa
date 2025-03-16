@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Membership.css";
 import { MdArrowRightAlt } from "react-icons/md";
 
@@ -43,10 +44,12 @@ const Membership = () => {
               <p>Herbal Sitz Bath</p>
 
               <h5>*above offer valid for only one person </h5>
-
-              <button>
-                 Book Now<MdArrowRightAlt />
-              </button>
+              <Link to="/book">
+                <button>
+                  Book Now
+                  <MdArrowRightAlt />
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -76,9 +79,12 @@ const Membership = () => {
 
               <h5>*above offer valid for only one person </h5>
 
-              <button>
-                 Book Now <MdArrowRightAlt />
-              </button>
+              <Link to="/book">
+                <button>
+                  Book Now
+                  <MdArrowRightAlt />
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -109,7 +115,7 @@ const Membership = () => {
               <h5>*above offer valid for only one person </h5>
 
               <button>
-                 Book Now <MdArrowRightAlt />
+                Book Now <MdArrowRightAlt />
               </button>
             </div>
           </div>
