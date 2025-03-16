@@ -1,0 +1,625 @@
+.container-booking{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.booking-container {
+  width: 100%;
+  /* max-width: 1200px; */
+  padding: 50px;
+  text-align: center;
+}
+
+/* Title Styling */
+.booking-title {
+  /* font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 34px;
+  color: #242424;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  text-align: center;
+  width: 60%;
+  margin: auto; */
+
+  display: none;
+}
+
+
+
+
+.form-section5 {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.service-date-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.service-group {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.date-time-group {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.form-section5 select,
+.react-datepicker__input-container input {
+  width: 100%;
+  max-width: 250px;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid #01e5e5;
+  border-radius: 12px;
+  font-size: 16px;
+  background: white;
+  cursor: pointer;
+  color: grey;
+  text-align: center;
+}
+
+.next-btn {
+  padding: 12px 20px;
+  background: #01a1a1;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 3rem;
+  width: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.next-btn:hover {
+  background: #01e5e5;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .service-group,
+  .date-time-group {
+    gap: 40px; 
+  }
+
+  .form-section5 select,
+  .react-datepicker__input-container input {
+    width: 400px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  
+  .service-date-container {
+    
+    gap: 20px;
+  }
+  .service-group,
+  .date-time-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+
+  .form-section5 select,
+  .react-datepicker__input-container input {
+    width: 300px;
+  }
+
+  .next-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+
+  
+  .service-date-container {
+    
+    gap: 30px;
+  }
+  .service-group,
+  .date-time-group {
+    gap: 40px;
+  }
+
+  .form-section5 {
+    padding: 10px;
+  }
+
+  .form-section5 select,
+  .react-datepicker__input-container input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .next-btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+
+
+
+/* General Form Section */
+.form-section1 {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Back Button */
+.form-section1 .back-btn {
+  background: none;
+  border: none;
+  color: #01a1a1;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-section1 .back-btn:hover {
+  color: #4a2d16;
+}
+
+.form-section1 h2 {
+  font-size: 28px;
+  line-height: 30px;
+  color: #242424;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Input Fields */
+.form-section1 input,
+.form-section1 textarea {
+  margin-bottom: 15px;
+  transition: border 0.3s ease-in-out;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid #01e5e5;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.form-section1 input:focus,
+.form-section1 textarea:focus {
+  border-color: #4a2d16;
+  outline: none;
+}
+
+/* Textarea */
+.form-section1 textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Next Button */
+.form-section1 .next-btn {
+  width: fit-content;
+  padding: 12px 20px;
+  background: #01a1a1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-section1 .next-btn:hover {
+  background: #015e5e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-section1 .form-section {
+    padding: 15px;
+  }
+  
+  .form-section1 input,
+  .form-section1 textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .form-section1 .next-btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+
+
+
+/* General Form Section */
+.form-section3 {
+  max-width: 800px;
+  margin: auto;
+  padding: 25px;
+  background: #fff;
+  text-align: center;
+  position: relative;
+  margin-top: 1rem;
+}
+
+/* Back Button */
+.form-section3 .back-btn {
+  background: none;
+  border: none;
+  color: #01a1a1;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-section3 .back-btn:hover {
+  color: #4a2d16;
+}
+
+/* Title */
+.form-section3 h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Confirmation Details */
+.form-section3 .confirmation-details {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.form-section3 .confirmation-details p {
+  margin: 16px 0;
+  color: #555;
+}
+
+.form-section3 .confirmation-details strong {
+  color: #333;
+}
+
+/* Next Button */
+.form-section3 .next-btn {
+  width: fit-content;
+  padding: 12px 20px;
+  background: #01a1a1;
+  color: white;
+  border: none;
+  margin-top: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-section3 .next-btn:hover {
+  background: #015e5e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-section3 .form-section {
+    padding: 20px;
+  }
+  
+  .form-section3 h2 {
+    font-size: 20px;
+  }
+  
+  .form-section3 .confirmation-details {
+    font-size: 14px;
+  }
+  
+  .form-section3 .next-btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .form-section3 .back-btn {
+    font-size: 14px;
+  }
+}
+
+
+/* Main Wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Success Message Container */
+.success-container {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Success Message */
+.success-msg {
+  font-size: 20px;
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Success Text */
+.success-text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Home Button */
+.home-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #01a1a1;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.home-btn:hover {
+  background: #4a2d16;
+}
+
+
+
+.todo-container {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  margin: 50px auto;
+  padding: 50px 30px;
+  background: url("../../../assets/images/gal3.jpg") no-repeat center center/cover;
+  text-align: left;
+  overflow: hidden;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+/* Dark Overlay */
+.todo-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.todo-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.todo-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.todo-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Grid Layout for To-Dos */
+.todo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+  gap: 30px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+/* Individual To-Do Item */
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Number Circle */
+.todo-number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #01e5e5;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Text Next to Number */
+.todo-text {
+  flex-grow: 1;
+}
+
+.todo-text strong {
+  font-size: 18px;
+  color: #01e5e5;
+}
+
+.todo-text p {
+  font-size: 16px;
+  color: white;
+  margin-top: 5px;
+}
+
+/* Footer Note */
+.footer-note {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .todo-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .todo-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 column per row */
+  }
+
+  .todo-item {
+    flex-direction: row;
+  }
+}
+
+
+
+.spa-todo-container {
+  width: 100vw;
+  max-width: 100%;
+  padding: 50px 30px;
+  display: flex;
+  justify-content: center;
+  background: white; /* Clean and minimalistic */
+}
+
+.spa-todo-content {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.spa-todo-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.spa-todo-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Grid Layout */
+.spa-todo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  gap: 30px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+/* Individual To-Do */
+.spa-todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Number Circle */
+.spa-todo-number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #01A1A1; /* Updated Theme */
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Text Content */
+.spa-todo-text {
+  flex-grow: 1;
+}
+
+.spa-todo-text strong {
+  font-size: 18px;
+  color: #01A1A1; /* Updated Theme */
+}
+
+.spa-todo-text p {
+  font-size: 16px;
+  color: #444;
+  margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .spa-todo-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .spa-todo-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 per row */
+  }
+}

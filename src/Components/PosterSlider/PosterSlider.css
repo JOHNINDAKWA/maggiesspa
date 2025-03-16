@@ -1,0 +1,121 @@
+/* Poster Slider Container */
+.poster-slider-container {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* Background Blur Effect */
+  .poster-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px) brightness(40%);
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+  }
+  
+  /* Poster Image Container */
+  .poster-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+  }
+  
+  /* Image with Sliding + Fade + Zoom Effect */
+  .poster-image {
+    width: 100%;
+    max-width: 760px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateX(100%) scale(1.1);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+  
+  /* Active Slide */
+  .active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  
+  /* Exiting Slide */
+  .exiting {
+    opacity: 0;
+    transform: translateX(-100%) scale(1.1);
+  }
+  
+  /* Navigation Buttons */
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.337);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    transition: background 0.3s, transform 0.3s;
+    outline: none;
+  }
+
+
+  .nav-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .nav-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
+  }
+  
+  .left {
+    left: 20px;
+  }
+  .right {
+    right: 20px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1024px) {
+    .poster-slider-container {
+      height: 600px;
+    }
+    .poster-image {
+      max-width: 600px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .poster-slider-container {
+      height: 500px;
+    }
+    .poster-image {
+      max-width: 450px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .poster-slider-container {
+      height: 400px;
+    }
+    .poster-image {
+      max-width: 350px;
+    }
+  }
+  

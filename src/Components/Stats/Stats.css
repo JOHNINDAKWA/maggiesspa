@@ -1,0 +1,258 @@
+/* Main Stats Section */
+.stats-container {
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    background: url('../../assets/images/spa-stone-wash-petals-white-bgimage.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Inner container to center content */
+.stats-content {
+    max-width: 900px;
+    width: 90%;
+}
+
+
+/* Individual stat item */
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.stats-overlay{
+    margin-right: -250px;
+}
+
+.stats-items{
+    display: flex;
+    align-items: center;
+    gap: 120px;
+}
+
+/* Icon styling with rhombus shape */
+.stat-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+    border-radius: 16px;
+    margin-bottom: 15px;
+}
+
+.rhombus.pink{
+    border: 3px solid #ff5566;
+}
+
+.rhombus.yellow{
+    border: 3px solid #f2bd07;
+}
+
+
+.rhombus.green{
+    border: 3px solid #56c152;
+}
+
+.stat-item h2{
+    font-size: 50px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.p-pink{
+    color: #ff5566;
+}
+
+.p-yellow{
+    color: #f2bd07;
+}
+
+.p-green{
+    color: #56c152;
+}
+
+.stat-item p{
+    font-size: 24px;
+    line-height: normal;
+    text-transform: none;
+    color: #333333;
+}
+.stat-icon img {
+    width: 50px;
+    height: 50px;
+    transform: rotate(-45deg);
+}
+
+/* Number styling */
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Thin line */
+.stat-line {
+    width: 40px;
+    background: #906c5f;;
+    margin: 3px auto;
+    clear: both;
+    display: inline-block;
+    height: 1px;
+    text-align: center;
+}
+
+/* Description text */
+.stat-text {
+    font-size: 18px;
+    color: #666;
+}
+
+/* footer card section */
+.stats-footer {
+    margin-top: 40px;
+}
+
+.stats-footer h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.stats-footer .stat-line {
+    margin: 10px auto;
+}
+
+.stats-footer p {
+    font-size: 16px;
+    font-style: normal;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Explore button */
+.stats-explore {
+    font-size: 13px;
+    letter-spacing: 0.75px;
+    padding: 16px 30px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    line-height: normal;
+    margin: 10px 0px 0px;
+    outline: none;
+    position: relative;
+    text-transform: inherit;
+    z-index: 1;
+    background: linear-gradient(45deg, #5d1900, #bc9787);
+    background-size: 200% 200%;
+    border: none;
+    transition: background 0.4s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.stats-explore:hover {
+    background: linear-gradient(90deg, #ff5566, #f2bd07, #56c152);
+    background-size: 400% 400%;
+    animation: gradientAnimation 0.8s ease-in-out forwards;
+    transform: scale(1.05);
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .stats-items {
+        gap: 60px; /* Reduce spacing between items */
+    }
+    
+    .stats-overlay {
+        margin-right: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stats-items {
+        flex-direction: column; 
+        gap: 40px;
+        display: none;
+    }
+
+    .stats-container{
+        padding: 20px 0px;
+    }
+
+
+    .stat-item h2 {
+        font-size: 40px; /* Reduce font size for better fit */
+    }
+
+    .stat-item p {
+        font-size: 20px;
+    }
+
+    .stats-footer h3 {
+        font-size: 20px;
+    }
+
+    .stats-footer{
+        padding-left: 40px;
+    }
+
+    .stats-footer p {
+        font-size: 14px;
+    }
+
+    .stats-explore {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stats-container {
+        padding: 50px 20px; 
+    }
+
+    .stat-item h2 {
+        font-size: 32px; 
+    }
+
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .stat-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .stats-footer h3 {
+        font-size: 18px;
+    }
+
+    .stats-footer p {
+        font-size: 12px;
+    }
+}

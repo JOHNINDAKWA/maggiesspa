@@ -1,0 +1,166 @@
+.home-gallery-container {
+    display: flex;
+    width: 100vw; /* Full width */
+    max-width: 100%;
+    height: 600px; /* Adjust height as needed */
+    gap: 10px;
+    padding: 20px 140px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start;
+    /* margin-top: 100px; */
+}
+
+.home-gallery-left,
+.home-gallery-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gal1, .gal4{
+    width: 400px !important;
+    height: 580px !important;
+    object-fit: cover;
+}
+
+.gal2, .gal3{
+    width: 400px !important;
+    height: 260px !important;
+    object-fit: cover;
+}
+.home-gallery-middle {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-gallery-middle-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.home-gallery-middle-top img {
+    max-width: 450px;
+    height: auto;
+    object-fit: cover;
+}
+
+.home-gallery-left img,
+.home-gallery-right img {
+    max-width: 440px;
+    max-height: 660px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-gallery-middle-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    position: relative;
+}
+
+/* Calligraphy text behind the main text */
+.home-gallery-middle-bottom span {
+    color: #242424;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 70px;
+    letter-spacing: 0;
+    position: relative;
+    z-index: 2; 
+}
+
+
+.home-gallery-middle-bottom span::before {
+    content: "Luxury Relaxation";
+    position: absolute;
+    font-family: "Dancing Script", cursive;
+    font-size: 60px;
+    color: rgba(0, 0, 0, 0.1); 
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; 
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.home-gallery-middle-bottom img {
+    width: 80%;
+    max-width: 500px;
+    object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .home-gallery-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 20px;
+    }
+
+    .home-gallery-left,
+    .home-gallery-right,
+    .home-gallery-middle {
+        width: 100%;
+    }
+
+    .home-gallery-middle-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-gallery-middle-top img {
+        max-width: 100%;
+    }
+
+    .home-gallery-middle-bottom span {
+        font-size: 50px;
+    }
+
+    .home-gallery-middle-bottom span::before {
+        font-size: 80px;
+        top: -30px;
+    }
+
+    .home-gallery-middle-bottom img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-gallery-middle-bottom span {
+        font-size: 40px;
+    }
+
+    .home-gallery-middle-bottom span::before {
+        font-size: 60px;
+        top: -20px;
+    }
+
+    .home-gallery-middle-bottom img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-gallery-middle-bottom span {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .home-gallery-middle-bottom span::before {
+        font-size: 50px;
+        top: -15px;
+    }
+}

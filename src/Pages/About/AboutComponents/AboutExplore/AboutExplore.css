@@ -1,0 +1,123 @@
+
+.about-explore-container {
+    width: 100%;
+    padding: 60px 10px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Explore Top */
+.about-explore-container .explore-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    text-align: left;
+}
+
+.about-explore-container .explore-top h1 {
+    flex: 1;
+    color: #242424;
+  font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 70px;
+    letter-spacing: 0;
+    position: relative;
+}
+
+.about-explore-container .explore-top h1::before {
+    display: none !important;
+}
+
+.about-explore-container .explore-top p {
+    font-size: 16px;
+    color: #555;
+    flex: 1;
+    padding-left: 20px;
+}
+
+/* Explore Bottom */
+.about-explore-container .explore-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    background: #f6ebe7;
+    padding: 20px;
+}
+
+/* Bottom Items */
+.about-explore-container .explore-bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Vertical Line */
+.about-explore-container .explore-bottom-item:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Image */
+.about-explore-container .explore-bottom-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* Content */
+.about-explore-container .explore-bottom-content h3 {
+    font-size: 32px;
+    font-weight: 400;
+    color: rgb(59, 58, 58);
+    margin-bottom: 5px;
+    font-family: Cormorant Garamond;
+    
+
+}
+
+.about-explore-container .explore-bottom-content p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .about-explore-container .explore-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-explore-container .explore-top p {
+        padding-left: 0;
+        margin-top: 15px;
+    }
+
+    .about-explore-container .explore-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .about-explore-container .explore-bottom-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    /* Remove vertical line on mobile */
+    .about-explore-container .explore-bottom-item:not(:last-child) {
+        border-right: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+        padding-bottom: 20px;
+    }
+}
