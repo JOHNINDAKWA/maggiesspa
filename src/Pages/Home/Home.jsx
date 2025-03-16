@@ -28,11 +28,13 @@ const Home = () => {
     
 
       <Landing/>
-      <Deserve/>
-      {/* <Bliss/> */}
-      <Appointment/>
       <HomeAbout/>
       <Stats/>
+      
+      {/* <Bliss/> */}
+      <Appointment/>
+      <Deserve/>
+     
       <Testimonial/>
       <WorkingHours/>
       {/* <PosterSlider/> */}
