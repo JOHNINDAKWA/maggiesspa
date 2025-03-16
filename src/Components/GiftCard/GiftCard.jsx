@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./GiftCard.css";
 
 const GiftCard = () => {
@@ -40,7 +41,7 @@ const GiftCard = () => {
       {/* Call to Action */}
       <div className="gift-card-cta">
         <p>Give the ultimate self-care experience. Purchase a gift card today!</p>
-        <button className="gift-button">Get a Gift Card</button>
+        <Link to='/package' className="gift-button">Get a Gift Card</Link>
       </div>
     </div>
   );

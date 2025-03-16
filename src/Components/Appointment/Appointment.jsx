@@ -29,7 +29,7 @@ const Appointment = () => {
             <br /><br />
             Can’t wait to pamper you!  
           </p>
-          <Link to="/contact">
+          <Link to="/book">
             <button className="appointment-button">
               Book Your Appointment
             </button>

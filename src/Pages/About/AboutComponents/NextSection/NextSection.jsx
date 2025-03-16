@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import "./NextSection.css";
+import { Link } from "react-router-dom";
 
 const NextSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +44,8 @@ const NextSection = () => {
           rejuvenating experiences. From expert massage therapies to premium skincare, 
           we ensure every visit leaves you refreshed, relaxed, and renewed.
         </p>
-        <button>Book Your Session</button>
+        
+       <Link to='/book'><button>Book Your Session</button></Link> 
       </div>
 
       {/* Right Content (Progress Bars) */}

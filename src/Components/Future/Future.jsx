@@ -2,6 +2,7 @@ import './Future.css'
 import { FaArrowTrendUp, FaLeaf, FaRegFaceSmileBeam, FaSpa } from "react-icons/fa6";
 import TinyBottle from "../../assets/images/candle.png";
 import MaggyMaggy from "../../assets/images/maggy2.jpeg";
+import { Link } from 'react-router-dom';
 
 
 const Future = () => {
@@ -43,7 +44,7 @@ const Future = () => {
 
         <div className="future-right-bottom">
           <p>“To find yourself, lose yourself in the rhythm of nature and stillness of the soul.”</p>
-          <button>Begin Your Journey</button>
+          <Link to='/book'><button>Begin Your Journey</button></Link>
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ import Thing2 from "../../assets/images/thing2.png";
 import Thing3 from "../../assets/images/thing3.png";
 import Thing4 from "../../assets/images/thing4.png";
 import Thing5 from "../../assets/images/thing5.png";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -20,7 +21,6 @@ const services = [
     description:
       "Relieve back pain, improve circulation, and relax with safe, tailored techniques for moms-to-be.",
     image: Service_1,
-    link: "/services/prenatal-massage",
   },
   {
     id: 2,
@@ -28,7 +28,6 @@ const services = [
     description:
       "Ease physical stress after childbirth, reduce pain, and speed up postpartum recovery.",
     image: Service_2,
-    link: "/services/postpartum-massage",
   },
   {
     id: 3,
@@ -36,7 +35,6 @@ const services = [
     description:
       "Gentle facials designed to nourish sensitive pregnancy and postpartum skin.",
     image: Service_3,
-    link: "/services/facial-skincare",
   },
   {
     id: 4,
@@ -44,7 +42,6 @@ const services = [
     description:
       "Hydrating wraps, exfoliation, and massages to enhance skin elasticity and reduce stretch marks.",
     image: Service_4,
-    link: "/services/body-treatments",
   },
   {
     id: 5,
@@ -52,7 +49,6 @@ const services = [
     description:
       "Enhance flexibility, strength, and mental focus to prepare for labor and reduce stress.",
     image: Service_5,
-    link: "/services/prenatal-yoga",
   },
 ];
 
@@ -73,9 +69,9 @@ const Deserve = () => {
             <h3>{services[0].title}</h3>
           </div>
           <p>{services[0].description}</p>
-          <a href={services[0].link}>
-            <button className="deserve">Discover More</button>
-          </a>
+          <Link to='/services'>
+                <button className="deserve">Discover More</button>
+              </Link>
         </div>
       </div>
 
@@ -90,9 +86,9 @@ const Deserve = () => {
                 <h3>{service.title}</h3>
               </div>
               <p>{service.description}</p>
-              <a href={service.link}>
+              <Link to='/services'>
                 <button className="deserve">Discover More</button>
-              </a>
+              </Link>
             </div>
           </div>
         ))}
