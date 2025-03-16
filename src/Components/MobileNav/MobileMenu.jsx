@@ -33,9 +33,9 @@ const MobileMenu = () => {
 
           {/* Services Dropdown */}
           <li className="mobile-dropdown">
-            <div className="dropdown-header" onClick={() => setIsServicesOpen(!isServicesOpen)}>
+            <Link to='/services' className="dropdown-header" onClick={() => setIsServicesOpen(!isServicesOpen)}>
               Our Services <RiArrowDownSLine className={`dropdown-icon ${isServicesOpen ? "rotate" : ""}`} />
-            </div>
+            </Link>
             {isServicesOpen && (
               <ul className="dropdown-list">
                 {displayedServices.map((service) => (

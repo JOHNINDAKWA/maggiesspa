@@ -72,6 +72,12 @@
     padding: 10px;
     position: relative;
     transition: color 0.5s ease-in-out;
+    display: inline-block;
+    width: fit-content;
+    max-width: 155px; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .mobile-nav-list li:not(.mobile-book-now) a:hover {
