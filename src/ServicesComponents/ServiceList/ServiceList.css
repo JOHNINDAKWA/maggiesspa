@@ -3,7 +3,6 @@
     padding: 60px 20px;
     max-width: 1200px;
     margin: auto;
-    /* background: #f0fdfd; */
 }
 
 /* Section Title */
@@ -12,7 +11,6 @@
     color: #014d4d;
     font-weight: bold;
     margin-bottom: 40px;
-    /* text-transform: uppercase; */
     letter-spacing: 1px;
     font-family: "Dancing Script", cursive;
 }
@@ -57,7 +55,13 @@
     .services-grid {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .services-container {
+        width: 90%;
+    }
 }
+
+
 
 /* Service Card */
 .service-card {
