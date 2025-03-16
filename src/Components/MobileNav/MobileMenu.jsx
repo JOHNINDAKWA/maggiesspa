@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { RiMenu3Line, RiCloseLine, RiArrowDownSLine, RiFacebookFill, RiInstagramLine, RiTwitterXFill, RiMailLine, RiPhoneFill } from "react-icons/ri";
+import { 
+  RiMenu3Line, RiCloseLine, RiArrowDownSLine, 
+  RiFacebookFill, RiInstagramLine, RiTwitterXFill, 
+  RiMailLine, RiPhoneFill 
+} from "react-icons/ri";
 import "./MobileMenu.css";
 import services from "../../ServicesComponents/ServiceList/ServeList"; // Import service list
 
@@ -10,6 +14,20 @@ const MobileMenu = () => {
 
   // Get only the first 4 services
   const displayedServices = services.slice(0, 4);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !event.target.closest(".mobile-sidebar")) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <div className="mobile-wrapper">
@@ -68,7 +86,7 @@ const MobileMenu = () => {
       </div>
 
       {/* Click outside to close menu */}
-      {isMenuOpen && <div className="mobile-overlay" onClick={() => setIsMenuOpen(false)} />}
+      {isMenuOpen && <div className="mobile-overlay" />}
     </div>
   );
 };

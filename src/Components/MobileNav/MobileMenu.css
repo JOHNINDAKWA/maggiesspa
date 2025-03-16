@@ -13,6 +13,18 @@
     padding: 0 18px;
 }
 
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    cursor: pointer;
+  }
+  
+
 .mobile-logo {
     width: 80px;
 }
@@ -115,7 +127,7 @@
     font-weight: 500;
     cursor: pointer;
     padding: 8px 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
   }
   
   .dropdown-icon {
