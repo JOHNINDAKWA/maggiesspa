@@ -2,8 +2,9 @@
 .landing {
     position: relative;
     width: 100%;
-    height: calc(100vh - 246px);
+    height: calc(100vh - 200px);
     overflow: hidden;
+    overflow-y: hidden;
   }
   
   /* Individual Slide */

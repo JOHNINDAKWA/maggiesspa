@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center; /* Centers content */
     align-items: center;
-    height: 165px;
+    height: 135px;
   }
   
   /* Wrapper to keep content centered */
@@ -46,7 +46,7 @@
   
   /* Make Logo Bigger */
   .logo img {
-    height: 140px;
+    height: 135px;
   }
   
   /* Icon Container */

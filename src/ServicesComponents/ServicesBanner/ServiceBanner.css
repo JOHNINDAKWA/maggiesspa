@@ -1,7 +1,7 @@
 /* service Banner */
 .service-banner {
     width: 100vw;
-    height: 200px; /* Small height */
+    height: 135px; /* Small height */
     background: url('../../assets/images/banner3.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@
 
 /* Heading */
 .service-banner h2 {
-    font-size: 42px;
+    font-size: 30px;
     font-weight: bold;
     color: white;
     margin-bottom: 10px;
