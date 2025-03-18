@@ -6,23 +6,44 @@ import { BookingContext } from "../../Context/BookingContext";
 const BookingForm = ({ scrollToDetails }) => {
   const { bookingData, setBookingData, setStep } = useContext(BookingContext);
   const [error, setError] = useState("");
+  const [showTimeSlots, setShowTimeSlots] = useState(false);
+  const availableSlots = [
+    "08:00 AM", "08:30 AM", "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM",
+    "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM",
+    "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM",
+    "05:00 PM", "05:30 PM", "06:00 PM"
+  ];
 
   // Handle "Next Section" button click
   const handleNext = () => {
-    if (
-      !bookingData.service ||
-      !bookingData.service_type ||
-      !bookingData.date ||
-      !bookingData.startTime ||
-      !bookingData.endTime
-    ) {
-      setError("Please select a service, date, start time, and end time.");
+    if (!bookingData.service || !bookingData.service_type || !bookingData.date || !bookingData.startTime || !bookingData.endTime) {
+      setError("Please select a service, date, and time slot.");
       return;
     }
-
     setError("");
     setStep(2);
     scrollToDetails();
+  };
+
+  // Function to handle time slot selection
+  const handleTimeSlotClick = (time) => {
+    if (bookingData.startTime === time) {
+      // Unselect the start time if clicked again
+      setBookingData({ ...bookingData, startTime: "", endTime: "" });
+    } else if (!bookingData.startTime) {
+      // Select the start time
+      setBookingData({ ...bookingData, startTime: time });
+    } else if (bookingData.endTime === time) {
+      // Unselect the end time if clicked again
+      setBookingData({ ...bookingData, endTime: "" });
+    } else {
+      // Select the end time (must be after start time)
+      const startIndex = availableSlots.indexOf(bookingData.startTime);
+      const endIndex = availableSlots.indexOf(time);
+      if (endIndex > startIndex) {
+        setBookingData({ ...bookingData, endTime: time });
+      }
+    }
   };
 
   return (
@@ -30,58 +51,23 @@ const BookingForm = ({ scrollToDetails }) => {
       <h2>Select a Service & Time</h2>
 
       <div className="service-date-container">
-        {/* Service Selection (Top Row) */}
+        {/* Service Selection */}
         <div className="service-group">
           <div>
-
-
-
             <select
               value={bookingData.service}
-              onChange={(e) =>
-                setBookingData({ ...bookingData, service: e.target.value })
-              }
+              onChange={(e) => setBookingData({ ...bookingData, service: e.target.value })}
             >
               <option value="">Select Service</option>
-              <option value="Prenatal Massage Therapy">
-                Prenatal Massage Therapy
-              </option>
-              <option value="Postpartum Massage Therapy">
-                Postpartum Massage Therapy
-              </option>
-              <option value="Customized Facial and Skincare Treatments">
-                Customized Facial and Skincare Treatments
-              </option>
-              <option value="Body Treatments and Stretch Mark Solutions">
-                Body Treatments and Stretch Mark Solutions
-              </option>
-              <option value="Prenatal Yoga and Fitness Classes">
-                Prenatal Yoga and Fitness Classes
-              </option>
-              <option value="Nutritional Counseling and Wellness Consultations">
-                Nutritional Counseling and Wellness Consultations
-              </option>
-              <option value="Lactation and Breastfeeding Support">
-                Lactation and Breastfeeding Support
-              </option>
-              <option value="Educational Workshops and Support Groups">
-                Educational Workshops and Support Groups
-              </option>
-              <option value="Spa Packages and Membership Programs">
-                Spa Packages and Membership Programs
-              </option>
-              <option value="Relaxation and Stress Relief Therapies">
-                Relaxation and Stress Relief Therapies
-              </option>
+              <option value="Prenatal Massage Therapy">Prenatal Massage Therapy</option>
+              <option value="Postpartum Massage Therapy">Postpartum Massage Therapy</option>
             </select>
           </div>
 
           <div>
             <select
               value={bookingData.service_type}
-              onChange={(e) =>
-                setBookingData({ ...bookingData, service_type: e.target.value })
-              }
+              onChange={(e) => setBookingData({ ...bookingData, service_type: e.target.value })}
             >
               <option value="">Select Service Type</option>
               <option value="In-Spa Treatment">In-Spa Treatment</option>
@@ -90,63 +76,41 @@ const BookingForm = ({ scrollToDetails }) => {
           </div>
         </div>
 
-        {/* Date & Time Selection (Bottom Row) */}
+        {/* Date Selection */}
         <div className="date-time-group">
           <div className="custom-datepicker">
             <DatePicker
               selected={bookingData.date ? new Date(bookingData.date) : null}
-              onChange={(date) =>
-                setBookingData({ ...bookingData, date: date.toISOString() })
-              }
+              onChange={(date) => setBookingData({ ...bookingData, date: date.toISOString() })}
               dateFormat="yyyy-MM-dd"
               placeholderText="Select Date ⤵"
             />
           </div>
-
-          <div className="custom-datepicker">
-            <DatePicker
-              selected={
-                bookingData.startTime
-                  ? new Date(`1970-01-01T${bookingData.startTime}`)
-                  : null
-              }
-              onChange={(time) =>
-                setBookingData({
-                  ...bookingData,
-                  startTime: time.toTimeString().slice(0, 5),
-                })
-              }
-              showTimeSelect
-              showTimeSelectOnly
-              timeIntervals={30}
-              timeCaption="Start Time"
-              dateFormat="HH:mm"
-              placeholderText="Select Start Time ⤵"
-            />
-          </div>
-
-          <div className="custom-datepicker">
-            <DatePicker
-              selected={
-                bookingData.endTime
-                  ? new Date(`1970-01-01T${bookingData.endTime}`)
-                  : null
-              }
-              onChange={(time) =>
-                setBookingData({
-                  ...bookingData,
-                  endTime: time.toTimeString().slice(0, 5),
-                })
-              }
-              showTimeSelect
-              showTimeSelectOnly
-              timeIntervals={30}
-              timeCaption="End Time"
-              dateFormat="HH:mm"
-              placeholderText="Select End Time ⤵"
-            />
-          </div>
         </div>
+
+        {/* View Available Time Slots Button */}
+        {bookingData.service && bookingData.service_type && bookingData.date && !showTimeSlots && (
+          <button className="view-slots-btn" onClick={() => setShowTimeSlots(true)}>
+            View Available Time Slots
+          </button>
+        )}
+
+        {/* Display Available Time Slots */}
+        {showTimeSlots && (
+          <div className="time-slots-container">
+            {availableSlots.map((slot, index) => (
+              <button
+                key={index}
+                className={`time-slot-btn ${
+                  slot === bookingData.startTime || slot === bookingData.endTime ? "selected" : ""
+                }`}
+                onClick={() => handleTimeSlotClick(slot)}
+              >
+                {slot}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Display Error Message */}

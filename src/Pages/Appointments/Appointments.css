@@ -1,0 +1,224 @@
+.appointments-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    max-width: 550px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+  }
+  
+  .search-bar input:focus {
+    border-color: #01A1A1;
+    outline: none;
+  }
+  
+  /* Layout for Sidebar & Table */
+  .appointments-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  /* Left Sidebar */
+  .filter-sort-section {
+    width: 250px;
+    padding: 15px;
+    background: #e0f7f7;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .filter-section label,
+  .sort-section label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .filter-section input,
+  .sort-section select {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+  }
+
+
+  
+  .filter-section input:focus,
+  .sort-section select:focus {
+    border-color: #01A1A1;
+    outline: none;
+  }
+  
+  /* Right Section (Appointments Table) */
+  .appointments-table-container {
+    flex: 1;
+    overflow-x: auto;
+  }
+  
+  /* Table Styling */
+  .appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .appointments-table th,
+  .appointments-table td {
+    text-align: left;
+    padding: 12px;
+    white-space: nowrap;
+  }
+  
+  .appointments-table thead {
+    background: #01A1A1;
+    color: #fff;
+  }
+  
+  .appointments-table tbody tr.even-row {
+    background: #f8f9fa;
+  }
+  
+  .appointments-table tbody tr.odd-row {
+    background: #e0f7f7;
+  }
+  
+  /* View Details Button */
+  .view-details-btn {
+    background: #01A1A1;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+  
+  .view-details-btn:hover {
+    background: #008080;
+  }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: #01A1A1;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .pagination button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination span {
+    font-size: 16px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .appointments-layout {
+      flex-direction: column;
+    }
+  
+    .filter-sort-section {
+      width: 100%;
+    }
+  }
+  /* Responsive Design */
+@media (max-width: 1024px) {
+    .appointments-layout {
+      flex-direction: column;
+    }
+  
+    .filter-sort-section {
+      width: 100%;
+    }
+  
+    /* Hide Time Column */
+    .appointments-table th:nth-child(4),
+    .appointments-table td:nth-child(4) {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Reduce Padding for Mobile */
+    .appointments-container {
+      padding: 16px;
+      width: 95vw;
+    }
+  
+    .search-bar input {
+      max-width: 100%;
+      padding: 8px;
+    }
+  
+    .appointments-table th,
+    .appointments-table td {
+      padding: 8px;
+    }
+  
+    /* Stack Items in the Table */
+    .appointments-table-container {
+      overflow-x: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Adjust Layout */
+    .appointments-container {
+      padding: 5px;
+    }
+  
+    .appointments-table {
+      font-size: 14px;
+    }
+  
+    /* Hide Additional Columns for Smallest Screens */
+    .appointments-table th:nth-child(2),
+    .appointments-table td:nth-child(2) {
+      display: none;
+    }
+
+  
+    .view-details-btn {
+      padding: 6px 8px;
+      font-size: 12px;
+    }
+  }

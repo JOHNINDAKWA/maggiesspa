@@ -11,6 +11,7 @@ const Confirmation = () => {
     
     // Replace with actual Google Form entry IDs
     formData.append("entry.865383914", bookingData.service);
+    formData.append("entry.1573145382", bookingData.service_type);
     formData.append("entry.1902942553", bookingData.date);
     formData.append("entry.258649123", bookingData.startTime);
     formData.append("entry.258649123", bookingData.endTime);
@@ -47,7 +48,7 @@ const Confirmation = () => {
 
       <div className="confirmation-details">
         <p><strong>Service:</strong> {bookingData.service}</p>
-        <p><strong>Service:</strong> {bookingData.service_type}</p>
+        <p><strong>Service Type:</strong> {bookingData.service_type}</p>
         <p><strong>Date:</strong> {bookingData.date ? new Date(bookingData.date).toLocaleDateString() : "N/A"}</p>
         <p><strong>Time:</strong> {bookingData.startTime} - {bookingData.endTime}</p>
         <p><strong>Name:</strong> {bookingData.name}</p>

@@ -7,6 +7,7 @@ import Layout from "./Layout"; // Correct import of Layout
 import SpecificService from "./ServicesComponents/SpecificService/SpecificService";
 import BookingPage from "./Pages/Booking/BookingPage";
 import Package from "./Pages/Package/Package";
+import Appointments from "./Pages/Appointments/Appointments";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "services/:id", element: <SpecificService /> },
       { path: "contact", element: <Contact /> },
       { path: "book", element: <BookingPage /> },
+      { path: "appointments", element: <Appointments /> },
     ],
   },
 ]);

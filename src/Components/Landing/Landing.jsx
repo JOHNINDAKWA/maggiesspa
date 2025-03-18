@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Landing.css";
 
-import Three from "../../assets/images/massage2.webp";
+import Three from "../../assets/images/postnatal5.jpg";
 import Seven from "../../assets/images/massage3.jpg";
 import Nine from "../../assets/images/nine.jpg";
 import { Link } from "react-router-dom";

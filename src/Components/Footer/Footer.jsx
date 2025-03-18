@@ -16,6 +16,7 @@ import Img4 from "../../assets/images/image4.jpg";
 import Img5 from "../../assets/images/two.jpg";
 import Img6 from "../../assets/images/six.jpg";
 import { GoArrowUp } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -143,7 +144,7 @@ const Footer = () => {
 
 
       <div className="footer-bottom">
-        <p>© 2017 Maggies Spa Theme, Made by John Indakwa</p>
+        <p>© 2017 Maggies Spa Theme, Made by <a href="https://owidigitalmedia.vercel.app/">Owimedia</a></p>
       </div>
     </div>
 
