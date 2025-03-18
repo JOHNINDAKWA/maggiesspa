@@ -8,6 +8,7 @@ import SpecificService from "./ServicesComponents/SpecificService/SpecificServic
 import BookingPage from "./Pages/Booking/BookingPage";
 import Package from "./Pages/Package/Package";
 import Appointments from "./Pages/Appointments/Appointments";
+import AppointmentDetails from "./Pages/Appointments/AppointmentDetails/AppointmentDetails";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       { path: "contact", element: <Contact /> },
       { path: "book", element: <BookingPage /> },
       { path: "appointments", element: <Appointments /> },
+      { path: "appointments/:id", element: <AppointmentDetails /> }
+
+
+  
     ],
   },
 ]);

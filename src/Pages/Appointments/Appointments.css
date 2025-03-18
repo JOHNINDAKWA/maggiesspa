@@ -89,7 +89,7 @@
   .appointments-table th,
   .appointments-table td {
     text-align: left;
-    padding: 12px;
+    padding: 18px;
     white-space: nowrap;
   }
   
@@ -97,7 +97,7 @@
     background: #01A1A1;
     color: #fff;
   }
-  
+
   .appointments-table tbody tr.even-row {
     background: #f8f9fa;
   }

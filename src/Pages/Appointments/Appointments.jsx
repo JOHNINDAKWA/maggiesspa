@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Appointments.css";
+import { Link } from "react-router-dom";
 
 const GOOGLE_SHEET_ID = "1wN9O7qkt7VE7XfnasRKtWSlToRWdr95YIIhNKONEvnE";
 const API_KEY = "AIzaSyCS2cNNg1qVwewLXeziZxkRI5V8_QOb9Ek";
@@ -85,7 +86,9 @@ const Appointments = () => {
       appointment.service.toLowerCase().includes(searchQuery.toLowerCase()) ||
       appointment.date.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const matchesDate = selectedDate ? appointment.rawDate === selectedDate : true;
+    const matchesDate = selectedDate
+      ? appointment.rawDate === selectedDate
+      : true;
 
     return matchesSearch && matchesDate;
   });
@@ -96,7 +99,10 @@ const Appointments = () => {
   // Pagination Logic
   const totalPages = Math.ceil(sortedAppointments.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentAppointments = sortedAppointments.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const currentAppointments = sortedAppointments.slice(
+    startIndex,
+    startIndex + ITEMS_PER_PAGE
+  );
 
   return (
     <div className="appointments-container">
@@ -126,7 +132,10 @@ const Appointments = () => {
           {/* Sorting Section */}
           <div className="sort-section">
             <label>Sort By:</label>
-            <select value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
+            <select
+              value={sortOption}
+              onChange={(e) => setSortOption(e.target.value)}
+            >
               <option value="mostRecent">Most Recent</option>
               <option value="upcoming">Upcoming Appointments</option>
               <option value="oldest">Oldest First</option>
@@ -152,14 +161,19 @@ const Appointments = () => {
                 </thead>
                 <tbody>
                   {currentAppointments.map((appointment, index) => (
-                    <tr key={appointment.id} className={index % 2 === 0 ? "even-row" : "odd-row"}>
+                    <tr
+                      key={appointment.id}
+                      className={index % 2 === 0 ? "even-row" : "odd-row"}
+                    >
                       <td>{appointment.name}</td>
                       <td>{appointment.service}</td>
                       <td>{appointment.date}</td>
                       <td>{appointment.time}</td>
-                      <td>
-                        <button className="view-details-btn">View Details</button>
-                      </td>
+                      <Link to={`/appointments/${appointment.id}`}>
+                        <button className="view-details-btn">
+                          View Details
+                        </button>
+                      </Link>
                     </tr>
                   ))}
                 </tbody>
@@ -167,11 +181,19 @@ const Appointments = () => {
 
               {/* Pagination Controls */}
               <div className="pagination">
-                <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+                <button
+                  onClick={() => setCurrentPage(currentPage - 1)}
+                  disabled={currentPage === 1}
+                >
                   Previous
                 </button>
-                <span>Page {currentPage} of {totalPages}</span>
-                <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === totalPages}>
+                <span>
+                  Page {currentPage} of {totalPages}
+                </span>
+                <button
+                  onClick={() => setCurrentPage(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                >
                   Next
                 </button>
               </div>
