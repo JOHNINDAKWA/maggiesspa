@@ -169,11 +169,11 @@ const Appointments = () => {
                       <td>{appointment.service}</td>
                       <td>{appointment.date}</td>
                       <td>{appointment.time}</td>
-                      <Link to={`/appointments/${appointment.id}`}>
+                      <td><Link to={`/appointments/${appointment.id}`} >
                         <button className="view-details-btn">
                           View Details
                         </button>
-                      </Link>
+                      </Link></td>                      
                     </tr>
                   ))}
                 </tbody>
