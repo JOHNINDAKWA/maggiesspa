@@ -1,0 +1,186 @@
+.selfcare-care {
+  color: #333 !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.selfcare-care h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #01a1a1;
+}
+
+.selfcare-care p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.selfcare-packages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.selfcare-package {
+  background-color: #ffffff;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.selfcare-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 2px solid #01a1a1;
+}
+
+.selfcare-package h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #01a1a1;
+  padding: 20px;
+  background-color: #f0f0f0a7;
+  margin-bottom: 15px;
+}
+
+.selfcare-package h3 span {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.selfcare-subhead {
+  font-weight: bold;
+  color: #017e7e;
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+
+.selfcare-subhead::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #01a1a1;
+  margin-top: 6px;
+}
+
+.selfcare-package ul li::before {
+  content: "\2022";
+  color: #01a1a1;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+.selfcare-link {
+  color: #01a1a1;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  transition: color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.selfcare-link::after {
+  content: "→";
+  font-size: 22px;
+  transform: translateX(10px);
+  transition: transform 0.3s ease;
+}
+
+.selfcare-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background-color: #01a1a1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.selfcare-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.selfcare-link:hover {
+  color: #017e7e;
+}
+
+.selfcare-link:hover::after {
+  transform: translateX(2px);
+}
+
+@media (max-width: 768px) {
+  .selfcare-care {
+    padding: 30px 16px;
+  }
+
+  .selfcare-care h2 {
+    font-size: 28px;
+  }
+
+  .selfcare-packages {
+    grid-template-columns: 1fr;
+  }
+
+  .selfcare-package {
+    padding: 16px;
+  }
+
+  .selfcare-package h3 {
+    font-size: 20px;
+    padding: 16px;
+  }
+
+  .selfcare-package h3 span {
+    font-size: 15px;
+  }
+
+  .selfcare-link {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .selfcare-link::before {
+    width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .selfcare-care h2 {
+    font-size: 24px;
+  }
+
+  .selfcare-img {
+    height: 180px;
+  }
+
+  .selfcare-package h3 {
+    font-size: 18px;
+  }
+
+  .selfcare-package h3 span {
+    font-size: 16px;
+  }
+
+  .selfcare-package ul li {
+    font-size: 16px;
+  }
+}

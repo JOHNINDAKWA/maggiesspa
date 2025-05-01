@@ -1,0 +1,238 @@
+.membership-container {
+    padding: 50px;
+    width: 100vw;
+    background: url('../../assets/images/wooden.jpg') no-repeat center center/cover;
+}
+
+.cont{
+    display: flex;
+    align-items: flex-start;
+    justify-content:end; 
+    gap: 40px;
+    margin-left: 50px;
+}
+/* Brightened Heading Colors */
+.membership-heading {
+    max-width: 350px;
+    color: #fff;
+    margin-left: auto; /* Push heading to the right */
+}
+.membership-heading h3 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffdbdb; /* Light pink for contrast */
+}
+
+.membership-head-line {
+    width: 50px;
+    height: 3px;
+    background-color: #ff508b;
+    margin: 10px 0;
+}
+
+.total h2{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: "EB Garamond", serif; 
+}
+
+.total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.membership-card h3{
+    font-size: 28px;
+    font-style: italic;
+    /* font-family: "Dancing Script", cursive;
+     */
+     font-family: Cormorant Garamond;
+
+    font-weight: 300;
+}
+
+
+.membership-heading h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #f2d77d; /* Brighter Yellow */
+}
+
+.membership-heading p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #e0e0e0;
+}
+
+/* Membership cards container */
+.membership-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-grow: 1;
+    margin-left: auto; /* Push cards to the right */
+}
+
+/* Individual cards */
+.membership-card {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    background: #fff; /* White background */
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Active card always has the blurry pink background */
+.membership-card.active {
+    background: url('../../assets/images/dark-room4.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+/* Hover effect with blurry pink background */
+.membership-card:hover {
+    background: url('../../assets/images/dark-room4.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+/* Buttons */
+.membership-card button {
+    background: transparent;
+    border: 2px solid;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Button background appears on hover */
+.membership-card:hover button {
+    background: inherit;
+    color: white;
+}
+
+/* Membership percent */
+.membership-percent {
+    background-color: #f8ccda;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Percentage Discount */
+.percentage {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    color: #ff508b; /* Pink to match the theme */
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.percentage h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.percentage span {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: -12px;
+}
+
+/* Vertical Line */
+.vertical-line {
+    width: 2px;
+    height: 40px;
+    background: #ff508b; /* Pink line to match theme */
+    margin: 0 10px;
+}
+
+
+.membership-percent p{
+    color: #b10740 !important;
+}
+
+/* Borders and button colors */
+.pink-card {
+    border-color: #ff508b;
+}
+
+.pink-card button {
+    border-color: #ff508b;
+    color: #ff508b;
+}
+
+.green-card {
+    border-color: #56c152;
+}
+
+.green-card button {
+    border-color: #56c152;
+    color: #56c152;
+}
+
+.yellow-card {
+    border-color: #f2d77d;
+}
+
+.yellow-card button {
+    border-color: #f2d77d;
+    color: #f2d77d;
+}
+
+/* Button hover effects */
+.pink-card:hover button {
+    background-color: #ff508b;
+    color: white;
+}
+
+.green-card:hover button {
+    background-color: #56c152;
+    color: white;
+}
+
+.yellow-card:hover button {
+    background-color: #f2d77d;
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .membership-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+    .cont{
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    .membership-heading {
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0; /* Reset for smaller screens */
+    }
+
+    .membership-cards {
+        justify-content: center;
+        margin-left: 0; /* Reset for smaller screens */
+    }
+}
+@media screen and (max-width: 768px) {
+    .membership-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}

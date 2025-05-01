@@ -1,0 +1,351 @@
+/* Base container setup */
+.users-page-container {
+  width: 1200px;
+  max-width: 95%;
+  height: auto;
+  margin: auto;
+  padding: 20px;
+}
+
+  .users-page-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .users-page-container h2{
+    font-size: 24px;
+  }
+  
+  .users-page-container .add-btn {
+    background: #4caf50;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .users-page-container .add-btn:hover {
+    background: #388e3c;
+  }
+  
+  .users-page-container .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .users-page-container .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 10px;
+  }
+  
+  .users-page-container .users-table th,
+  .users-page-container .users-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  .edit-table{
+    text-align: right !important;
+  }
+  
+  .users-page-container .users-table th {
+    background: #01a1a1;
+    color: #fff;
+  }
+  
+  .users-page-container .role-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .users-page-container .role-badge.admin {
+    background-color: #ffe5b4;
+    color: #b3541e;
+  }
+  
+  .users-page-container .role-badge.staff {
+    background-color: #d1e7dd;
+    color: #0f5132;
+  }
+  
+  .users-page-container .status-active {
+    background: #d4edda;
+    color: #155724;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  
+  .users-page-container .status-inactive {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  
+  .users-page-container .edit-btn {
+    background: #01a1a1;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .users-page-container .edit-btn:hover {
+    background: #018383;
+  }
+  
+  .users-page-container .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .users-page-container .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    position: relative;
+  }
+  
+  .users-page-container .modal-content h3 {
+    margin-bottom: 20px;
+    color: #01a1a1;
+  }
+  
+  .users-page-container .modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .users-page-container .modal-content input,
+  .users-page-container .modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .users-page-container .password-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  .users-page-container .password-field input {
+    flex: 1;
+  }
+  
+  .users-page-container .toggle-eye {
+    margin-left: 8px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .users-page-container .modal-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .users-page-container .save-btn {
+    background: #4caf50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .users-page-container .cancel-btn {
+    background: #f44336;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .users-page-container .save-btn:hover {
+    background: #388e3c;
+  }
+  
+  .users-page-container .cancel-btn:hover {
+    background: #d32f2f;
+  }
+
+  /* Breadcrumb */
+.breadcrumb2 {
+  margin-bottom: 10px;
+}
+
+.breadcrumb-link2 {
+  font-size: 14px;
+  color: #01A1A1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb-link2:hover {
+  text-decoration: underline;
+}
+
+/* Toast */
+.custom-toast2 {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 10000;
+  animation: fadeinout 3s ease;
+}
+
+@keyframes fadeinout {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+  
+  @media (max-width: 768px) {
+    .users-page-container .hide-on-small {
+      display: none;
+    }
+  }
+  
+
+  
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .users-page-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .users-page-container h2 {
+    font-size: 22px;
+  }
+
+  .users-page-container .add-btn {
+    padding: 7px 12px;
+    font-size: 14px;
+  }
+
+  .users-page-container .users-table th,
+  .users-page-container .users-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .users-page-container .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .users-page-container {
+    width: 100vw;
+    padding: 10px;
+  }
+
+  .users-page-container h2 {
+    font-size: 20px;
+  }
+
+  .users-page-container .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .users-page-container .add-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .users-page-container .users-table th.hide-on-small,
+  .users-page-container .users-table td.hide-on-small {
+    display: none;
+  }
+
+  .users-page-container .users-table {
+    font-size: 12px;
+  }
+
+  .users-page-container .edit-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .users-page-container .modal-content {
+    width: 95%;
+    max-width: 95%;
+    padding: 15px;
+  }
+}
+
+/* Extra small screens (very small mobile) */
+@media (max-width: 480px) {
+  .users-page-container h2 {
+    font-size: 18px;
+  }
+
+  .users-page-container .users-table th,
+  .users-page-container .users-table td {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .users-page-container .add-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .users-page-container .modal-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .users-page-container .modal-content label {
+    font-size: 12px;
+  }
+
+  .users-page-container .modal-content input,
+  .users-page-container .modal-content select {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .users-page-container .save-btn,
+  .users-page-container .cancel-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

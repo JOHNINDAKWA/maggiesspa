@@ -1,0 +1,122 @@
+.spa-services {
+    padding: 4rem 1rem;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .spa-services .services-grid {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .spa-services .service-card2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .spa-services .service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .spa-services .service-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ⬅ left-align content */
+    text-align: left; /* ⬅ left-align text */
+  }
+  
+  .spa-services .service-content h3 {
+    font-size: 1.2rem; /* reduced from 1.75rem */
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .spa-services .service-content p {
+    font-size: 0.95rem; /* reduced from 1.1rem */
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .spa-services .view-service-button {
+    padding: 0.6rem 1.2rem;
+    background-color: #01a1a1;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .spa-services .view-service-button:hover {
+    background-color: #028888;
+  }
+  
+  .spa-services .view-service-button:active {
+    transform: scale(0.97);
+  }
+  
+  /* Medium screens (tablets and below) */
+@media (max-width: 768px) {
+    .spa-services {
+      padding: 3rem 1rem;
+    }
+  
+    .spa-services .service-content {
+      padding: 1rem;
+    }
+  
+    .spa-services .service-content h3 {
+      font-size: 1.1rem;
+    }
+  
+    .spa-services .service-content p {
+      font-size: 0.9rem;
+    }
+  
+    .spa-services .view-service-button {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media (max-width: 480px) {
+    .spa-services {
+      padding: 2.5rem 0.8rem;
+    }
+  
+    .spa-services .services-grid {
+      grid-template-columns: 1fr; /* stack cards */
+      gap: 1.5rem;
+    }
+  
+    .spa-services .service-image {
+      height: 180px;
+    }
+  
+    .spa-services .service-content h3 {
+      font-size: 1rem;
+    }
+  
+    .spa-services .service-content p {
+      font-size: 0.85rem;
+    }
+  
+    .spa-services .view-service-button {
+      font-size: 0.85rem;
+      padding: 0.5rem 0.9rem;
+    }
+  }
+  

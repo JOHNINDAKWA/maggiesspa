@@ -1,0 +1,150 @@
+.baby-care {
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .baby-care h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #01a1a1;
+  }
+  
+  .baby-packages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .baby-package {
+    background-color: #fff;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .baby-package-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #01a1a1;
+  }
+  
+  .baby-package h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #01a1a1;
+    padding: 20px;
+    background-color: #f0f0f0a7;
+    margin-bottom: 15px;
+  }
+  
+  .baby-package h3 span {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .baby-package p{
+    color: #333;
+    font-size: 17px;
+  }
+  
+  .baby-package ul li{
+    color: #333;
+    font-size: 17px;
+
+  }
+  .baby-package ul li::before {
+    content: '\2022';
+    color: #01a1a1;
+    font-size: 18px;
+    padding-right: 10px;
+  }
+
+  .package-link {
+    color: #01a1a1;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    transition: color 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .package-link::after {
+    content: '→';
+    font-size: 22px;
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+  }
+  
+  .package-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background-color: #01a1a1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .package-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .package-link:hover {
+    color: #017e7e;
+  }
+  
+  .package-link:hover::after {
+    transform: translateX(2px);
+  }
+  
+  .what-to-expect {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.05rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3px;
+  }
+  
+  .what-to-expect::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #01a1a1;
+    margin-top: 6px;
+  }
+  
+  @media (max-width: 768px) {
+    .baby-packages {
+      grid-template-columns: 1fr;
+    }
+
+    .baby-care {
+      padding: 10px;
+    }
+  
+    .baby-care h2 {
+      font-size: 24px;
+    }
+  
+    .baby-package h3 {
+      font-size: 20px;
+    }
+  
+    .baby-package h3 span {
+      font-size: 16px;
+    }
+  }

@@ -1,0 +1,181 @@
+.prenatal-packages-v2 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+  
+  .prenatal-packages-v2__title {
+    text-align: center;
+    font-size: 2rem;
+    color: #01A1A1;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+  
+  .prenatal-packages-v2__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start; 
+  }
+
+  .prenatal-packages-v2__body {
+    margin-bottom: 1.5rem;
+  }
+  
+  .prenatal-packages-v2__footer {
+    padding-top: 0.5rem;
+  }
+  
+  
+  .prenatal-packages-v2__card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(1, 161, 161, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  
+  .prenatal-packages-v2__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(1, 161, 161, 0.15);
+  }
+  
+  .prenatal-packages-v2__card--premium {
+    border: 2px solid #01A1A1;
+    background: #f6ffff;
+    
+    position: relative;
+  }
+  
+  .nobg{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(-1);
+  }
+
+
+  .prenatal-packages-v2__info-bar {
+    margin-bottom: 12px;
+  }
+  
+  .prenatal-packages-v2__info-bar h3 {
+    font-size: 1.5rem;
+    color: #01A1A1;
+    margin-bottom: 4px;
+  }
+  
+  .prenatal-packages-v2__info-bar span {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .prenatal-packages-v2__subtext {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  .prenatal-packages-v2__description {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 18px;
+  }
+  
+  .prenatal-packages-v2__sessions {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .prenatal-packages-v2__session h4 {
+    font-size: 1.1rem;
+    color: #017e7e;
+    margin-bottom: 6px;
+  }
+  
+  .prenatal-packages-v2__session ul,
+  .prenatal-packages-v2__session-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+  }
+  
+  .prenatal-packages-v2__session ul li,
+  .prenatal-packages-v2__session-list li {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  
+  .prenatal-packages-v2__button {
+    margin-top: 1.2rem;
+    background-color: #01A1A1;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  
+  .prenatal-packages-v2__button:hover {
+    background-color: #018787;
+    transform: translateY(-2px);
+  }
+
+  .prenatal-packages-v2__tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #eafdfd;
+    border: 1px solid #01a1a1;
+    color: #017e7e;
+    padding: 14px 14px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    gap: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 1px 4px rgba(1, 161, 161, 0.1);
+  }
+  
+  .prenatal-packages-v2__tag-time {
+    font-weight: 600;
+  }
+  
+  .prenatal-packages-v2__tag-price {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .prenatal-packages-v2__tag-divider {
+    font-size: 1rem;
+    color: #999;
+  }
+  
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .prenatal-packages-v2__grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .prenatal-packages-v2__button {
+      width: 100%;
+      text-align: center;
+    }
+
+      
+  .nobg{
+    display: none;
+  }
+
+  }
+  

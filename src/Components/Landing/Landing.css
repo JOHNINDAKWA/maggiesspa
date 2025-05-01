@@ -1,0 +1,339 @@
+/* Fullscreen Slider */
+.landing {
+    position: relative;
+    width: 100%;
+    height: calc(100vh);
+    overflow: hidden;
+    overflow-y: hidden;
+  }
+  
+  /* Individual Slide */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 1s ease-in-out, transform 1.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  /* Active Slide */
+  .slide.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Overlay Effect */
+  .slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+  }
+  
+  /* Content Container */
+  .content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+  }
+  
+  /* Header Animation */
+  .header {
+    font-size: 40px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-30px);
+    display: inline-block;
+    animation: fadeSlideIn 1.5s ease-in-out forwards;
+  }
+  
+  /* Description Animation */
+  .description {
+    font-size: 20px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeSlideIn 1s ease-in-out 0.5s forwards;
+  }
+  
+  /* Button Animation */
+  .book-landing {
+    padding: 12px 24px;
+    font-size: 18px;
+    color: white;
+    background: #02c7c7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transform: rotate(-10deg);
+    animation: rotateAppear 1s ease-in-out 1.2s forwards;
+   
+  }
+  
+  .book-landing:hover {
+    background: #00b3b3;
+  }
+  
+  /* Navigation Dots */
+  .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .dot.active {
+    background: #ff6600;
+  }
+
+  .social-sidebar {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 10;
+  }
+  
+  .social-sidebar a {
+    color: white;
+    font-size: 22px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .social-sidebar a:hover {
+    color: #01a1a1;
+    transform: scale(1.2);
+  }
+  
+
+  .landing-flair {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  /* Decorative floating circle */
+  .floating-circle {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #00c4c4 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.7;
+  }
+  
+  /* Optional floating emoji */
+  .floating-leaf {
+    font-size: 24px;
+    animation: floatReverse 6s ease-in-out infinite;
+    opacity: 0.6;
+  }
+  .scroll-arrow {
+    font-size: 28px;
+    color: #ffffff;
+    animation: bounceDown 2s infinite;
+    opacity: 0.8;
+    margin-top: 10px;
+  }
+  
+  /* Smooth bounce effect */
+  @keyframes bounceDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  
+  /* Animations */
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @keyframes floatReverse {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  
+  /* Animations */
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes rotateAppear {
+    from {
+      opacity: 0;
+      transform: rotate(-15deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(0);
+    }
+  }
+  
+
+
+  /* Tablets and smaller screens */
+@media (max-width: 1024px) {
+  .landing {
+    height: 80vh;
+  }
+
+  .content {
+    max-width: 500px;
+    padding: 15px;
+  }
+
+  .header {
+    font-size: 35px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .book-landing {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .landing {
+    height: 75vh;
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 10px;
+    margin-top: 3rem;
+  }
+
+  .header {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 18px;
+    width: 70%;
+    margin: 15px auto;
+    font-weight: 300;
+
+  }
+
+  .book-landing {
+    font-size: 16px;
+    padding: 12px 16px;
+    margin-top: 20px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .landing {
+    height: 70vh;
+  }
+
+  .slide {
+    align-items: flex-start;
+    padding-top: 20%;
+  }
+
+  .content {
+    max-width: 100%;
+    text-align: center;
+    padding: 8px;
+  }
+
+  .header {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .book-landing {
+    font-size: 12px;
+    padding: 12px 20px;
+  }
+
+  .dots {
+    bottom: 10px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .social-sidebar {
+    display: none;
+  }
+
+  .landing-flair {
+    display: none; /* Hide flair on small screens */
+  }
+}

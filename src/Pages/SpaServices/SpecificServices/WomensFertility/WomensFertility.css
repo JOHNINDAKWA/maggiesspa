@@ -1,0 +1,152 @@
+.womens-fertility-care {
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .womens-fertility-care h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #01a1a1;
+  }
+  
+  .womens-fertility-packages {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .womens-fertility-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(1, 161, 161, 0.08);
+  }
+  
+  .womens-fertility-img {
+    width: 90%;
+    height: 520px;
+    object-fit: cover;
+    border-bottom: 2px solid #01a1a1;
+  }
+  
+  .womens-fertility-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #01a1a1;
+    padding: 18px;
+    background-color: #f0f0f0a2;
+    margin-bottom: 15px;
+    width: 90%;
+  }
+  
+  .womens-fertility-card h3 span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  .womens-subtitle {
+    font-weight: bold;
+    color: #017e7e;
+    font-size: 1.05rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .womens-fertility-card ul {
+    padding-left: 20px;
+  }
+  
+  .womens-fertility-card ul li {
+    margin-bottom: 8px;
+    color: #444;
+  }
+  
+  .womens-fertility-card ul li::before {
+    content: "•";
+    color: #01a1a1;
+    font-size: 18px;
+    margin-right: 8px;
+  }
+  
+  .womens-pricing {
+    width: 70%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+  }
+  
+  .womens-pricing th,
+  .womens-pricing td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .womens-pricing th {
+    background-color: #01a1a1;
+    color: #fff;
+  }
+  .table-list {
+    padding-left: 18px;
+    margin: 0;
+  }
+  
+  .table-list li {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  
+  .womens-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #01a1a1;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .womens-link::after {
+    content: " →";
+    font-size: 18px;
+    transition: transform 0.3s;
+  }
+  
+  .womens-link:hover {
+    color: #017e7e;
+  }
+  
+  .womens-link:hover::after {
+    transform: translateX(5px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .womens-fertility-packages {
+      grid-template-columns: 1fr;
+    }
+  
+    .womens-fertility-card {
+      padding: 16px;
+    }
+  
+    .womens-fertility-img {
+      height: 200px;
+      width: 100%;
+    }
+
+    .hide-mobile {
+      display: none;
+    }
+
+
+
+    .womens-fertility-card h3{
+      width: 100%;
+    }
+  }
+

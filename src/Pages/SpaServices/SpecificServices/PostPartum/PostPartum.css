@@ -1,0 +1,243 @@
+
+  .postpartum-care {
+    color: #01a1a1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .postpartum-care h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #01a1a1;
+  }
+  
+  .postpartum-care p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .postpartum-care .packages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .postpartum-care .package2 {
+    background-color: #ffffff;
+    overflow: hidden;
+    margin-bottom: 20px;
+    
+    padding: 20px;
+  }
+  
+  
+  .postpartum-care .package-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #01a1a1;
+  }
+  
+  .postpartum-care .package2 h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #01a1a1;
+    padding: 20px;
+    background-color: #f0f0f0a7;
+    margin-bottom: 15px;
+  }
+
+  .postpartum-care .package2 h3 span {
+    font-size: 18px;
+    font-weight: 300;
+    
+  }
+  
+  .postpartum-care .package2 .pricing {
+    width: 80%;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .postpartum-care .package2 .pricing th,
+  .postpartum-care .package2 .pricing td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .postpartum-care .package2 .pricing th {
+    background-color: #01a1a1;
+    color: #fff;
+  }
+  
+  .postpartum-care .package2 .pricing td {
+    color: #333;
+    background-color: #f8f8f8;
+  }
+  
+  .postpartum-care .package2 ul {
+    list-style-type: none;
+    margin-top: 10px;
+  }
+  
+  .postpartum-care .package2 ul li {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .postpartum-care .package2 ul li::before {
+    content: '\2022';
+    color: #01a1a1;
+    font-size: 18px;
+    padding-right: 10px;
+  }
+
+  
+  .postpartum-care .package2 .package-description {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+  }
+
+
+  .package-link {
+    color: #01a1a1;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    transition: color 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  /* Sliding Arrow */
+  .package-link::after {
+    content: '→';
+    font-size: 22px;
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Underline Effect */
+  .package-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background-color: #01a1a1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .package-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .package-link:hover {
+    color: #017e7e;
+  }
+  
+  .package-link:hover::after {
+    transform: translateX(2px);
+  }
+  
+ /* Enhanced subheadings */
+.package2 .what-to-expect {
+    font-weight: bold;
+    color: #017e7e;
+    font-size: 1.05rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.3px;
+    position: relative;
+  }
+  
+  .package2 .what-to-expect::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #01a1a1;
+    margin-top: 6px;
+  }
+  @media (max-width: 768px) {
+    .postpartum-care {
+      padding: 30px 16px;
+    }
+  
+    .postpartum-care h2 {
+      font-size: 28px;
+    }
+  
+    .postpartum-care .packages {
+      grid-template-columns: 1fr;
+    }
+  
+    .postpartum-care .package2 {
+      padding: 16px;
+    }
+  
+    .postpartum-care .package2 h3 {
+      font-size: 20px;
+      padding: 16px;
+    }
+
+
+      .package-link::before {
+
+      width: 40%;
+   
+    }
+    .postpartum-care .package2 h3 span {
+      font-size: 15px;
+    }
+  
+    .postpartum-care .package2 .pricing {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .package-link, .package-button {
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .postpartum-care h2 {
+      font-size: 24px;
+    }
+  
+    .package-img {
+      height: 180px;
+    }
+  
+    .postpartum-care .package2 h3 {
+      font-size: 18px;
+    }
+  
+    .postpartum-care .package2 h3 span {
+      font-size: 14px;
+    }
+  
+    .postpartum-care .package2 ul li {
+      font-size: 14px;
+    }
+  }
+  

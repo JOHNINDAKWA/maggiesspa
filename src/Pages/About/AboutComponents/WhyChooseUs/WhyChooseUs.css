@@ -1,0 +1,72 @@
+.why-choose-us {
+    padding: 60px 5%;
+    text-align: center;
+    /* background: #f8f8f8; */
+  }
+  
+  .why-choose-us h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 0.8px;
+  }
+  
+  /* Flex container */
+  .features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers everything */
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Each feature box */
+  .feature {
+    text-align: center;
+    flex: 1 1 calc(33.33% - 30px); /* Each takes up 1/3rd of the space */
+    min-width: 250px; /* Ensures proper wrapping on smaller screens */
+    padding: 15px 5px;
+  }
+  
+  /* Feature Icons */
+  .feature-icon {
+    font-size: 2.8rem;
+    color: #01a1a1;
+    margin-bottom: 2px;
+  }
+  
+  /* Feature Titles */
+  .feature h3 {
+    font-size: 1.4rem;
+    color: #222;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  
+  /* Feature Paragraphs */
+  .feature p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .feature {
+      flex: 1 1 calc(50% - 30px); /* Switch to 2 columns */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .feature {
+      flex: 1 1 100%; /* Single column layout */
+    }
+  
+    .why-choose-us h2 {
+      font-size: 1.8rem;
+    }
+  }
+  

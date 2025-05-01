@@ -1,0 +1,139 @@
+.next-section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+  }
+  
+  .next-section-left {
+    width: 50%;
+  }
+  
+  .next-section-left h2 {
+    font-size: 2.5rem;
+    color: #353535;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .next-section-left p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+  
+  .next-section-left button {
+    background: #01a1a1;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .next-section-left button:hover {
+    background: #018c8c;
+  }
+  
+  /* Right Section */
+  .next-section-right {
+    width: 50%;
+  }
+  
+  .progress-bar-container {
+    margin-bottom: 20px;
+  }
+  
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #353535;
+    margin-bottom: 5px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: #01a1a1;
+    width: 0%;
+  }
+/* For tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .next-section-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .next-section-left,
+    .next-section-right {
+      width: 100%;
+    }
+  
+    .next-section-left h2 {
+      font-size: 2rem;
+    }
+  
+    .progress-label {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* For mobile devices (max-width: 768px) */
+  @media (max-width: 768px) {
+    .next-section-container {
+      padding: 30px 15px;
+    }
+  
+    .next-section-left h2 {
+      font-size: 1.8rem;
+    }
+  
+    .next-section-left p {
+      font-size: 15px;
+    }
+  
+    .next-section-left button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  
+    .progress-label {
+      font-size: 0.85rem;
+    }
+  
+    .progress-bar {
+      height: 6px;
+    }
+  }
+  
+  /* For small mobile devices (max-width: 480px) */
+  @media (max-width: 480px) {
+    .next-section-left h2 {
+      font-size: 1.6rem;
+    }
+  
+    .progress-label {
+      font-size: 0.9rem;
+    }
+  
+    .progress-bar {
+      height: 5px;
+    }
+  }
+    

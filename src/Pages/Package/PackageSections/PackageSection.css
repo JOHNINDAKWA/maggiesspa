@@ -1,0 +1,123 @@
+.package-section2 {
+  padding: 60px 20px;
+  /* background-color: #f5f7f6; */
+  /* font-family: 'Helvetica Neue', sans-serif; */
+}
+
+.package-wrapper2 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-row2 {
+  margin-bottom: 60px;
+}
+
+.category-heading2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #4A2D16;
+  margin-bottom: 30px;
+  padding-left: 6px;
+  border-left: 4px solid #01A1A1;
+}
+
+
+.subcategory-row2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.subcategory-card2 {
+  background-color: #fff;
+  border: 1px solid #ececec71;
+  border-radius: 10px;
+  flex: 1 1 560px;
+  max-width: 560px;
+  padding: 20px;
+  box-shadow: 0 1px 3px #01d1d16c;
+  transition: background-color 0.3s ease;
+  height: auto;             
+  display: block;           
+}
+
+
+.subcategory-card2:hover {
+  background-color: #fafafa;
+}
+
+.subcategory-title2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #01A1A1;
+  margin-bottom: 12px;
+}
+
+/* Table-style service layout */
+.service-list2 {
+  width: 100%;
+  border-collapse: collapse;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-item2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.service-item2:last-child {
+  border-bottom: none;
+}
+
+.service-description2 {
+  color: #333;
+  max-width: 75%;
+}
+
+.service-price2 {
+  color: #01A1A1;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .subcategory-row {
+    flex-direction: column;
+  }
+
+  .subcategory-card {
+    flex: none !important;   /* NEW: override any flex growth */
+    max-width: 100%;
+    width: 100%;             /* NEW: ensures full-width on mobile */
+    height: auto;            /* NEW: ensure height fits content */
+    padding: 16px;           /* Slightly smaller padding for smaller screens */
+  }
+
+  .category-heading {
+    font-size: 20px;
+  }
+
+  .subcategory-title {
+    font-size: 15px;
+  }
+
+  .service-item {
+    font-size: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-price {
+    margin-top: 4px;
+  }
+}

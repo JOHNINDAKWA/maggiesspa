@@ -1,0 +1,122 @@
+.services-container {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section Title */
+.services-title {
+    font-size: 34px;
+    color: #014d4d;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-family: "Dancing Script", cursive;
+}
+
+.services-list-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    position: relative; 
+    text-align: center;
+}
+
+.services-list-title::after {
+  content: "";
+  position: absolute;
+  background-image: url('../../assets/images/lotus-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures it fully covers the given height & width */
+  height: 16px;
+  width: 16px;
+  top: -5px;
+  right: 60px;
+}
+  
+
+/* Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .services-container {
+        width: 100%;
+        padding: 20px 10px;
+    }
+}
+
+
+
+/* Service Card */
+.service-card {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 161, 161, 0.15);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.service-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 161, 161, 0.3);
+}
+
+/* Service Image */
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Service Title */
+.service-title {
+    font-size: 20px;
+    color: #016b6b;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* Service Description */
+.service-description {
+    font-size: 15px;
+    color: #014d4d;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* CTA Button */
+.service-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background: #01a1a1;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.service-card:hover .service-button {
+    background: #014d4d;
+}

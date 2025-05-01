@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Outfit&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Outfit&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  /* font-family: "Lora", serif; */
+  /* font-family: "Lato", sans-serif; */
+  /* font-family: "EB Garamond", serif; */
+  font-family: "Quicksand", sans-serif;
+  
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust width as needed */
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light background for contrast */
+  border-radius: 5px;
+}
+
+/* Scrollbar thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #01a1a1; /* Color applied correctly */
+  border-radius: 5px;
+}
+
+/* Scrollbar thumb hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #018080; /* Slightly darker shade on hover */
+}
+
+
+ul{
+  list-style: none;
+}
+
+::selection {
+  background-color: #018080;
+  color: #fff;
+}
+a{
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

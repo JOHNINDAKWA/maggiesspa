@@ -1,0 +1,285 @@
+/* Main Contact Form Container */
+.contactForm-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px 5%;
+}
+
+/* Contact Details Section */
+.contactForm-details {
+    background: #f6ebe7;
+    padding: 50px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Each Detail Item */
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.detail-item:not(:last-child){
+    
+    border-bottom: 1px solid  #55433c35;
+}
+
+.detail-item svg {
+    background-color: #55433c;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    line-height: 50px;
+    border-radius: 50%;
+    color: #f6ebe7;
+}
+
+.detail-info span {
+    color: #242424;
+    font-family: Cormorant Garamond;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 0;
+}
+
+.detail-info p {
+    font-size: 16px;
+    color: #444;
+}
+
+
+/* Contact Form Section */
+.contactForm-content {
+    max-width: 600px;
+    width: 100%;
+    flex: 1;
+}
+
+/* Form Heading */
+.contactForm-content h2 {
+    color: #242424;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 70px;
+    letter-spacing: 0;
+    position: relative;
+    z-index: 2; 
+}
+
+
+
+/* Form */
+.contactForm-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Row for Email & Phone */
+.contactForm-row {
+    display: flex;
+    gap: 15px;
+}
+
+.contactForm-row input,
+.contactForm-row select {
+    width: 100%;
+    padding: 15px 0px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    background: white;
+    color: rgba(0, 0, 0, 0.649);
+    transition: border 0.3s ease-in-out;
+}
+
+/* Textarea */
+.contactForm-form textarea {
+    width: 100%;
+    padding: 15px 0px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    background: white;
+    color: rgba(0, 0, 0, 0.649);
+    transition: border 0.3s ease-in-out;
+}
+
+/* Button with Wavy Background Animation */
+.contactForm-form button {
+    position: relative;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #cda291; /* Fallback color */
+    transition: 0.3s ease-in-out;
+    width: fit-content;
+}
+
+
+
+/* Create the wave effect */
+.contactForm-form button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 300%;
+    background: radial-gradient(circle, #4cb8b5 25%, transparent 30%);
+    background-size: 50% 50%;
+    animation: waveAnimation 3s infinite linear;
+    opacity: 0.5;
+    z-index: 0;
+    transition: opacity 0.3s;
+}
+
+/* Hover effect makes the wave more visible */
+.contactForm-form button:hover::before {
+    opacity: 0.8;
+}
+
+/* Ensure text remains above animation */
+.contactForm-form button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Keyframe animation for the wave effect */
+@keyframes waveAnimation {
+    0% { transform: translateX(-50%) translateY(0%); }
+    50% { transform: translateX(0%) translateY(-50%); }
+    100% { transform: translateX(50%) translateY(0%); }
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    /* Stack contact form & details on smaller screens */
+    .contactForm-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 40px 4%;
+    }
+
+    /* Adjust Contact Details Section */
+    .contactForm-details {
+        width: 100%;
+        padding: 40px;
+    }
+
+    /* Adjust Contact Form Content */
+    .contactForm-content {
+        max-width: 100%;
+    }
+
+    /* Form Heading */
+    .contactForm-content h2 {
+        font-size: 45px;
+        line-height: 60px;
+    }
+
+    .contactForm-content h2::before {
+        font-size: 50px;
+        top: -25px;
+        left: 20%;
+    }
+
+    /* Ensure input fields fit properly */
+    .contactForm-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contactForm-container {
+        padding: 30px 5%;
+    }
+
+    .contactForm-details {
+        padding: 30px;
+    }
+
+    .contactForm-content h2 {
+        font-size: 38px;
+        line-height: 50px;
+    }
+
+    .contactForm-content h2::before {
+        font-size: 45px;
+        top: -20px;
+        left: 15%;
+    }
+
+    /* Adjust input fields and buttons */
+    .contactForm-form input,
+    .contactForm-form select,
+    .contactForm-form textarea {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .contactForm-form button {
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contactForm-container {
+        padding: 20px 6%;
+    }
+
+    .contactForm-details {
+        padding: 20px;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .detail-item svg {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .contactForm-content h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .contactForm-content h2::before {
+        font-size: 35px;
+        top: -15px;
+        left: 10%;
+    }
+
+    /* Stack form elements */
+    .contactForm-row {
+        flex-direction: column;
+    }
+
+    .contactForm-form button {
+        width: 100%;
+        text-align: center;
+    }
+}

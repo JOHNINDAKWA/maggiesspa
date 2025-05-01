@@ -1,0 +1,131 @@
+.partner-section {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  
+  .partner-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .partner-heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: #013838;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  
+  .partner-subtext {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin-inline: auto;
+    font-style: italic;
+  }
+  
+  /* Updated layout with manual control */
+  .partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 10px;
+  }
+  
+  .partner-logo-card {
+    flex: 1 1 240px;
+    max-width: 260px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px 20px;
+    box-shadow: 0 6px 20px rgba(1, 161, 161, 0.1);
+    transition: all 0.35s ease;
+    border: 2px solid transparent;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  .partner-logo-card:hover {
+    transform: translateY(-6px);
+    border-color: #01a1a1;
+    box-shadow: 0 12px 30px rgba(1, 161, 161, 0.15);
+  }
+  
+  .partner-logo-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, #01a1a140, transparent);
+    z-index: -1;
+    border-radius: 16px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .partner-logo-card:hover::after {
+    opacity: 1;
+  }
+  
+  .partner-logo-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .partner-logo-card p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    padding: 0 5px;
+  }
+  
+  /* ===========================
+     ✅ Responsive Adjustments
+     =========================== */
+  
+  @media screen and (max-width: 768px) {
+    .partner-heading {
+      font-size: 26px;
+    }
+  
+    .partner-subtext {
+      font-size: 15px;
+    }
+  
+    .partner-logos {
+      justify-content: center;
+    }
+  
+    .partner-logo-card:nth-child(n+3) {
+      display: none;
+    }
+  
+    .partner-logo-card img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .partner-heading {
+      font-size: 22px;
+    }
+  
+    .partner-subtext {
+      font-size: 15px;
+    }
+  
+    .partner-logo-card p {
+      font-size: 16px;
+    }
+  }
+  

@@ -1,0 +1,289 @@
+.deserve-container {
+    background-color: white;
+    width: 1200px;
+    margin: 0 auto; 
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.deserve-container h3 {
+    color: #000;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.havel{
+    
+    font-family: "Dancing Script", cursive;
+}
+
+.deserve-line {
+    width: 80px;
+    height: 2px;
+    background-color: #01a1a1;
+    margin: 10px auto 20px;
+}
+
+.deserve-container h5 {
+    color: #000;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* Top Section */
+.deserve-service-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px; 
+}
+
+.side-img {
+    width: 50%;
+}
+
+.deserve-service-top-content {
+    text-align: left;
+    max-width: 500px;
+}
+
+.deserve-service-top-content h2 {
+    color: #01a1a1;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.deserve-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.deserve-title img {
+    width: 35px;
+}
+
+.deserve-title h3 {
+    color: #b46a3d;
+    font-size: 1.1rem;
+}
+
+.deserve-service-top-content p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    word-wrap: break-word; 
+}
+
+.deserve {
+    background: #01a1a1;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.deserve:hover {
+    background: #4a2d16;
+    color: white;
+}
+
+/* Bottom Section */
+.deserve-service-bottom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    margin-top: 50px;
+}
+
+.deserve-item {
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; 
+}
+
+.deserve-item:hover {
+    transform: translateY(-5px);
+}
+
+.top-img {
+    width: 95%;
+    height: 300px; 
+    object-fit: cover;
+}
+
+.deserve-item .deserve-title {
+    justify-content: left;
+}
+
+.deserve-item p {
+    color: #333;
+    font-size: 1rem;
+    margin: 10px 0 15px;
+    max-width: 100%;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 1200px */
+@media (max-width: 1200px) {
+    .deserve-container {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .deserve-service-top {
+        gap: 40px;
+    }
+
+    .side-img {
+        width: 45%;
+    }
+
+    .deserve-service-bottom {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* For screens smaller than 992px */
+@media (max-width: 992px) {
+    .deserve-container h3 {
+        font-size: 2.5rem;
+    }
+
+
+    .deserve-service-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .side-img {
+        width: 80%;
+    }
+
+    .deserve-service-top-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .deserve-title {
+        justify-content: center;
+    }
+
+    .deserve-service-bottom {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .top-img {
+        height: 250px;
+    }
+
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    .deserve-container h3 {
+        font-size: 2rem;
+    }
+    .deserve-container{
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 10px;
+    }
+
+    .deserve-container h5 {
+        font-size: 1rem;
+    }
+
+    .deserve-service-top p{
+        width: 100%;
+    }
+
+    .deserve-service-top-content{
+        text-align: left;
+        padding-left: 20px;
+    }
+    .deserve-title{
+        justify-content: left;
+    }
+
+    .deserve-service-bottom p{
+        width: 90% !important;
+    }
+    .deserve-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .side-img, .top-img {
+        max-width: 400px;
+        max-height: 276px;
+        object-fit: cover;
+    }
+
+    .deserve-service-top-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .deserve-title h3 {
+        font-size: 1.3rem;
+    }
+    .btm-content{
+        padding-left: 20px;
+    }
+
+    .deserve-service-bottom {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .top-img {
+        height: 300px;
+    }
+}
+
+/* For screens smaller than 576px */
+@media (max-width: 576px) {
+    .deserve-container h3 {
+        font-size: 1.8rem;
+    }
+
+    .deserve-line {
+        width: 60px;
+    }
+
+    .deserve-service-top-content {
+        max-width: 100%;
+    }
+
+    .side-img {
+        width: 100%;
+    }
+
+    .deserve-service-top-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .deserve-title h3 {
+        font-size: 1.2rem;
+    }
+
+    .deserve-service-top-content p {
+        font-size: 0.9rem;
+    }
+
+    .deserve {
+        font-size: 0.9rem;
+    }
+
+    .top-img {
+        height: 250px;
+    }
+}

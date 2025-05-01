@@ -1,0 +1,192 @@
+/* PostpartumPackages.css */
+
+.postpartum-packages {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem 1rem; /* bottom padding increased */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+  .postpartum-packages h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #01A1A1;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .postpartum-packages__cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    align-content: start;
+  }
+  
+  .postpartum-packages__card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(1, 161, 161, 0.2);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 640px; /* bumped from 580px */
+    box-sizing: border-box;
+  }
+  
+  .postpartum-packages__card:hover {
+    box-shadow: 0 10px 30px rgba(1, 161, 161, 0.3);
+  }
+  
+  .postpartum-packages__package-title {
+    font-size: 1.75rem;
+    color: #01A1A1;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .postpartum-packages__package-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .postpartum-packages__package-info {
+    background-color: #f9f9f9;
+    border-left: 2px solid rgba(2, 222, 222, 0.29);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+  }
+  
+  .postpartum-packages__info-text strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #01A1A1;
+    margin-bottom: 0.5rem;
+  }
+  
+  .postpartum-packages__info-list {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+  
+  .postpartum-packages__info-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  .postpartum-packages__package-info p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  .postpartum-packages__badge {
+    background-color: #01A1A1;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 3px 10px rgba(1, 161, 161, 0.3);
+  }
+  
+  .postpartum-packages__btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  .postpartum-packages__btn {
+    background-color: #01a1a184;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.55rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .postpartum-packages__btn:hover {
+    background-color: #018787;
+    transform: translateY(-2px);
+  }
+    /* Tablet (768px and down) */
+@media (max-width: 768px) {
+    .postpartum-packages {
+      padding: 1.5rem 1rem 3rem 1rem;
+    }
+  
+    .postpartum-packages h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .postpartum-packages__cards-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .postpartum-packages__card {
+      min-height: auto;
+      padding: 1rem;
+    }
+  
+    .postpartum-packages__badge {
+      font-size: 1.1rem;
+      padding: 0.4rem 0.9rem;
+    }
+  
+    .postpartum-packages__info-list li {
+      font-size: 0.9rem;
+    }
+  
+    .postpartum-packages__btn {
+      padding: 0.65rem 1.25rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Mobile (480px and down) */
+  @media (max-width: 480px) {
+    .postpartum-packages {
+      padding: 1rem 0.5rem 2rem 0.5rem;
+    }
+  
+    .postpartum-packages h2 {
+      font-size: 1.75rem;
+    }
+  
+    .postpartum-packages__card {
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(1, 161, 161, 0.15);
+      padding: 1rem;
+    }
+  
+    .postpartum-packages__info-list li {
+      font-size: 0.85rem;
+    }
+  
+    .postpartum-packages__btn {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+  
+    .postpartum-packages__badge {
+      font-size: 1rem;
+      padding: 0.3rem 0.75rem;
+    }
+  }
+  

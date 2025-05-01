@@ -1,0 +1,168 @@
+.home-about-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 80px 20px;
+    box-sizing: border-box;
+  }
+
+/* Left: Maggy's Image */
+.home-about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-about-image img {
+    /* width: 100%; */
+    max-width: 500px;
+    /* border-radius:71% 29% 70% 30% / 0% 37% 63% 100%; */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Right: About Content */
+.home-about-content {
+    flex: 1;
+    text-align: left;
+    padding-left: 40px;
+    width: 600px;
+    height: 500px;
+    position: relative; 
+    background-position: 0 75% !important;
+    /* box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.06); */
+}
+
+.home-about-content::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, #01A1A1 20%, transparent 70%);
+    opacity: 0.4;
+    z-index: 1;
+}
+
+
+
+.home-about-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.home-about-line {
+    width: 80px;
+    height: 3px;
+    background: #906c5f;
+    margin: 10px 0;
+}
+
+.home-about-subtitle {
+    font-size: 20px;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.home-about-details {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+    width: 540px;
+}
+.home-about-details strong{
+    color: rgb(55, 22, 1);
+}
+/* Image Marquee Slider */
+.home-about-slider {
+    margin-top: 30px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slider-img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .home-about-container {
+        width: 100%;
+        padding: 60px 5%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-about-image {
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .home-about-content {
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .slider-img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-about-container {
+        flex-direction: column;
+        padding: 50px 5%;
+    }
+
+    .home-about-content h2 {
+        font-size: 30px;
+    }
+
+    .home-about-details {
+        font-size: 16px;
+        width: 80%;
+        padding: 10px;
+        margin: 0 auto;
+        
+    }
+
+    .home-about-line{
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-about-container {
+        padding: 40px 5%;
+    }
+
+    .home-about-image {
+        max-width: 100%;
+    }
+
+    .slider-img {
+        width: 100px;
+    }
+    .home-about-details {
+        font-size: 16px;
+        width: 90%;
+        
+    }
+}
