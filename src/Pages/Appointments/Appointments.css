@@ -402,6 +402,9 @@
       padding: 16px;
       width: 95vw;
     }
+    .search-bar-with-user{
+      margin-top: 12px;
+    }
   
     .search-bar input {
       max-width: 100%;
