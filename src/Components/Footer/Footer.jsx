@@ -148,8 +148,16 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom">
             <p>
-              © {new Date().getFullYear()} Maggies Spa Theme, Made by{" "}
-              <a href="https://owidigitalmedia.vercel.app/">Owimedia</a>
+              © {new Date().getFullYear()} Maggie's Spa. Designed and developed
+              by{" "}
+              <a
+                href="https://owidigitalmedia.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Owimedia
+              </a>
+              .
             </p>
           </div>
         </div>
