@@ -30,6 +30,11 @@
     border-radius: 8px;
     font-size: 14px;
   }
+
+  .login-form input:focus {
+    border-color: #01a1a1;
+}
+
   
   .login-form button {
     width: 100%;

@@ -33,7 +33,7 @@
     padding: 8px 12px;
     display: block;
     transition: all 0.3s ease-in-out;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 /* Underline Hover Effect */
@@ -58,7 +58,7 @@
 .desktop-menu ul li a {
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between icon and text */
+    gap: 8px; 
 }
 
 /* Align dropdown icons */
@@ -125,28 +125,21 @@
 
 
 
-
-
-
-
-
 /* Book Now Button */
+.book-now2 {
 
-.book-now{
-    /* margin-top: -1.5rem; */
 }
+
 .book-now2 a {
-    background-color: #01a1a1;
-    color: white;
+    color: white;    
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #01a1a1, #018383);
     font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 25px;
     transition: all 0.3s ease-in-out;
     display: inline-block;
 }
 
 .book-now2 a:hover {
-    background-color: white;
-    color: #01a1a1;
-    transform: scale(1.1);
+    background-color: #015454;
+    transform: scale(1.02);
 }

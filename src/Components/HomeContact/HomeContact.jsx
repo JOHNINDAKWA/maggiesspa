@@ -6,7 +6,8 @@ const HomeContact = () => {
   return (
     <section className="home-contact">
       <div className="contact-content">
-        <h2>Let’s Get in Touch With Us</h2>
+      <h2>Contact Maggie’s Spa</h2>
+
         <p>Feel free to reach out for any inquiries or service requests.</p>
 
 

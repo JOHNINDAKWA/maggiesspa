@@ -59,6 +59,7 @@
     font-family: inherit;
     outline: none;
     transition: border 0.2s ease;
+    width: 100%;
   }
   
   .modal-content input[type="date"]:focus,

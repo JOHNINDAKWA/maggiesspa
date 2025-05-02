@@ -21,13 +21,26 @@ const LoginPage = () => {
       });
   
       const users = response.data.record.users;
-      const user = users.find((u) => u.email === email && u.password === password);
+      const user = users.find(
+        (u) => u.email === email && u.password === password
+      );
   
       if (user) {
-        // ✅ use role directly from bin!
-        const userData = { id: user.id, name: user.name, email: user.email, role: user.role };
-        localStorage.setItem("loggedInUser", JSON.stringify(userData));
+        if (user.active === "false") {
+          setError("Your account is inactive. Please contact the administrator.");
+          return;
+        }
   
+        // ✅ user role and active directly from bin!
+        const userData = {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          role: user.role,
+          active: user.active,
+        };
+  
+        localStorage.setItem("loggedInUser", JSON.stringify(userData));
         navigate("/appointments");
       } else {
         setError("Invalid email or password.");

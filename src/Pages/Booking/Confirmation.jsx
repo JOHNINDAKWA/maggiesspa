@@ -1,27 +1,26 @@
 import React, { useContext, useState } from "react";
 import { BookingContext } from "../../Context/BookingContext";
+import emailjs from "@emailjs/browser";
 
 const BIN_ID = "68139f1b8561e97a500b9e03";
 const MASTER_KEY = "$2a$10$v.Wz5cNjZbcvhC1nqnnYl.o9V6KJzJ7U7JnB.ZO4VwoYlh9TAvevm";
-
-
 
 const Confirmation = () => {
   const { bookingData, setStep } = useContext(BookingContext);
   const [saving, setSaving] = useState(false);
 
-
   const handleSubmit = async () => {
-    setSaving(true); // Start showing spinner
+    setSaving(true);
+
     try {
-      // 1. Fetch existing bin data
+      // 1️⃣ Fetch current bin data
       const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
         headers: { "X-Master-Key": MASTER_KEY },
       });
       const data = await response.json();
       const appointments = data.record.appointments || [];
-  
-      // 2. Create new appointment
+
+      // 2️⃣ Create new appointment object
       const newAppointment = {
         id: appointments.length + 1,
         timestamp: new Date().toISOString(),
@@ -36,13 +35,13 @@ const Confirmation = () => {
         note: bookingData.note || "",
         status: "Pending",
       };
-  
+
       const updatedData = {
         ...data.record,
         appointments: [...appointments, newAppointment],
       };
-  
-      // 3. Push to bin
+
+      // 3️⃣ Save back to bin
       await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
         method: "PUT",
         headers: {
@@ -51,32 +50,46 @@ const Confirmation = () => {
         },
         body: JSON.stringify(updatedData),
       });
-  
-      // 4. Move to success screen
+
+      // 4️⃣ Send confirmation email via EmailJS
+      await emailjs.send(
+        "service_t44eye4",            // your EmailJS service ID
+        "template_mdbjbkh",          // your EmailJS template ID
+        {
+          name: bookingData.name,
+          service: bookingData.service,
+          date: new Date(bookingData.date).toLocaleDateString(),
+          time: `${bookingData.startTime} - ${bookingData.endTime}`,
+          phone: bookingData.phone,
+          email: bookingData.email,
+          year: new Date().getFullYear(),
+        },
+        "Weoz86fayUHPPiNlY"          // your EmailJS public key
+      );
+
+      // 5️⃣ Move to success screen
       setTimeout(() => {
         setSaving(false);
         setStep(4);
       }, 1000);
     } catch (error) {
       setSaving(false);
-      alert("Error saving appointment. Try again.");
+      alert("Error saving appointment or sending email. Please try again.");
       console.error("Submission error:", error);
     }
   };
 
-  
   if (saving) {
     return (
       <div className="loading-overlay">
         <div className="spinner"></div>
+        <p>Processing your appointment...</p>
       </div>
     );
   }
-  
 
   return (
     <div className="form-section3">
-      {/* Go Back Button */}
       <button className="back-btn" onClick={() => setStep(2)}>
         ← Go Back
       </button>

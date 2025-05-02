@@ -146,6 +146,13 @@
     border: 1px solid #ccc;
   }
   
+
+  .users-page-container .modal-content input:focus ,
+  .users-page-container .modal-content select:focus {
+   
+    border: 1px solid #01a1a184;
+}
+
   .users-page-container .password-field {
     display: flex;
     align-items: center;

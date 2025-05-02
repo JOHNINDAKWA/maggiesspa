@@ -74,7 +74,9 @@ const Appointments = () => {
       appt.service.toLowerCase().includes(searchQuery.toLowerCase()) ||
       appt.formattedDate.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const matchesDate = selectedDate ? appt.date === selectedDate : true;
+    const matchesDate = selectedDate
+      ? new Date(appt.date).toISOString().split("T")[0] === selectedDate
+      : true;
 
     const matchesStatus = selectedStatus
       ? appt.status === selectedStatus

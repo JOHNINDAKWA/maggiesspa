@@ -53,8 +53,8 @@ const Layout = () => {
               </div>
               <div className="contact">
                 <div>
-                  <span>Call Us On</span>
-                  <span>+254 796 125 105</span>
+                  <span>+254713599235</span>
+                  <span>+254798335126</span>
                 </div>
                 <div className="icon-container">
                   <FaPhoneAlt className="icon" />

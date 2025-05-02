@@ -1,7 +1,7 @@
 /* Default styles for larger screens */
 .home-contact {
     width: 80vw;
-    height: 80vh;
+    min-height: 600px;
     background: url('../../assets/images/contact-bg-1.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -37,11 +37,12 @@
     color: #242424;
     font-family: Cormorant Garamond;
     font-weight: 500;
-    font-size: 64px;
-    line-height: 70px;
+    font-size: clamp(26px, 5vw, 58px); /* dynamic font size */
+    line-height: 1.2;
     text-align: center;
-    width: 60%;
     margin: 0 auto 20px;
+    width: 100%; /* allow it to take full width */
+    word-wrap: break-word; /* ensure long words break */
 }
 
 /* Paragraph */

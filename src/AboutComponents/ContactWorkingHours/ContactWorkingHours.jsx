@@ -1,6 +1,7 @@
 import './ContactWorkingHours.css';
 import Maggy_4 from '../../assets/images/gal4.jpg';
 import { GoArrowUpRight } from "react-icons/go";
+import { Link } from 'react-router-dom';
 
 const ContactWorkingHours = () => {
   return (
@@ -20,7 +21,7 @@ const ContactWorkingHours = () => {
           <span>Sunday</span>
           <p>10:00am - 4:00pm</p>
         </div>
-        <button>View Services <GoArrowUpRight /></button>
+        <Link to='/services'>View Services <GoArrowUpRight /></Link>
       </div>
 
       {/* Center Image */}
@@ -43,7 +44,13 @@ const ContactWorkingHours = () => {
           <span>Other Holidays</span>
           <p>9:00am - 3:00pm</p>
         </div>
-        <button>Visit Spa <GoArrowUpRight /></button>
+        <a 
+    href="https://maps.app.goo.gl/pyZm9JEPhx7YpUb18" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+   Visit Spa <GoArrowUpRight />
+  </a>
       </div>
     </div>
   );

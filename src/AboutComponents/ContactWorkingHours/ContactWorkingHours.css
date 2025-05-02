@@ -95,9 +95,9 @@
 
 
 
-/* Button Styling */
-.cwh-left button,
-.cwh-right button {
+/* a Styling */
+.cwh-left a,
+.cwh-right a {
   padding: 12px 22px;
   font-size: 14px;
   font-weight: bold;
@@ -113,11 +113,21 @@
   gap: 8px;
 }
 
-.cwh-left button:hover,
-.cwh-right button:hover {
+.cwh-left a:hover,
+.cwh-right a:hover {
   background-color: #0e6a67;
   box-shadow: 0 4px 10px rgba(0, 123, 119, 0.5);
 }
+
+.cwh-right a a {
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cwh-right a a:hover {
+  background-color: #22d2cb;
+  transform: scale(1.05);
+}
+
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) {

@@ -1,5 +1,7 @@
 .appointments-container {
-    max-width: 1600px;
+    max-width: 1400px;
+    width: 100%;
+    min-height: 500px;
     margin: auto;
     padding: 20px;
     display: flex;
@@ -20,7 +22,7 @@
     max-width: 550px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 30px;
     font-size: 14px;
     transition: border-color 0.3s;
   }
@@ -64,7 +66,7 @@
 
 .dropdown-content {
   position: absolute;
-  top: 110%;
+  top: 15px;
   right: 0;
   background-color: white;
   min-width: 180px;
@@ -278,7 +280,7 @@
 /* Hidden by default - show on hover */
 .filter-options {
   position: absolute;
-  top: 100%;
+  top: 35px;
   left: 0;
   background: #ffffff;
   border: 1px solid #ddd;
