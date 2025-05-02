@@ -60,7 +60,7 @@ const PersonalDetails = () => {
       />
 
       <textarea
-        placeholder="Note (optional): like Preferences, Medical disclaimers etc"
+        placeholder="Note (optional); Preferences, Medical disclaimers etc"
         value={bookingData.note}
         onChange={(e) =>
           setBookingData({ ...bookingData, note: e.target.value })

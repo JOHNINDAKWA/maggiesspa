@@ -12,7 +12,7 @@ const ContactForm = () => {
           <FaLocationDot />
           <div className="detail-info">
             <span>Center Address</span>
-            <p>Karen, 31 Nandi Rd Nairobi, Kenya</p>
+            <p>Karen 31 Collective Ngong Rd, Nairobi</p>
           </div>
         </div>
 
