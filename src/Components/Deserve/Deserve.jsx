@@ -21,6 +21,7 @@ const services = [
     description:
       "Relieve back pain, improve circulation, and relax with safe, tailored techniques for moms-to-be.",
     image: Service_1,
+    link: '/services/1'
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const services = [
     description:
       "Ease physical stress after childbirth, reduce pain, and speed up postpartum recovery.",
     image: Service_2,
+    link: '/services/2'
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ const services = [
     description:
       "Our Signature Self-Care Rituals are designed to nourish your skin and honor your feminine essence. ",
     image: Service_3,
+    link: '/services/3'
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ const services = [
     description:
       "Holistic therapies for breast health, emotional balance, and fertility support.",
     image: Service_4,
+    link: '/services/4'
   },
   {
     id: 5,
@@ -49,6 +53,7 @@ const services = [
     description:
       "Enhance flexibility, strength, and mental focus to prepare for labor and reduce stress.",
     image: Service_5,
+    link: '/services/6'
   },
 ];
 
@@ -69,7 +74,7 @@ const Deserve = () => {
             <h3>{services[0].title}</h3>
           </div>
           <p>{services[0].description}</p>
-          <Link to='/services'>
+          <Link to={services[0].link}>
                 <button className="deserve">Discover More</button>
               </Link>
         </div>
@@ -86,7 +91,7 @@ const Deserve = () => {
                 <h3>{service.title}</h3>
               </div>
               <p>{service.description}</p>
-              <Link to='/services'>
+              <Link to={service.link}>
                 <button className="deserve">Discover More</button>
               </Link>
             </div>
