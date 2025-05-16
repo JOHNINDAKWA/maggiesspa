@@ -27,8 +27,8 @@ const Postpartum = () => {
             </thead>
             <tbody>
               <tr>
-                <td>60 MIN</td>
-                <td>6,000</td>
+                <td>75 MIN</td>
+                <td>6,500</td>
               </tr>
               <tr>
                 <td>90 MIN</td>

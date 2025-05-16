@@ -1,7 +1,7 @@
 import TestimonyHead from "../../assets/images/tri-color-leaves.png";
-import Client1 from "../../assets/images/client1.png";
-import Client2 from "../../assets/images/client2.png";
-import Client3 from "../../assets/images/client3.png";
+import Client1 from "../../assets/images/test1.jpg";
+import Client2 from "../../assets/images/test4.jpg";
+import Client3 from "../../assets/images/test5.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
