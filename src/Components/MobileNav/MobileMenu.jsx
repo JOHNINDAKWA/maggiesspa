@@ -5,7 +5,7 @@ import {
   RiFacebookFill, RiInstagramLine, RiTwitterXFill,
   RiMailLine, RiPhoneFill
 } from "react-icons/ri";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaLocationDot, FaTiktok } from "react-icons/fa6";
 
 import { CiMenuBurger } from "react-icons/ci";
 import "./MobileMenu.css";
@@ -54,9 +54,9 @@ const MobileMenu = () => {
           <p><RiMailLine /> maggiespnpmassage@gmail. </p>
           <p><FaLocationDot /> Karen 31 collective, on Ngong road. <br />1st floor, Right side </p>
           <div className="social-icons">
-            <a href="#"><RiFacebookFill /></a>
-            <a href="#"><RiInstagramLine /></a>
-            <a href="#"><RiTwitterXFill /></a>
+            <a href="https://www.facebook.com/maggiespnpmassage"><RiFacebookFill /></a>
+            <a href="https://www.instagram.com/postpartumpregnancy.spa/"><RiInstagramLine /></a>
+            <a href="https://www.tiktok.com/@maggieamanda0"><FaTiktok /></a>
           </div>
         </div>
       </div>

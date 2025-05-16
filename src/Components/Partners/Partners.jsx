@@ -3,6 +3,7 @@ import logo1 from "../../assets/images/partners/partner6.png";
 // import logo2 from "../../assets/images/partners/partner8.jpg"; 
 // import logo3 from "../../assets/images/partners/partner7.jpg"; 
 import logo4 from "../../assets/images/partners/partner5.jpg";
+import { Link } from "react-router-dom";
 
 const Partners = () => {
   return (
@@ -17,10 +18,10 @@ const Partners = () => {
         </p>
 
         <div className="partner-logos">
-          <div className="partner-logo-card">
-            <img src={logo1} alt="Malaika Mums" />
+          <Link to="https://malaica.com/" className="partner-logo-card">
+            <img src={logo4} alt="Malaika Mums" />
             <p>Malaika Mums - Maternity Care Alliance</p>
-          </div>
+          </Link>
           {/* <div className="partner-logo-card">
             <img src={logo2} alt="Creative Nest Studio" />
             <p>Creative Nest & CrossFit Karen - Maternal Fitness</p>
@@ -30,7 +31,7 @@ const Partners = () => {
             <p>Fiesta House Maternity - Beauty in Pregnancy</p>
           </div> */}
           <div className="partner-logo-card">
-            <img src={logo4} alt="Wellness Alliance" />
+            <img src={logo1} alt="Wellness Alliance" />
             <p>Partnered for Recovery, Wellness & Support</p>
           </div>
         </div>

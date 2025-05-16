@@ -4,9 +4,10 @@ import "./Landing.css";
 import {
   RiFacebookFill,
   RiInstagramLine,
-  RiTwitterXFill,
 } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
+
+import { FaTiktok } from "react-icons/fa";
 
 import Two from "../../assets/images/postnatal4.jpg";
 import One from "../../assets/images/spa-services/mag11.jpg";
@@ -50,14 +51,14 @@ const Landing = () => {
     <div className="landing">
       {/* Social Icons Sidebar */}
       <div className="social-sidebar">
-        <a href="#">
+        <a href="https://www.facebook.com/maggiespnpmassage">
           <RiFacebookFill />
         </a>
-        <a href="#">
+        <a href="https://www.instagram.com/postpartumpregnancy.spa/">
           <RiInstagramLine />
         </a>
-        <a href="#">
-          <RiTwitterXFill />
+        <a href="https://www.tiktok.com/@maggieamanda0">
+          <FaTiktok />
         </a>
       </div>
       {slides.map((slide, index) => (

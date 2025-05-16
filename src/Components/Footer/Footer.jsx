@@ -103,10 +103,11 @@ const Footer = () => {
             </div>
             <div className="footer-middle-left-socials">
               <div className="footer-socials">
-                <FaXTwitter />
-                <FaTiktok />
-                <CiFacebook />
-                <CiInstagram />
+                <Link to='https://www.instagram.com/postpartumpregnancy.spa/'><CiInstagram /></Link>
+                <Link to='https://www.tiktok.com/@maggieamanda0'><FaTiktok /></Link>
+                <Link to='https://www.facebook.com/maggiespnpmassage'><CiFacebook /></Link>
+                <Link to='https://www.instagram.com/postpartumpregnancy.spa/'><FaXTwitter /></Link>            
+    
               </div>
             </div>
           </div>
