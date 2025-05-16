@@ -50,7 +50,7 @@ const SuccessMessage = () => {
       <div className="todo-container">
       <div className="overlay"></div> {/* Dark overlay */}
       <div className="todo-content">
-        <h2>📝 To-Do List for a Pregnancy Massage Client (Home Service)</h2>
+        <h2>🍁 To-Do List for a Pregnancy Massage Client (Home Service)</h2>
         <p>
           To ensure a smooth, relaxing, and effective prenatal massage session,
           please prepare the following before my arrival:

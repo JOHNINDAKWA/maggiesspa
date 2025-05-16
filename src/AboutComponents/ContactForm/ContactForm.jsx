@@ -33,6 +33,7 @@ const ContactForm = () => {
           </div>
         </div>
 
+
         <div className="detail-item">
         <LuTimerReset />
           <div className="detail-info">
