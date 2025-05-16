@@ -2,6 +2,7 @@ import React from "react";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import AB1 from "../../../../assets/images/about-maggy.jpg";
 import "./AboutLanding.css";
+import { Link } from "react-router-dom";
 
 const AboutLanding = () => {
   return (
@@ -43,7 +44,7 @@ const AboutLanding = () => {
           </ul>
         </div>
 
-        <button>View More</button>
+        <Link to='/services'>View More</Link>
       </div>
 
       <div className="about-landing-right">

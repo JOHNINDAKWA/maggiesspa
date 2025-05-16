@@ -38,7 +38,7 @@ const BestForYou = () => {
 
         <div className="buttons">
           <button className="services-btn">Explore Training</button>
-          <button>Contact Us</button>
+          <Link className="services-btn" to='/contact'>Contact Us</Link>
         </div>
       </div>
     </section>

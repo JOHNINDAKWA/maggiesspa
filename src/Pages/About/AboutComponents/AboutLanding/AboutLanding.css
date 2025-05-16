@@ -79,7 +79,7 @@
       font-size: 1.5rem;
     }
   
-    .about-landing-left button {
+    .about-landing-left a {
         line-height: 1.4;
         padding: 1.2rem 3.2rem;
         font-weight: 600;
@@ -96,7 +96,7 @@
         transition: all 0.2s ease-in-out;
     }
   
-    .about-landing-left button:hover {
+    .about-landing-left a:hover {
       background: #01a1a1;
       color: white;
     }
