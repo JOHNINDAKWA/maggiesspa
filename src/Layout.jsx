@@ -53,7 +53,7 @@ const Layout = () => {
               </div>
               <div className="contact">
                 <div>
-                  <span>+254705650292</span>
+                  <span>+254796125105</span>
                   <span>info@maggiesspa.com</span>
                 </div>
                 <div className="icon-container">

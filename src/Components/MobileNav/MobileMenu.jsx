@@ -88,7 +88,7 @@ const MobileMenu = () => {
         <div className="sidebar-footer">
           <p>
             <RiPhoneFill />
-            +254705650292
+             +254796125105
           </p>
           <p>
             <RiMailLine /> maggiespnpmassage@gmail.{" "}
