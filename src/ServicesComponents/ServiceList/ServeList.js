@@ -44,7 +44,7 @@ const services = [
   },
   {
     id: 3,
-    title: "Self-Care Rituals",
+    title: "Self-Care Services",
     description: "Luxurious treatments for skin, feet, and feminine wellness.",
     detailed:
       "Our Signature Self-Care Rituals are designed to nourish your skin, restore your energy, and honor your feminine essence. These treatments combine holistic techniques, ancient herbal traditions, and gentle cosmetic therapies to provide deep healing and radiant renewal from head to toe.",

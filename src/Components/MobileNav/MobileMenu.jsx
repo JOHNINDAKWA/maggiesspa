@@ -50,7 +50,7 @@ const MobileMenu = () => {
         </div>
 
         <div className="sidebar-footer">
-          <p><RiPhoneFill /> +254796125105</p>
+          <p><RiPhoneFill />+254705650292</p>
           <p><RiMailLine /> maggiespnpmassage@gmail. </p>
           <p><FaLocationDot /> Karen 31 collective, on Ngong road. <br />1st floor, Right side </p>
           <div className="social-icons">

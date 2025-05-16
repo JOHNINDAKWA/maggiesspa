@@ -8,7 +8,7 @@ const WomensFertility = () => {
     <section className="womens-fertility-care">
 
       <div className="womens-fertility-packages">
-      <h2>Women's Health </h2>
+      <h2>Women's Health Treatments</h2>
         {/* Women's Health - Breast Divine Release */}
         <div className="womens-fertility-card">
           <img
@@ -46,7 +46,7 @@ const WomensFertility = () => {
 
         {/* Fertility - The Miracle Path */}
         <div className="womens-fertility-card">
-        <h2>Fertility</h2>
+        <h2>Fertility Treatments</h2>
           <img
             src={FertilityImg}
             alt="Fertility Treatments"

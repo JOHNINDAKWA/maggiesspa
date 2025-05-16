@@ -20,7 +20,7 @@ const ContactForm = () => {
         <FaPhoneSquareAlt />
           <div className="detail-info">
             <span>Phone</span>
-            <p>+254 796 125 105</p>
+            <p>+254705650292</p>
           </div>
         </div>
 

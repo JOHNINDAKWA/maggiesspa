@@ -1,7 +1,7 @@
 import "./Partners.css";
 import logo1 from "../../assets/images/partners/partner6.png"; 
-import logo2 from "../../assets/images/partners/partner8.jpg"; 
-import logo3 from "../../assets/images/partners/partner7.jpg"; 
+// import logo2 from "../../assets/images/partners/partner8.jpg"; 
+// import logo3 from "../../assets/images/partners/partner7.jpg"; 
 import logo4 from "../../assets/images/partners/partner5.jpg";
 
 const Partners = () => {
@@ -21,14 +21,14 @@ const Partners = () => {
             <img src={logo1} alt="Malaika Mums" />
             <p>Malaika Mums - Maternity Care Alliance</p>
           </div>
-          <div className="partner-logo-card">
+          {/* <div className="partner-logo-card">
             <img src={logo2} alt="Creative Nest Studio" />
             <p>Creative Nest & CrossFit Karen - Maternal Fitness</p>
           </div>
           <div className="partner-logo-card">
             <img src={logo3} alt="Fiesta House" />
             <p>Fiesta House Maternity - Beauty in Pregnancy</p>
-          </div>
+          </div> */}
           <div className="partner-logo-card">
             <img src={logo4} alt="Wellness Alliance" />
             <p>Partnered for Recovery, Wellness & Support</p>

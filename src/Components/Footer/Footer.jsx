@@ -75,8 +75,8 @@ const Footer = () => {
             <div className="footer-top-right-line"></div>
 
             <div className="footer-top-right-details">
-              <h4>+254798335126</h4>
-              <p> +254713599235</p>
+              <h4>+254705650292</h4>
+              <p> +254705650292</p>
             </div>
           </div>
         </div>

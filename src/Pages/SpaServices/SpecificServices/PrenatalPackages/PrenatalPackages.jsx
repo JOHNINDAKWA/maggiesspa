@@ -19,7 +19,6 @@ const PrenatalPackages = () => {
                 Ksh 40,000
               </span>
             </div>
-
             <p className="prenatal-packages-v2__subtext">
               Suitable after 35 weeks
             </p>
@@ -29,11 +28,6 @@ const PrenatalPackages = () => {
             relax, restore, and empower in the final weeks of pregnancy.
           </p>
           <img className="nobg" src={Nobg} alt="MAMA PACKAGE" />
-
-
-
-
-
           <div className="prenatal-packages-v2__sessions">
             <div className="prenatal-packages-v2__session">
               <h4>Embrace & Nourish (2Hrs)</h4>
@@ -64,11 +58,11 @@ const PrenatalPackages = () => {
               </ul>
             </div>
           </div>
-
-          <Link to="#" className="prenatal-packages-v2__button">
+          <Link to="/book" className="prenatal-packages-v2__button">
             Get This Package
           </Link>
         </div>
+        
 
         {/* Elegant Pregnancy Package */}
         <div className="prenatal-packages-v2__card ">
@@ -82,7 +76,6 @@ const PrenatalPackages = () => {
                   Ksh 40,000
                 </span>
               </div>
-
               <p className="prenatal-packages-v2__subtext">
                 Perfect for baby showers, birthdays, or a gift
               </p>
@@ -102,9 +95,8 @@ const PrenatalPackages = () => {
               <li>20 edited professional photos/videos</li>
             </ul>
           </div>
-
           <div className="prenatal-packages-v2__footer">
-            <Link to="#" className="prenatal-packages-v2__button">
+            <Link to="/book" className="prenatal-packages-v2__button">
               Get This Package
             </Link>
           </div>

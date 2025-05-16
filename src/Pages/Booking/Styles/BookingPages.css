@@ -54,7 +54,7 @@
   max-width: 250px;
   padding: 12px;
   border: none;
-  border-bottom: 1px solid #01e5e5;
+  border-bottom: 1px solid #01a1a1;
   border-radius: 12px;
   font-size: 16px;
   background: white;
@@ -63,7 +63,20 @@
   text-align: center;
   outline: none; /* 👈 REMOVE default black border on click */
 }
+.react-datepicker__day--keyboard-selected{
+  background-color: #00aeae;
+}
 
+.react-datepicker__day--keyboard-selected:hover{
+  background-color: #00bbbb !important;
+}
+
+.react-datepicker__header {
+   
+    background-color: #01a1a1;
+    border-bottom: 1px solid #aeaeae;
+   
+}
 /* Add a soft custom focus border instead */
 .form-section5 select:focus,
 .react-datepicker__input-container input:focus {

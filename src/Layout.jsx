@@ -53,8 +53,7 @@ const Layout = () => {
               </div>
               <div className="contact">
                 <div>
-                  <span>+254713599235</span>
-                  <span>+254798335126</span>
+                  <span>+254705650292</span>
                 </div>
                 <div className="icon-container">
                   <FaPhoneAlt className="icon" />
