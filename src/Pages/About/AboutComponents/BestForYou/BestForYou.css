@@ -131,6 +131,19 @@
     transition: all 0.3s;
   }
 
+    .best-for-you-right a {
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: 1px solid #01a1a1;
+    background: transparent;
+    color: #01a1a1;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
   .services-btn{
     background: #01a1a1 !important;
     color: white !important;

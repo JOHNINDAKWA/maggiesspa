@@ -2,6 +2,7 @@ import React from "react";
 import "./BestForYou.css"; // Import the CSS file
 import { FaPlay } from "react-icons/fa";
 import Best from "../../../../assets/images/image1.jpg";
+import { Link } from "react-router-dom";
 
 const BestForYou = () => {
   return (
