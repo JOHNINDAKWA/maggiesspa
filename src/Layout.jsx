@@ -54,6 +54,7 @@ const Layout = () => {
               <div className="contact">
                 <div>
                   <span>+254705650292</span>
+                  <span>info@maggiesspa.com</span>
                 </div>
                 <div className="icon-container">
                   <FaPhoneAlt className="icon" />
