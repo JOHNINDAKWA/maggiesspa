@@ -43,13 +43,13 @@ const Prenatal = () => {
             </thead>
             <tbody>
               <tr>
-                <td>60 MIN</td>
-                <td>6,000</td>
+                <td>90 MIN</td>
+                <td>9,000</td>
                 <td>Pregnancy Massage</td>
               </tr>
               <tr>
                 <td>90 MIN</td>
-                <td>9,000</td>
+                <td>11,300</td>
                 <td>
                   <ul className="table-list">
                     <li>Pregnancy Massage</li>
