@@ -145,7 +145,7 @@
 
     .footer-socials a:hover{
     color: #013d3d;
-    transform: scale(0.1);
+    font-size: 20px;
   }
   .footer-middle-middle {
     flex: 1;
