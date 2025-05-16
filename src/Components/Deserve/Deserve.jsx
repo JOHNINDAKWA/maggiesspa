@@ -33,7 +33,7 @@ const services = [
   },
   {
     id: 3,
-    title: "Self-Care Rituals",
+    title: "Self-Care Services",
     description:
       "Our Signature Self-Care Rituals are designed to nourish your skin and honor your feminine essence. ",
     image: Service_3,
