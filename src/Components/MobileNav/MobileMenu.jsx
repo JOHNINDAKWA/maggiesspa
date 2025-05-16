@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
-  RiMenu3Line, RiCloseLine, RiArrowDownSLine,
-  RiFacebookFill, RiInstagramLine, RiTwitterXFill,
-  RiMailLine, RiPhoneFill
+  RiMenu3Line,
+  RiCloseLine,
+  RiArrowDownSLine,
+  RiFacebookFill,
+  RiInstagramLine,
+  RiTwitterXFill,
+  RiMailLine,
+  RiPhoneFill,
 } from "react-icons/ri";
 import { FaLocationDot, FaTiktok } from "react-icons/fa6";
 
@@ -15,7 +20,10 @@ const MobileMenu = () => {
 
   useEffect(() => {
     const closeOnClickOutside = (e) => {
-      if (!e.target.closest(".mobile-sidebar") && !e.target.closest(".menu-icon")) {
+      if (
+        !e.target.closest(".mobile-sidebar") &&
+        !e.target.closest(".menu-icon")
+      ) {
         setIsOpen(false);
       }
     };
@@ -23,40 +31,94 @@ const MobileMenu = () => {
     return () => document.removeEventListener("mousedown", closeOnClickOutside);
   }, []);
 
-
   return (
     <div className="mobile-nav">
       <div className="mobile-header">
-        <Link to="/" className="mobile-logo">Maggies Spa</Link>
+        <Link to="/" className="mobile-logo">
+          Maggies Spa
+        </Link>
         <CiMenuBurger className="menu-icon" onClick={() => setIsOpen(true)} />
       </div>
 
       <div className={`mobile-sidebar ${isOpen ? "active" : ""}`}>
         <div className="sidebar-header">
-          <Link to="/" className="sidebar-logo">Maggies Spa</Link>
-          <RiCloseLine className="close-icon" onClick={() => setIsOpen(false)} />
+          <Link to="/" className="sidebar-logo">
+            Maggies Spa
+          </Link>
+          <RiCloseLine
+            className="close-icon"
+            onClick={() => setIsOpen(false)}
+          />
         </div>
 
         <ul className="nav-links">
-          <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
-          <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
-          <li><Link to="/package" onClick={() => setIsOpen(false)}>Pricing</Link></li>
-          <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>
-          <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+          <li>
+            <Link to="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/services" onClick={() => setIsOpen(false)}>
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/package" onClick={() => setIsOpen(false)}>
+              Pricing
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" onClick={() => setIsOpen(false)}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" onClick={() => setIsOpen(false)}>
+              Contact
+            </Link>
+          </li>
         </ul>
 
         <div className="book-now">
-          <Link to="/book" onClick={() => setIsOpen(false)}>Book Now</Link>
+          <Link to="/book" onClick={() => setIsOpen(false)}>
+            Book Now
+          </Link>
         </div>
 
         <div className="sidebar-footer">
-          <p><RiPhoneFill />+254705650292</p>
-          <p><RiMailLine /> maggiespnpmassage@gmail. </p>
-          <p><FaLocationDot /> Karen 31 collective, on Ngong road. <br />1st floor, Right side </p>
+          <p>
+            <RiPhoneFill />
+            +254705650292
+          </p>
+          <p>
+            <RiMailLine /> maggiespnpmassage@gmail.{" "}
+          </p>
+          <p>
+            <FaLocationDot /> Karen 31 collective, on Ngong road. <br />
+            1st floor, Right side{" "}
+          </p>
           <div className="social-icons">
-            <a href="https://www.facebook.com/maggiespnpmassage"><RiFacebookFill /></a>
-            <a href="https://www.instagram.com/postpartumpregnancy.spa/"><RiInstagramLine /></a>
-            <a href="https://www.tiktok.com/@maggieamanda0"><FaTiktok /></a>
+            <a
+              href="https://www.facebook.com/maggiespnpmassage"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <RiFacebookFill />
+            </a>
+            <a
+              href="https://www.instagram.com/postpartumpregnancy.spa/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <RiInstagramLine />
+            </a>
+            <a
+              href="https://www.tiktok.com/@maggieamanda0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTiktok />
+            </a>
           </div>
         </div>
       </div>

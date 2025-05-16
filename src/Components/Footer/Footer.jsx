@@ -103,11 +103,34 @@ const Footer = () => {
             </div>
             <div className="footer-middle-left-socials">
               <div className="footer-socials">
-                <Link to='https://www.instagram.com/postpartumpregnancy.spa/'><CiInstagram /></Link>
-                <Link to='https://www.tiktok.com/@maggieamanda0'><FaTiktok /></Link>
-                <Link to='https://www.facebook.com/maggiespnpmassage'><CiFacebook /></Link>
-                <Link to='https://www.instagram.com/postpartumpregnancy.spa/'><FaXTwitter /></Link>            
-    
+                <a
+                  href="https://www.instagram.com/postpartumpregnancy.spa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CiInstagram />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@maggieamanda0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaTiktok />
+                </a>
+                <a
+                  href="https://www.facebook.com/maggiespnpmassage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CiFacebook />
+                </a>
+                <a
+                  href="https://www.instagram.com/postpartumpregnancy.spa/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaXTwitter />
+                </a>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import "./Partners.css";
-import logo1 from "../../assets/images/partners/partner6.png"; 
-// import logo2 from "../../assets/images/partners/partner8.jpg"; 
-// import logo3 from "../../assets/images/partners/partner7.jpg"; 
+import logo1 from "../../assets/images/partners/partner6.png";
+// import logo2 from "../../assets/images/partners/partner8.jpg";
+// import logo3 from "../../assets/images/partners/partner7.jpg";
 import logo4 from "../../assets/images/partners/partner5.jpg";
 import { Link } from "react-router-dom";
 
@@ -13,15 +13,21 @@ const Partners = () => {
           Trusted By Leading Maternal Wellness Partners
         </h2>
         <p className="partner-subtext">
-          Maggie’s Spa is recognized by respected organizations committed to motherhood,
-          fitness, wellness, and postpartum care.
+          Maggie’s Spa is recognized by respected organizations committed to
+          motherhood, fitness, wellness, and postpartum care.
         </p>
 
         <div className="partner-logos">
-          <Link to="https://malaica.com/" className="partner-logo-card">
+          <a
+            href="https://malaica.com/"
+            className="partner-logo-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={logo4} alt="Malaika Mums" />
             <p>Malaika Mums - Maternity Care Alliance</p>
-          </Link>
+          </a>
+
           {/* <div className="partner-logo-card">
             <img src={logo2} alt="Creative Nest Studio" />
             <p>Creative Nest & CrossFit Karen - Maternal Fitness</p>

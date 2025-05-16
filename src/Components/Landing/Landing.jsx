@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Landing.css";
 
-import {
-  RiFacebookFill,
-  RiInstagramLine,
-} from "react-icons/ri";
+import { RiFacebookFill, RiInstagramLine } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 import { FaTiktok } from "react-icons/fa";
@@ -51,13 +48,25 @@ const Landing = () => {
     <div className="landing">
       {/* Social Icons Sidebar */}
       <div className="social-sidebar">
-        <a href="https://www.facebook.com/maggiespnpmassage">
+        <a
+          href="https://www.facebook.com/maggiespnpmassage"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <RiFacebookFill />
         </a>
-        <a href="https://www.instagram.com/postpartumpregnancy.spa/">
+        <a
+          href="https://www.instagram.com/postpartumpregnancy.spa/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <RiInstagramLine />
         </a>
-        <a href="https://www.tiktok.com/@maggieamanda0">
+        <a
+          href="https://www.tiktok.com/@maggieamanda0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FaTiktok />
         </a>
       </div>
