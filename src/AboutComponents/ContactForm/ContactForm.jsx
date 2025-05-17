@@ -29,7 +29,7 @@ const ContactForm = () => {
         <MdOutlineMarkEmailRead />
           <div className="detail-info">
             <span>Center Address</span>
-            <p>info@maggiesspa.com</p>
+            <p>info@maggiespregnancyspa.co.ke</p>
           </div>
         </div>
 

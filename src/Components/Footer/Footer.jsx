@@ -58,8 +58,8 @@ const Footer = () => {
               <p className="top-p">Email</p>
               <div className="footer-top-middle-line"></div>
               <div className="footer-top-middle-details">
-                <h4>info@maggiesspa.com</h4>
-                <p> admin@maggiesspa.com</p>
+                <h4>info@maggiesspa.co.ke</h4>
+                <p> admin@maggiesspa.co.ke</p>
               </div>
             </div>
             <img src={footerFlower} alt="" />

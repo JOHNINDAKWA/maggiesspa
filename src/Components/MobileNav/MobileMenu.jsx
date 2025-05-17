@@ -91,7 +91,7 @@ const MobileMenu = () => {
              +254796125105
           </p>
           <p>
-            <RiMailLine /> maggiespnpmassage@gmail.{" "}
+            <RiMailLine /> info@maggiespregnancyspa.co.ke
           </p>
           <p>
             <FaLocationDot /> Karen 31 collective, on Ngong road. <br />
