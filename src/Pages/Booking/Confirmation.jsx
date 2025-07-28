@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import { BookingContext } from "../../Context/BookingContext";
 import emailjs from "@emailjs/browser";
 
-const BIN_ID = "68139f1b8561e97a500b9e03";
-const MASTER_KEY = "$2a$10$v.Wz5cNjZbcvhC1nqnnYl.o9V6KJzJ7U7JnB.ZO4VwoYlh9TAvevm";
+const BIN_ID = "68139f1b8561e97a500b9e03"; // Your existing appointments binId
+const MASTER_KEY = "$2a$10$v.Wz5cNjZbcvhC1nqnnYl.o9V6KJzJ7U7JnB.ZO4VwoYlh9TAvevm"; // Your existing masterKey
 
 const Confirmation = () => {
   const { bookingData, setStep } = useContext(BookingContext);
@@ -24,11 +24,15 @@ const Confirmation = () => {
       const newAppointment = {
         id: appointments.length + 1,
         timestamp: new Date().toISOString(),
+        branchId: bookingData.branchId, // NEW: Include branch ID
+        branchName: bookingData.branchName, // NEW: Include branch name
         service: bookingData.service,
         service_type: bookingData.service_type,
         service_name: bookingData.service_name,
+        duration: bookingData.duration, // Include duration
+        price: bookingData.price, // Include price
         date: bookingData.date,
-        time: `${bookingData.startTime}, ${bookingData.endTime}`,
+        time: `${bookingData.startTime} - ${bookingData.endTime}`, // Changed comma to hyphen for display clarity
         name: bookingData.name,
         email: bookingData.email,
         phone: bookingData.phone,
@@ -53,18 +57,21 @@ const Confirmation = () => {
 
       // 4️⃣ Send confirmation email via EmailJS
       await emailjs.send(
-        "service_t44eye4",            // your EmailJS service ID
-        "template_mdbjbkh",          // your EmailJS template ID
+        "service_t44eye4", // your EmailJS service ID
+        "template_mdbjbkh", // your EmailJS template ID
         {
           name: bookingData.name,
-          service: bookingData.service,
+          branch: bookingData.branchName, // NEW: Add branch to email template
+          service: bookingData.service_name, // Use service_name for specific service
+          price: bookingData.price, // Include price in email template
           date: new Date(bookingData.date).toLocaleDateString(),
           time: `${bookingData.startTime} - ${bookingData.endTime}`,
           phone: bookingData.phone,
           email: bookingData.email,
+          note: bookingData.note || "N/A", // Include note in email
           year: new Date().getFullYear(),
         },
-        "Weoz86fayUHPPiNlY"          // your EmailJS public key
+        "Weoz86fayUHPPiNlY" // your EmailJS public key
       );
 
       // 5️⃣ Move to success screen
@@ -97,9 +104,11 @@ const Confirmation = () => {
       <h2>Now, Let's double check...</h2>
 
       <div className="confirmation-details">
-        <p><strong>Service:</strong> {bookingData.service}</p>
-        <p><strong>Service Type:</strong> {bookingData.service_type}</p>
+        <p><strong>Spa Location:</strong> {bookingData.branchName}</p> {/* NEW: Display branch name */}
+        <p><strong>Service Area:</strong> {bookingData.service}</p>
+        <p><strong>Treatment Type:</strong> {bookingData.service_type}</p>
         <p><strong>Session / Package:</strong> {bookingData.service_name}</p>
+        <p><strong>Price:</strong> {bookingData.price}</p> {/* NEW: Display price */}
         <p><strong>Date:</strong> {bookingData.date ? new Date(bookingData.date).toLocaleDateString() : "N/A"}</p>
         <p><strong>Time:</strong> {bookingData.startTime} - {bookingData.endTime}</p>
         <p><strong>Name:</strong> {bookingData.name}</p>

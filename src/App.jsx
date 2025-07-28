@@ -14,6 +14,7 @@ import Postpartum from "./Pages/SpaServices/SpecificServices/PostPartum/PostPart
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import LoginPage from "./Components/LoginPage/LoginPage";
 import UsersPage from "./Pages/UsersPage/UsersPage";
+import Pricing from "./Pages/Pricing/Pricing";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
       { path: "contact", element: <Contact /> },
       { path: "book", element: <BookingPage /> },
       { path: "login", element: <LoginPage /> },
-      { path: "users", element: <UsersPage /> },  // <--- new
+      { path: "users", element: <UsersPage /> },  
+      { path: "pricing", element: <Pricing /> },  
       { path: "reports", element: <div>Reports Page Coming Soon</div> },
       { path: "settings", element: <div>Settings Page Coming Soon</div> },
       { path: "profile", element: <div>Profile Page Coming Soon</div> },

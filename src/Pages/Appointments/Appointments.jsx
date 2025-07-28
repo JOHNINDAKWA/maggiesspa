@@ -135,6 +135,9 @@ const Appointments = () => {
               </>
             )}
 
+            <Link to="/pricing">Pricing</Link>
+
+
             <button
               onClick={() => {
                 localStorage.removeItem("loggedInUser");

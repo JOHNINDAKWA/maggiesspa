@@ -6,6 +6,8 @@ export const BookingContext = createContext();
 // Provider Component
 export const BookingProvider = ({ children }) => {
   const [bookingData, setBookingData] = useState({
+    branchId: "", // NEW: Store the ID of the selected branch
+    branchName: "", // NEW: Store the name of the selected branch
     service: "",
     service_type: "",
     service_name: "",
@@ -18,11 +20,11 @@ export const BookingProvider = ({ children }) => {
     email: "",
     phone: "",
     note: "",
-    selectedCategory: "", // <--- NEW
-    selectedSubcategory: "", // <--- NEW
-    selectedServiceObject: null, // <--- NEW (full selected service object)
+    selectedCategory: "",
+    selectedSubcategory: "",
+    selectedServiceObject: null,
   });
-  
+
   const [step, setStep] = useState(1); // Track current step
 
   return (
