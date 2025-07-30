@@ -239,18 +239,18 @@ const Pricing = () => {
 
   return (
     <div className="pricing-page-container">
-      {/* New Top Bar Header */}
+      
       <div className="top-bar-header">
-        {/* Breadcrumb - Left */}
+       
         <div className="breadcrumb">
           <FaChevronLeft className="breadcrumb-icon" />
           <a href="/appointments" className="breadcrumb-link">Back to Appointments</a>
         </div>
 
-        {/* Central Title */}
+       
         <h1 className="page-main-title">Pricing Management</h1>
 
-        {/* Add New Branch Button - Right */}
+       
         <button
           onClick={() => setIsAddBranchModalOpen(true)}
           className="btn btn-primary btn-add-branch"
@@ -304,7 +304,7 @@ const Pricing = () => {
                   categoryHeading,
                   subgroupTitle,
                   serviceDescription,
-                  name: `${serviceDescription} from ${subgroupTitle}` // For display in modal
+                  name: `${serviceDescription} from ${subgroupTitle}` 
                 })
               }
             />

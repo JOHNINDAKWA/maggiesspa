@@ -10,6 +10,7 @@ import {
   FaListAlt,
   FaStickyNote,
 } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import { TbMassage } from "react-icons/tb";
 import "./AppointmentDetails.css";
 import RescheduleModal from "../RescheduleModal/RescheduleModal";
@@ -225,6 +226,8 @@ const AppointmentDetails = () => {
                 <>
                   <Link to="/users">Users / Staff</Link>
                   <Link to="/reports">Reports</Link>
+
+                   <Link to="/pricing">Pricing</Link>
                 </>
               )}
 
@@ -334,6 +337,17 @@ const AppointmentDetails = () => {
             </span>
           </div>
         </div>
+
+        <div className="appointment-row2">
+          <div className="info-item">
+            <FaLocationDot className="icon"/>
+            <span>
+              <strong>Branch:</strong> {appointment.branchName}
+            </span>
+          </div>
+    
+        </div>
+
 
         <div className="description-box">
           <TbMassage className="icon" />

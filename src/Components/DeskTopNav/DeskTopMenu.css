@@ -3,20 +3,43 @@
     width: 100%;
     background-color: #4a2d16;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* This centers the ul within the desktop-menu */
     padding: 15px 0;
     position: relative;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
 }
+
+/* NEW: Sticky Navigation Styles */
+.desktop-menu.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    background-color: #4a2d16;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
 
 /* Menu List */
 .desktop-menu ul {
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: center; /* CHANGE THIS FROM 'end' TO 'center' */
     gap: 20px;
     padding: 0;
-    margin: 0;
+    margin: 0 auto; /* Keep margin auto for horizontal centering within its max-width */
+    max-width: 1200px; /* Constrain width of the ul to align with content */
+    width: 100%; /* Take full width of parent */
+    /* padding-right: 20px; /* REMOVE or adjust this if you want perfect center */
+    box-sizing: border-box;
 }
 
 /* Menu Items */
@@ -38,7 +61,6 @@
 
 /* Underline Hover Effect */
 .desktop-menu > ul > li:not(.book-now2) > a::after {
-
     content: "";
     position: absolute;
     left: 50%;
@@ -58,7 +80,7 @@
 .desktop-menu ul li a {
     display: flex;
     align-items: center;
-    gap: 8px; 
+    gap: 8px;
 }
 
 /* Align dropdown icons */
@@ -81,7 +103,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
-    background: linear-gradient(to right, #4a2d16, #5b391e, #4a2d16); /* Gradient with less pronounced middle */
+    background: linear-gradient(to right, #4a2d16, #5b391e, #4a2d16);
     border-radius: 0 0 10px 10px;
     padding: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -101,7 +123,7 @@
 .dropdown-item {
     display: block;
     padding: 12px 1px;
-    background-color: transparent; /* Remove solid bg to let gradient show */
+    background-color: transparent;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -124,14 +146,8 @@
 }
 
 
-
-/* Book Now Button */
-.book-now2 {
-
-}
-
 .book-now2 a {
-    color: white;    
+    color: white;
     padding: 10px 16px;
     background: linear-gradient(135deg, #01a1a1, #018383);
     font-weight: bold;

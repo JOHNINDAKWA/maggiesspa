@@ -44,8 +44,8 @@ const Footer = () => {
             <div className="footer-top-left-line"></div>
 
             <div className="footer-top-left-details">
-              <h4>Karen 31 Collective</h4>
-              <p> Ngong Rd, Nairobi</p>
+              <h4>Karen 31 Collective, Ng'ong Rd</h4>
+              <p> Shop 14 Restaurant, Nanyuki</p>
             </div>
           </div>
 

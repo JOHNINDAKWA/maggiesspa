@@ -62,6 +62,12 @@ const MobileMenu = () => {
               Services
             </Link>
           </li>
+          {/* NEW: Blog Link for mobile */}
+          <li>
+            <Link to="/articles" onClick={() => setIsOpen(false)}>
+              Blog
+            </Link>
+          </li>
           <li>
             <Link to="/package" onClick={() => setIsOpen(false)}>
               Pricing
@@ -88,7 +94,7 @@ const MobileMenu = () => {
         <div className="sidebar-footer">
           <p>
             <RiPhoneFill />
-             +254796125105
+              +254796125105
           </p>
           <p>
             <RiMailLine /> info@maggiespregnancyspa.co.ke

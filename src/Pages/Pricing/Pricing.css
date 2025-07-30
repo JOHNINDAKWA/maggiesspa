@@ -1,709 +1,765 @@
 /* Parent Container for Scoping */
 .pricing-page-container {
-    min-height: 100vh;
-    /* background-color: #f8f8f8; */
-    padding: 20px; /* Kept your desired padding */
+  min-height: 100vh;
+  /* background-color: #f8f8f8; */
+  padding: 20px; /* Kept your desired padding */
 }
 
 /* New Top Bar Header */
 .pricing-page-container .top-bar-header {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr; /* Left, Center, Right */
-    align-items: center;
-    padding: 15px 0; /* Vertical padding */
-    margin-bottom: 30px; /* Space below the header */
-    border-bottom: 1px solid #eee; /* Subtle separator */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Left, Center, Right */
+  align-items: center;
+  padding: 15px 0; /* Vertical padding */
+  margin-bottom: 30px; /* Space below the header */
+  border-bottom: 1px solid #eee; /* Subtle separator */
 }
 
 /* Breadcrumb Styling */
 .pricing-page-container .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    justify-self: start; /* Align to the start of its grid column */
-    padding-left: 10px; /* Small left padding */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-self: start; /* Align to the start of its grid column */
+  padding-left: 10px; /* Small left padding */
 }
 
 .pricing-page-container .breadcrumb-icon {
-    color: #01a1a1;
-    font-size: 0.9em;
+  color: #01a1a1;
+  font-size: 0.9em;
 }
 
 .pricing-page-container .breadcrumb-link {
-    color: #555;
-    text-decoration: none;
-    font-size: 0.95em;
-    font-weight: 500;
-    transition: color 0.2s ease;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 .pricing-page-container .breadcrumb-link:hover {
-    color: #01a1a1;
-    text-decoration: underline;
+  color: #01a1a1;
+  text-decoration: underline;
 }
 
 /* Central Page Title */
 .pricing-page-container .page-main-title {
-    font-size: 1.8em; /* Smaller than old h1, but still prominent */
-    font-weight: 700;
-    color: #4A2D16; /* Darker brown for headings */
-    text-align: center;
-    margin: 0; /* Remove default margins */
-    justify-self: center; /* Align to the center of its grid column */
+  font-size: 1.8em; /* Smaller than old h1, but still prominent */
+  font-weight: 700;
+  color: #4a2d16; /* Darker brown for headings */
+  text-align: center;
+  margin: 0; /* Remove default margins */
+  justify-self: center; /* Align to the center of its grid column */
 }
 
 /* Add New Branch Button specific styling */
 .pricing-page-container .btn-add-branch {
-    justify-self: end; /* Align to the end of its grid column */
-    padding: 10px 20px; /* Slightly smaller button */
-    font-size: 0.95em;
+  justify-self: end; /* Align to the end of its grid column */
+  padding: 10px 20px; /* Slightly smaller button */
+  font-size: 0.95em;
 }
-
 
 /* Main Content Area */
 .pricing-page-container .pricing-main-content {
-    max-width: 1200px; /* Kept your desired wider max-width */
-    margin: 0 auto;
+  max-width: 1200px; /* Kept your desired wider max-width */
+  margin: 0 auto;
 }
 
 /* Buttons */
 .pricing-page-container .btn {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1em;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1em;
 }
 
 .pricing-page-container .btn-primary {
-    background-color: #01a1a1; /* Theme color */
-    color: white;
-    box-shadow: 0 4px 10px rgba(1, 161, 161, 0.3);
+  background-color: #01a1a1; /* Theme color */
+  color: white;
+  box-shadow: 0 4px 10px rgba(1, 161, 161, 0.3);
 }
 
 .pricing-page-container .btn-primary:hover {
-    background-color: #008c8c; /* Darker theme color on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(1, 161, 161, 0.4);
+  background-color: #008c8c; /* Darker theme color on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(1, 161, 161, 0.4);
 }
 
 .pricing-page-container .btn-secondary {
-    background-color: #e0e0e0;
-    color: #555;
+  background-color: #e0e0e0;
+  color: #555;
 }
 
 .pricing-page-container .btn-secondary:hover {
-    background-color: #d0d0d0;
-    transform: translateY(-1px);
+  background-color: #d0d0d0;
+  transform: translateY(-1px);
 }
 
 .pricing-page-container .btn-danger {
-    background-color: #dc3545; /* Red for delete */
-    color: white;
-    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+  background-color: #dc3545; /* Red for delete */
+  color: white;
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
 }
 
 .pricing-page-container .btn-danger:hover {
-    background-color: #c82333;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(220, 53, 69, 0.4);
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(220, 53, 69, 0.4);
 }
 
 .pricing-page-container .btn-sm {
-    padding: 8px 15px;
-    font-size: 0.85em;
-    border-radius: 6px;
+  padding: 8px 15px;
+  font-size: 0.85em;
+  border-radius: 6px;
 }
 
 .pricing-page-container .btn-outline-primary {
-    background-color: transparent;
-    color: #01a1a1;
-    border: 1px solid #01a1a1;
-    box-shadow: none;
+  background-color: transparent;
+  color: #01a1a1;
+  border: 1px solid #01a1a1;
+  box-shadow: none;
 }
 
 .pricing-page-container .btn-outline-primary:hover {
-    background-color: #01a1a1;
-    color: white;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(1, 161, 161, 0.2);
+  background-color: #01a1a1;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(1, 161, 161, 0.2);
 }
 
 .pricing-page-container .icon-margin-right {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .pricing-page-container .icon-margin-right-sm {
-    margin-right: 4px;
+  margin-right: 4px;
 }
 
 /* Loading and Error States */
 .pricing-page-container .loading-state,
 .pricing-page-container .empty-state {
-    text-align: center;
-    padding: 50px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    margin-top: 30px;
+  text-align: center;
+  padding: 50px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-top: 30px;
 }
 
 .pricing-page-container .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-top: 4px solid #01a1a1;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #01a1a1;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .pricing-page-container .loading-state p,
 .pricing-page-container .empty-state p {
-    font-size: 1.1em;
-    color: #555;
+  font-size: 1.1em;
+  color: #555;
 }
 
 .pricing-page-container .alert-message {
-    padding: 15px 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 0.95em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .pricing-page-container .alert-error {
-    background-color: #ffe0e0;
-    border: 1px solid #dc3545;
-    color: #dc3545;
+  background-color: #ffe0e0;
+  border: 1px solid #dc3545;
+  color: #dc3545;
 }
 
 /* Branch Cards Grid */
 .pricing-page-container .branch-cards-grid {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
 }
 
 /* Branch Card */
 .pricing-page-container .branch-card {
-    background-color: white;
-    border: 1px solid rgba(167, 167, 167, 0.13);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    padding: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
+  background-color: white;
+  border: 1px solid rgba(167, 167, 167, 0.13);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-
 .pricing-page-container .branch-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .pricing-page-container .branch-card-title {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: #01a1a1;
-    margin: 0;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #01a1a1;
+  margin: 0;
 }
 
 .pricing-page-container .branch-card-actions {
-    display: flex; /* Ensure actions are flex for spacing */
-    gap: 10px; /* Space between action buttons */
+  display: flex; /* Ensure actions are flex for spacing */
+  gap: 10px; /* Space between action buttons */
 }
 
 .pricing-page-container .branch-card-actions .action-btn {
-    background: none;
-    border: 1px solid transparent; /* Add a transparent border for consistent sizing */
-    border-radius: 50%; /* Make them round */
-    width: 38px; /* Fixed width */
-    height: 38px; /* Fixed height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1em; /* Slightly smaller icon */
-    cursor: pointer;
-    color: #888;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background: none;
+  border: 1px solid transparent; /* Add a transparent border for consistent sizing */
+  border-radius: 50%; /* Make them round */
+  width: 38px; /* Fixed width */
+  height: 38px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em; /* Slightly smaller icon */
+  cursor: pointer;
+  color: #888;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .pricing-page-container .branch-card-actions .action-btn:hover {
-    color: white; /* Icon color changes to white on hover */
-    background-color: #01a1a1; /* Teal background on hover */
-    border-color: #01a1a1;
-    box-shadow: 0 4px 10px rgba(1, 161, 161, 0.3);
-    transform: translateY(-1px);
+  color: white; /* Icon color changes to white on hover */
+  background-color: #01a1a1; /* Teal background on hover */
+  border-color: #01a1a1;
+  box-shadow: 0 4px 10px rgba(1, 161, 161, 0.3);
+  transform: translateY(-1px);
 }
 
 .pricing-page-container .branch-card-actions .action-btn-danger:hover {
-    background-color: #dc3545; /* Red background on hover for delete */
-    border-color: #dc3545;
-    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+  background-color: #dc3545; /* Red background on hover for delete */
+  border-color: #dc3545;
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
 }
 
 .pricing-page-container .branch-empty-state {
-    text-align: center;
-    padding: 30px 15px;
-    color: #777;
-    font-style: italic;
-    background-color: #fcfcfc;
-    border-radius: 8px;
-    border: 1px dashed #eee;
+  text-align: center;
+  padding: 30px 15px;
+  color: #777;
+  font-style: italic;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  border: 1px dashed #eee;
 }
 
 /* Service Category Section */
 .pricing-page-container .service-category-section {
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .pricing-page-container .service-category-section:last-of-type {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .pricing-page-container .service-category-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .pricing-page-container .service-category-title {
-    font-size: 1.3em;
-    font-weight: 600;
-    color: #4A2D16;
-    margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #4a2d16;
+  margin: 0;
 }
 
 .pricing-page-container .action-btn-sm {
-    font-size: 0.85em; /* Slightly smaller icon */
-    padding: 8px 12px; /* More padding for button-like feel */
-    border-radius: 6px;
-    color: white; /* Default text color */
-    background-color: #01a1a1; /* Teal background */
-    border: 1px solid #01a1a1;
-    box-shadow: 0 2px 5px rgba(1, 161, 161, 0.2);
-    transition: all 0.2s ease;
+  font-size: 0.85em; /* Slightly smaller icon */
+  padding: 8px 12px; /* More padding for button-like feel */
+  border-radius: 6px;
+  color: white; /* Default text color */
+  background-color: #01a1a1; /* Teal background */
+  border: 1px solid #01a1a1;
+  box-shadow: 0 2px 5px rgba(1, 161, 161, 0.2);
+  transition: all 0.2s ease;
 }
 
 .pricing-page-container .action-btn-sm:hover {
-    background-color: #008c8c; /* Darker teal on hover */
-    border-color: #008c8c;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(1, 161, 161, 0.3);
+  background-color: #008c8c; /* Darker teal on hover */
+  border-color: #008c8c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(1, 161, 161, 0.3);
 }
 
 .pricing-page-container .subgroup-empty-state,
 .pricing-page-container .service-empty-state {
-    font-size: 0.9em;
-    color: #999;
-    font-style: italic;
-    margin-left: 20px;
-    margin-top: 10px;
+  font-size: 0.9em;
+  color: #999;
+  font-style: italic;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 /* Service Subgroup Card */
 .pricing-page-container .service-subgroup-card {
-    background-color: #fdfdfd;
-    border: 1px solid #f5f5f5;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+  background-color: #fdfdfd;
+  border: 1px solid #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
 }
 
 .pricing-page-container .service-subgroup-title {
-    font-size: 1.15em;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 10px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #eee;
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
 }
 
 .pricing-page-container .service-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .pricing-page-container .service-itemm {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #f0f0f0;
-    /* Removed hover effect for service-item */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  /* Removed hover effect for service-item */
 }
 
 .pricing-page-container .service-itemm:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .pricing-page-container .service-description {
-    flex: 1;
-    color: #444;
-    font-size: 0.95em;
-    margin-right: 10px;
+  flex: 1;
+  color: #444;
+  font-size: 0.95em;
+  margin-right: 10px;
 }
 
 .pricing-page-container .service-price {
-    font-weight: 700;
-    color: #01a1a1;
-    font-size: 0.95em;
-    white-space: nowrap;
+  font-weight: 700;
+  color: #01a1a1;
+  font-size: 0.95em;
+  white-space: nowrap;
 }
 
 .pricing-page-container .service-item-actions {
-    display: flex;
-    gap: 8px;
-    margin-left: 15px;
+  display: flex;
+  gap: 8px;
+  margin-left: 15px;
 }
 
 .pricing-page-container .service-item-actions .action-btn-sm {
-    background: none; /* Reset background for these specific action buttons */
-    border: none; /* Reset border */
-    color: #888; /* Default color for icons */
-    font-size: 1em; /* Adjust icon size */
-    padding: 5px; /* Smaller padding */
-    border-radius: 50%; /* Make them round */
-    width: 30px; /* Fixed size */
-    height: 30px; /* Fixed size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: none; /* Remove default shadow */
-    transition: all 0.2s ease;
+  background: none; /* Reset background for these specific action buttons */
+  border: none; /* Reset border */
+  color: #888; /* Default color for icons */
+  font-size: 1em; /* Adjust icon size */
+  padding: 5px; /* Smaller padding */
+  border-radius: 50%; /* Make them round */
+  width: 30px; /* Fixed size */
+  height: 30px; /* Fixed size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none; /* Remove default shadow */
+  transition: all 0.2s ease;
 }
 
 .pricing-page-container .service-item-actions .action-btn-sm:hover {
-    background-color: rgba(1, 161, 161, 0.1); /* Light teal background on hover */
-    color: #01a1a1; /* Teal icon on hover */
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  background-color: rgba(1, 161, 161, 0.1); /* Light teal background on hover */
+  color: #01a1a1; /* Teal icon on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
 }
 
-.pricing-page-container .service-item-actions .action-btn-sm.action-btn-danger:hover {
-    background-color: rgba(220, 53, 69, 0.1); /* Light red background on hover for delete */
-    color: #dc3545; /* Red icon on hover for delete */
+.pricing-page-container
+  .service-item-actions
+  .action-btn-sm.action-btn-danger:hover {
+  background-color: rgba(
+    220,
+    53,
+    69,
+    0.1
+  ); /* Light red background on hover for delete */
+  color: #dc3545; /* Red icon on hover for delete */
 }
-
 
 /* Modals */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999; /* Increased z-index to a very high value */
-    animation: fadeIn 0.3s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Increased z-index to a very high value */
+  animation: fadeIn 0.3s ease-out;
 }
 
 .modal-content {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    width: 90%;
-    max-width: 500px;
-    transform: scale(0.95);
-    opacity: 0;
-    animation: slideIn 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: slideIn 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .modal-content-small {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 .modal-title {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: #4A2D16;
-    margin-bottom: 25px;
-    text-align: center;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #4a2d16;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .modal-icon-danger {
-    color: #dc3545;
-    font-size: 3.5em;
-    margin-bottom: 20px;
+  color: #dc3545;
+  font-size: 3.5em;
+  margin-bottom: 20px;
 }
 
 .modal-text {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 25px;
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 25px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form-label {
-    display: block;
-    font-size: 0.95em;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 8px;
+  display: block;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
 }
 
 .form-input {
-    width: calc(100% - 20px); /* Account for padding */
-    padding: 12px 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1em;
-    color: #333;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 12px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-input:focus {
-    outline: none;
-    border-color: #01a1a1;
-    box-shadow: 0 0 0 3px rgba(1, 161, 161, 0.2);
+  outline: none;
+  border-color: #01a1a1;
+  box-shadow: 0 0 0 3px rgba(1, 161, 161, 0.2);
 }
 
 .form-input:disabled {
-    background-color: #f0f0f0;
-    cursor: not-allowed;
+  background-color: #f0f0f0;
+  cursor: not-allowed;
 }
 
 .error-message-small {
-    color: #dc3545;
-    font-size: 0.85em;
-    margin-top: 5px;
+  color: #dc3545;
+  font-size: 0.85em;
+  margin-top: 5px;
 }
 
 .modal-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-    margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .modal-actions-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .form-group-or {
-    text-align: center;
-    margin: 15px 0;
-    font-size: 0.9em;
-    color: #888;
-    position: relative;
+  text-align: center;
+  margin: 15px 0;
+  font-size: 0.9em;
+  color: #888;
+  position: relative;
 }
 
 .form-group-or::before,
 .form-group-or::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 40%;
-    height: 1px;
-    background-color: #eee;
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #eee;
 }
 
 .form-group-or::before {
-    left: 0;
+  left: 0;
 }
 
 .form-group-or::after {
-    right: 0;
+  right: 0;
 }
 
 .form-group-divider {
-    border-top: 1px dashed #eee;
-    margin: 25px 0;
+  border-top: 1px dashed #eee;
+  margin: 25px 0;
 }
 
 /* React-Select Custom Styles (using classNamePrefix="react-select") */
 /* Note: These styles are global for react-select, not scoped by .pricing-page-container */
 .react-select__control {
-    border: 1px solid #ddd !important;
-    border-radius: 8px !important;
-    min-height: 45px !important;
-    box-shadow: none !important;
-    transition: all 0.2s ease !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  min-height: 45px !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
 }
 
 .react-select__control--is-focused {
-    border-color: #01a1a1 !important;
-    box-shadow: 0 0 0 3px rgba(1, 161, 161, 0.2) !important;
+  border-color: #01a1a1 !important;
+  box-shadow: 0 0 0 3px rgba(1, 161, 161, 0.2) !important;
 }
 
 .react-select__placeholder {
-    color: #999 !important;
+  color: #999 !important;
 }
 
 .react-select__single-value {
-    color: #333 !important;
+  color: #333 !important;
 }
 
 .react-select__indicator-separator {
-    background-color: #eee !important;
+  background-color: #eee !important;
 }
 
 .react-select__dropdown-indicator {
-    color: #888 !important;
+  color: #888 !important;
 }
 
 .react-select__dropdown-indicator:hover {
-    color: #555 !important;
+  color: #555 !important;
 }
 
 .react-select__menu {
-    border-radius: 8px !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
 .react-select__option {
-    padding: 12px 15px !important;
-    font-size: 1em !important;
-    color: #333 !important;
-    cursor: pointer !important;
+  padding: 12px 15px !important;
+  font-size: 1em !important;
+  color: #333 !important;
+  cursor: pointer !important;
 }
 
 .react-select__option--is-focused {
-    background-color: #e6f7f7 !important; /* Light teal */
+  background-color: #e6f7f7 !important; /* Light teal */
 }
 
 .react-select__option--is-selected {
-    background-color: #01a1a1 !important;
-    color: white !important;
+  background-color: #01a1a1 !important;
+  color: white !important;
 }
 
 /* Animations for Modals */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideIn {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
+/* For screens smaller than 768px (e.g., phones) */
+@media (max-width: 767px) {
+  .pricing-page-container .top-bar-header {
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto;
+    gap: 15px; 
+    padding: 15px; 
+    margin-bottom: 20px;
+  }
+  .pricing-page-container .breadcrumb {
+    justify-self: center; 
+    padding-left: 0;
+    font-size: 0.9em;
+  }
+  .pricing-page-container .page-main-title {
+    font-size: 1.5em; 
+    justify-self: center;
+  }
+  .pricing-page-container .btn-add-branch {
+    justify-self: center;
+    width: 100%; 
+    max-width: 250px;
+    padding: 12px 20px; 
+    font-size: 1em;
+  }
+} /* For screens between 768px and 1023px (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .pricing-page-container .top-bar-header {
+    padding: 20px 15px; 
+    margin-bottom: 25px;
+  }
+  .pricing-page-container .page-main-title {
+    font-size: 1.6em; 
+  }
+  .pricing-page-container .btn-add-branch {
+    padding: 10px 18px; 
+  }
+} 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .pricing-page-container {
-        padding: 20px;
-    }
+  .pricing-page-container {
+    padding: 20px;
+  }
 
-    .pricing-page-container .pricing-header {
-        padding: 30px 20px;
-        margin-bottom: 30px;
-    }
+  .pricing-page-container .pricing-header {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+  }
 
-    .pricing-page-container .pricing-title {
-        font-size: 2em;
-    }
+  .pricing-page-container .pricing-title {
+    font-size: 2em;
+  }
 
-    .pricing-page-container .pricing-subtitle {
-        font-size: 1em;
-    }
+  .pricing-page-container .pricing-subtitle {
+    font-size: 1em;
+  }
 
-    .pricing-page-container .pricing-actions-row {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 15px;
-    }
+  .pricing-page-container .pricing-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
 
-    .pricing-page-container .pricing-section-title {
-        font-size: 1.5em;
-        text-align: center;
-    }
+  .pricing-page-container .pricing-section-title {
+    font-size: 1.5em;
+    text-align: center;
+  }
 
-    .pricing-page-container .btn {
-        width: 100%;
-        padding: 12px 15px;
-    }
+  .pricing-page-container .btn {
+    width: 100%;
+    padding: 12px 15px;
+  }
 
-    .pricing-page-container .branch-cards-grid {
-        flex-direction: column;
-    }
+  .pricing-page-container .branch-cards-grid {
+    flex-direction: column;
+  }
 
-    .pricing-page-container .branch-card {
-        padding: 20px;
-    }
+  .pricing-page-container .branch-card {
+    padding: 20px;
+  }
 
-    .pricing-page-container .branch-card-title {
-        font-size: 1.5em;
-    }
+  .pricing-page-container .branch-card-title {
+    font-size: 1.5em;
+  }
 
-    .pricing-page-container .service-category-title {
-        font-size: 1.1em;
-    }
+  .pricing-page-container .service-category-title {
+    font-size: 1.1em;
+  }
 
-    .pricing-page-container .service-subgroup-title {
-        font-size: 1em;
-    }
+  .pricing-page-container .service-subgroup-title {
+    font-size: 1em;
+  }
 
-    .pricing-page-container .service-description,
-    .pricing-page-container .service-price {
-        font-size: 0.9em;
-    }
+  .pricing-page-container .service-description,
+  .pricing-page-container .service-price {
+    font-size: 0.9em;
+  }
 
-    /* Modal responsiveness is handled globally, so no .pricing-page-container prefix here */
-    .modal-content {
-        padding: 20px;
-        width: 95%;
-    }
+  /* Modal responsiveness is handled globally, so no .pricing-page-container prefix here */
+  .modal-content {
+    padding: 20px;
+    width: 95%;
+  }
 
-    .modal-title {
-        font-size: 1.5em;
-        margin-bottom: 20px;
-    }
+  .modal-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
 
-    .form-input {
-        padding: 10px;
-        font-size: 0.95em;
-    }
+  .form-input {
+    padding: 10px;
+    font-size: 0.95em;
+  }
 
-    .modal-actions {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .modal-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .modal-actions .btn {
-        width: 100%;
-    }
+  .modal-actions .btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
-    .pricing-page-container .pricing-title {
-        font-size: 1.8em;
-    }
+  .pricing-page-container .pricing-title {
+    font-size: 1.8em;
+  }
 
-    .pricing-page-container .pricing-subtitle {
-        font-size: 0.9em;
-    }
+  .pricing-page-container .pricing-subtitle {
+    font-size: 0.9em;
+  }
 }

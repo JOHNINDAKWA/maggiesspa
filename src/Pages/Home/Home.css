@@ -4,65 +4,180 @@
     flex-direction: column;
     align-items: center;
     width: 100vw;
-   overflow-x: hidden; 
-  }
-  
-  /* Top Section */
-  .top-home-section {
+    overflow-x: hidden;
+}
+
+/* Top Section */
+.top-home-section {
     width: 100vw; /* Full width */
     background-color: #fbeee5;
     display: flex;
     justify-content: center; /* Centers content */
     align-items: center;
-    height: 135px;
-  }
-  
-  /* Wrapper to keep content centered */
-  .top-home-wrapper {
+    height: 135px; /* Keep consistent height */
+    padding: 10px 0; /* Add some vertical padding for content */
+}
+
+/* Wrapper to keep content centered and manage spacing */
+.top-home-wrapper {
     width: 100%;
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-  }
-  
-  /* Location & Contact Styling */
-  .location,
-  .contact {
+}
+
+/* Location & Contact Styling */
+.location,
+.contact {
     display: flex;
     align-items: center;
     gap: 12px;
     color: #654b3e;
-  }
-  
-  /* Text stacked vertically */
-  .location div,
-  .contact div {
+    flex-shrink: 0;
+}
+
+/* Text stacked vertically for location and contact details */
+.location div,
+.contact div {
     display: flex;
     flex-direction: column;
+}
+
+/* Styling for "Our Locations" title */
+.location .location-title {
+    font-weight: 600;
     font-size: 16px;
-  }
-  
-  /* Make Logo Bigger */
-  .logo img {
-    height: 135px;
-  }
-  
-  /* Icon Container */
-  .icon-container {
+    margin-bottom: 2px;
+    color: #242424;
+}
+
+/* Styling for individual address lines */
+.location .address-line {
+    font-size: 13px;
+    line-height: 1.2;
+    color: #654b3e;
+}
+
+/* Styling for the first span in contact info (phone number) */
+.contact div span:first-child {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+/* Styling for the second span in contact info (email) */
+.contact div span:last-child {
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+
+/* Make Logo Bigger */
+.logo img {
+    height: 120px;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
+/* Icon Container */
+.icon-container {
     background-color: #01a1a1b3;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ; /* Oblong shape */
-    width: 50px;
-    height: 50px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  /* Icons Styling */
-  .icon {
-    font-size: 22px;
-    color: white;
-  }
+    flex-shrink: 0;
+}
 
+/* Icons Styling */
+.icon {
+    font-size: 20px;
+    color: white;
+}
+
+/* NEW: Space for the sticky navigation */
+main.main-content-shifted {
+    padding-top: 70px; /* Adjust this value to match the exact height of your sticky desktop menu */
+    /* The height of .desktop-menu is padding-top + padding-bottom + line-height/content height.
+       Estimate ~60-70px based on padding: 15px 0 and font size. Check developer tools for exact height. */
+}
+
+
+/* Media Queries */
+
+/* Tablet and smaller desktop adjustments (e.g., 1024px to 769px) */
+@media screen and (max-width: 1024px) {
+    .top-home-section {
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .top-home-wrapper {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 15px;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .location,
+    .contact {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Adjust text alignment for location/contact info when stacked */
+    .location div,
+    .contact div {
+        align-items: center;
+    }
+
+    .location .location-title {
+        font-size: 15px;
+    }
+    .location .address-line,
+    .contact div span {
+        font-size: 12px;
+    }
+
+    .logo img {
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .icon-container {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon {
+        font-size: 18px;
+    }
+
+    /* Adjust padding for sticky nav when layout changes on tablet */
+    main.main-content-shifted {
+        /* Since desktop menu switches to mobile menu below 768px,
+           this padding is mainly for the larger tablet screens where
+           the desktop menu might still be active but the layout shifts.
+           If the desktop menu itself is hidden below 768px, this might not be needed for mobile,
+           but better to have it here in case the desktop menu persists on some tablet ranges. */
+        padding-top: 60px; /* A slightly smaller padding for potentially shorter sticky nav on tablet */
+    }
+}
+
+/* Mobile (already handled by !isMobile condition in JSX, but good for explicit CSS) */
+@media screen and (max-width: 768px) {
+    .top-home-section {
+        display: none;
+    }
+    /* IMPORTANT: Reset padding-top for mobile if main element is used across all views
+       and mobile menu has a different height or is not sticky */
+    main.main-content-shifted {
+        padding-top: 0; /* Or adjust to height of mobile nav if it's sticky */
+    }
+}

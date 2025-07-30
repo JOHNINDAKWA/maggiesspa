@@ -16,18 +16,23 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    border-radius: 8px; /* Added for a softer look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
 }
 
 /* Each Detail Item */
 .detail-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align icon and text to the top */
     gap: 15px;
+    padding-bottom: 15px; /* Add padding for spacing before border */
+    border-bottom: 1px solid #55433c35; /* Apply border to all items by default */
 }
 
-.detail-item:not(:last-child){
-    
-    border-bottom: 1px solid  #55433c35;
+/* Remove border from the very last detail item */
+.contactForm-details .detail-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0; /* Remove padding if no border */
 }
 
 .detail-item svg {
@@ -35,22 +40,26 @@
     width: 30px;
     height: 30px;
     padding: 10px;
-    line-height: 50px;
+    line-height: 50px; /* This might not be effective for vertical alignment of SVG */
     border-radius: 50%;
     color: #f6ebe7;
+    flex-shrink: 0; /* Prevent icon from shrinking on smaller screens */
+    margin-top: 5px; /* Adjust vertical alignment of icon slightly */
 }
 
 .detail-info span {
     color: #242424;
-    font-family: Cormorant Garamond;
-    font-weight: 500;
-    font-size: 30px;
+    font-weight: 600; /* Made slightly bolder */
+    font-size: 26px; /* Slightly smaller for better fit with multiple lines */
     letter-spacing: 0;
+    margin-bottom: 5px; /* Space between title and description */
+    display: block; /* Ensure it takes full width for margin */
 }
 
 .detail-info p {
-    font-size: 16px;
+    font-size: 15px; /* Slightly smaller for better readability in lists */
     color: #444;
+    line-height: 1.4; /* Improve readability */
 }
 
 
@@ -59,6 +68,10 @@
     max-width: 600px;
     width: 100%;
     flex: 1;
+    background: #fff; /* Added for consistency, assumes default is white */
+    padding: 30px; /* Added internal padding */
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); */
 }
 
 /* Form Heading */
@@ -71,6 +84,7 @@
     letter-spacing: 0;
     position: relative;
     z-index: 2; 
+    margin-bottom: 30px; /* Added space below heading */
 }
 
 
@@ -79,46 +93,60 @@
 .contactForm-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* Increased gap between form elements */
 }
 
 /* Row for Email & Phone */
 .contactForm-row {
     display: flex;
-    gap: 15px;
+    gap: 20px; /* Increased gap in row */
 }
 
 .contactForm-row input,
 .contactForm-row select {
     width: 100%;
     padding: 15px 0px;
-    font-size: 18px;
+    font-size: 17px; /* Slightly smaller font for inputs */
     border: none;
     border-bottom: 1px solid #ddd;
     outline: none;
-    background: white;
-    color: rgba(0, 0, 0, 0.649);
-    transition: border 0.3s ease-in-out;
+    background: transparent; /* Changed to transparent for a cleaner look */
+    color: #333; /* Darker text color */
+    transition: border-bottom-color 0.3s ease-in-out;
 }
+
+.contactForm-row input::placeholder,
+.contactForm-form textarea::placeholder {
+    color: #888; /* Softer placeholder color */
+}
+
+.contactForm-row input:focus,
+.contactForm-row select:focus,
+.contactForm-form textarea:focus {
+    border-bottom-color: #008080; /* Teal underline on focus */
+}
+
 
 /* Textarea */
 .contactForm-form textarea {
     width: 100%;
     padding: 15px 0px;
-    font-size: 18px;
+    font-size: 17px;
     border: none;
     border-bottom: 1px solid #ddd;
     outline: none;
-    background: white;
-    color: rgba(0, 0, 0, 0.649);
-    transition: border 0.3s ease-in-out;
+    background: transparent; /* Changed to transparent */
+    color: #333;
+    transition: border-bottom-color 0.3s ease-in-out;
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px; /* Minimum height for textarea */
 }
 
 /* Button with Wavy Background Animation */
 .contactForm-form button {
     position: relative;
-    padding: 14px 20px;
-    font-size: 16px;
+    padding: 14px 25px; /* Adjusted padding */
+    font-size: 17px; /* Slightly larger font */
     font-weight: bold;
     border-radius: 30px;
     color: white;
@@ -128,6 +156,8 @@
     background-color: #cda291; /* Fallback color */
     transition: 0.3s ease-in-out;
     width: fit-content;
+    align-self: flex-start; /* Align button to the left */
+    letter-spacing: 1px; /* Add some letter spacing */
 }
 
 
@@ -140,7 +170,7 @@
     left: 0;
     width: 200%;
     height: 300%;
-    background: radial-gradient(circle, #4cb8b5 25%, transparent 30%);
+    background: radial-gradient(circle, #008080 25%, transparent 30%); /* Adjusted wave color to main brand teal */
     background-size: 50% 50%;
     animation: waveAnimation 3s infinite linear;
     opacity: 0.5;
@@ -173,70 +203,87 @@
     .contactForm-container {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 30px; /* Increased gap between stacked sections */
         padding: 40px 4%;
     }
 
     /* Adjust Contact Details Section */
     .contactForm-details {
         width: 100%;
+        max-width: 500px; /* Limit width even when stacked */
         padding: 40px;
     }
 
     /* Adjust Contact Form Content */
     .contactForm-content {
         max-width: 100%;
+        padding: 30px;
     }
 
     /* Form Heading */
     .contactForm-content h2 {
         font-size: 45px;
         line-height: 60px;
+        margin-bottom: 25px;
     }
 
-    .contactForm-content h2::before {
-        font-size: 50px;
-        top: -25px;
-        left: 20%;
-    }
+    /* .contactForm-content h2::before { ... No before pseudo-element in current HTML... } */
 
     /* Ensure input fields fit properly */
     .contactForm-row {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px; /* Increased gap */
+    }
+
+    .contactForm-form button {
+        align-self: center; /* Center button when stacked */
     }
 }
 
 @media screen and (max-width: 768px) {
     .contactForm-container {
         padding: 30px 5%;
+        gap: 25px;
     }
 
     .contactForm-details {
         padding: 30px;
+        gap: 15px; /* Smaller gap for detail items */
+    }
+
+    .detail-item svg {
+        margin-top: 2px; /* Adjust icon alignment */
+    }
+
+    .detail-info span {
+        font-size: 22px; /* Smaller font for detail titles */
+    }
+
+    .detail-info p {
+        font-size: 14px; /* Smaller font for detail text */
+    }
+
+
+    .contactForm-content {
+        padding: 25px;
     }
 
     .contactForm-content h2 {
         font-size: 38px;
         line-height: 50px;
-    }
-
-    .contactForm-content h2::before {
-        font-size: 45px;
-        top: -20px;
-        left: 15%;
+        margin-bottom: 20px;
     }
 
     /* Adjust input fields and buttons */
     .contactForm-form input,
     .contactForm-form select,
     .contactForm-form textarea {
-        font-size: 16px;
-        padding: 12px;
+        font-size: 15px;
+        padding: 10px 0;
     }
 
     .contactForm-form button {
-        padding: 12px 18px;
+        padding: 10px 20px;
         font-size: 15px;
     }
 }
@@ -244,42 +291,56 @@
 @media screen and (max-width: 480px) {
     .contactForm-container {
         padding: 20px 6%;
+        gap: 20px;
     }
 
     .contactForm-details {
         padding: 20px;
+        gap: 12px;
     }
 
     .detail-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
+        flex-direction: row; /* Keep as row for small screens, less vertical space needed */
+        text-align: left; /* Keep text left-aligned */
+        gap: 12px;
+        padding-bottom: 12px;
     }
 
     .detail-item svg {
-        width: 40px;
-        height: 40px;
-        padding: 8px;
+        width: 35px;
+        height: 35px;
+        padding: 7px;
+        margin-top: 0; /* Reset margin */
+    }
+
+    .detail-info span {
+        font-size: 20px;
+    }
+
+    .detail-info p {
+        font-size: 13px;
+    }
+
+    .contactForm-content {
+        padding: 20px;
     }
 
     .contactForm-content h2 {
         font-size: 30px;
         line-height: 40px;
-    }
-
-    .contactForm-content h2::before {
-        font-size: 35px;
-        top: -15px;
-        left: 10%;
+        margin-bottom: 15px;
     }
 
     /* Stack form elements */
     .contactForm-row {
         flex-direction: column;
+        gap: 10px;
     }
 
     .contactForm-form button {
         width: 100%;
         text-align: center;
+        padding: 10px 15px;
+        font-size: 14px;
     }
 }
