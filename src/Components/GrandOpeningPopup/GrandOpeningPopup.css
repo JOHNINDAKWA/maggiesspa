@@ -316,8 +316,7 @@
     }
 
     .popup-description {
-        font-size: 0.95em; /* Smaller description text */
-        margin-bottom: 25px;
+        display: none;
     }
 
     .popup-learn-more-btn {
@@ -370,10 +369,7 @@
         font-size: 0.3em;
     }
 
-    .popup-description {
-        font-size: 0.9em;
-        margin-bottom: 20px;
-    }
+
 
     .popup-learn-more-btn {
         padding: 9px 25px;
@@ -427,10 +423,6 @@
 
     .countdown-item {
         font-size: 1.2em;
-    }
-
-    .popup-description {
-        font-size: 0.85em;
     }
 
     .popup-close-btn {
