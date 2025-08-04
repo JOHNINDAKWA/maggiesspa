@@ -2,6 +2,9 @@ import Massage_Guide from "../../assets/images/articles/massage-guide.jpg";
 import SkinCare from "../../assets/images/articles/skincare-secrets.jpg";
 import PrenatalMassage from "../../assets/images/articles/prenatal-massage.jpg";
 import Nanyuki from "../../assets/images/articles/nanyuki-spa.jpg";
+import DecorImage from "../../assets/images/articles/decor.jpg"; // Import the decor image
+import MassageBenefitsImage from "../../assets/images/articles/massage-benefits.jpg"; // Import the massage benefits image
+import SkincareProducts from "../../assets/images/articles/skincare-products.jpg"; // Import the skincare products image
 
 // This file will contain your static article data
 const articles = [
@@ -52,13 +55,9 @@ const articles = [
     <a href="tel:+254796125105" style="color: #01a1a1; font-weight: bold; text-decoration: none;">+254796125105</a></p>
 
     <p>Welcome to your new sanctuary, Nanyuki Mamas! We can't wait to pamper you.</p>
-
-    <img 
-      src="/src/assets/images/articles/decor.jpg" 
-      alt="Interior view of Maggie's Spa Nanyuki branch" 
-      style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px;" 
-    />
-  `
+  `,
+    // New property for the decor image
+    decorImage: DecorImage,
   },
   {
     id: "2",
@@ -70,26 +69,27 @@ const articles = [
     excerpt:
       "Discover the many benefits of relaxation massages and how they can improve your overall well-being. From Swedish to aromatherapy, find your perfect escape.",
     content: `
-      <p>Relaxation massages are more than just a luxurious treat; they are a vital component of a healthy lifestyle, helping to reduce stress, ease muscle tension, and promote mental clarity. At Maggie's Spa, we offer a variety of massage therapies designed to melt away your worries and rejuvenate your spirit.</p>
-      <h2>Types of Relaxation Massages</h2>
-      <h3>Swedish Massage</h3>
-      <p>The most popular form of massage, Swedish massage involves long, flowing strokes, kneading, and circular movements on the topmost layers of muscles. It's designed to promote relaxation, improve circulation, and relieve superficial muscle tension.</p>
-      <h3>Aromatherapy Massage</h3>
-      <p>This massage combines the power of touch with the therapeutic benefits of essential oils. Depending on the oils used, it can be deeply relaxing, energizing, or stress-reducing. Our therapists will help you choose the perfect blend for your needs.</p>
-      <h3>Hot Stone Massage</h3>
-      <p>Experience deep relaxation with smooth, heated stones placed on specific points of your body. The heat from the stones helps to warm and relax muscles, allowing the therapist to apply deeper pressure without discomfort.</p>
-      <h2>Benefits of Regular Relaxation Massages</h2>
-      <ul>
-        <li>Reduces stress and anxiety</li>
-        <li>Improves sleep quality</li>
-        <li>Boosts mood and energy levels</li>
-        <li>Relieves muscle soreness and stiffness</li>
-        <li>Enhances blood circulation</li>
-        <li>Promotes a sense of calm and well-being</li>
-      </ul>
-      <p>Regular relaxation massages are an investment in your health. Talk to our expert therapists to find out which massage is right for you and start your journey to a more relaxed and balanced life.</p>
-       <img src="/src/assets/images/articles/massage-benefits.jpg" alt="Benefits of massage" style="max-width: 100%; height: auto; margin: 20px 0;" />
+    <p>Relaxation massages are more than just a luxurious treat; they are a vital component of a healthy lifestyle, helping to reduce stress, ease muscle tension, and promote mental clarity. At Maggie's Spa, we offer a variety of massage therapies designed to melt away your worries and rejuvenate your spirit.</p>
+    <h2>Types of Relaxation Massages</h2>
+    <h3>Swedish Massage</h3>
+    <p>The most popular form of massage, Swedish massage involves long, flowing strokes, kneading, and circular movements on the topmost layers of muscles. It's designed to promote relaxation, improve circulation, and relieve superficial muscle tension.</p>
+    <h3>Aromatherapy Massage</h3>
+    <p>This massage combines the power of touch with the therapeutic benefits of essential oils. Depending on the oils used, it can be deeply relaxing, energizing, or stress-reducing. Our therapists will help you choose the perfect blend for your needs.</p>
+    <h3>Hot Stone Massage</h3>
+    <p>Experience deep relaxation with smooth, heated stones placed on specific points of your body. The heat from the stones helps to warm and relax muscles, allowing the therapist to apply deeper pressure without discomfort.</p>
+    <h2>Benefits of Regular Relaxation Massages</h2>
+    <ul>
+      <li>Reduces stress and anxiety</li>
+      <li>Improves sleep quality</li>
+      <li>Boosts mood and energy levels</li>
+      <li>Relieves muscle soreness and stiffness</li>
+      <li>Enhances blood circulation</li>
+      <li>Promotes a sense of calm and well-being</li>
+    </ul>
+    <p>Regular relaxation massages are an investment in your health. Talk to our expert therapists to find out which massage is right for you and start your journey to a more relaxed and balanced life.</p>
     `,
+    // New property for the massage benefits image
+    massageBenefitsImage: MassageBenefitsImage,
   },
   {
     id: "3",
@@ -101,25 +101,26 @@ const articles = [
     excerpt:
       "Unlock the secrets to radiant, healthy skin with our expert tips and recommended routines. Learn about hydration, exfoliation, and protection.",
     content: `
-      <p>Achieving glowing skin requires more than just good genetics; it involves a consistent and tailored skincare routine. At Maggie's Spa, we believe in nurturing your skin with the best products and techniques.</p>
-      <h2>Your Daily Skincare Routine</h2>
-      <ol>
-        <li><strong>Cleanse:</strong> Start your day and end your night with a gentle cleanser to remove impurities and prepare your skin for treatment.</li>
-        <li><strong>Tone:</strong> A good toner balances your skin's pH and adds an extra layer of hydration.</li>
-        <li><strong>Serum:</strong> Target specific concerns like fine lines, hyperpigmentation, or dryness with a concentrated serum.</li>
-        <li><strong>Moisturize:</strong> Lock in hydration and protect your skin's barrier with a suitable moisturizer for your skin type.</li>
-        <li><strong>SPF (Daytime):</strong> Non-negotiable! Protect your skin from harmful UV rays, which are the leading cause of premature aging.</li>
-      </ol>
-      <h2>Key Ingredients to Look For</h2>
-      <ul>
-        <li><strong>Hyaluronic Acid:</strong> For intense hydration.</li>
-        <li><strong>Vitamin C:</strong> Brightens skin and protects against environmental damage.</li>
-        <li><strong>Retinoids:</strong> Boost cell turnover and reduce wrinkles (use at night).</li>
-        <li><strong>Niacinamide:</strong> Reduces inflammation and improves skin barrier function.</li>
-      </ul>
-      <p>Remember, consistency is key. Listen to your skin and adjust your routine as needed. For personalized advice, book a skin consultation with our estheticians.</p>
-      <img src="/src/assets/images/articles/skincare-products.jpg" alt="Skincare products" style="max-width: 100%; height: auto; margin: 20px 0;" />
+    <p>Achieving glowing skin requires more than just good genetics; it involves a consistent and tailored skincare routine. At Maggie's Spa, we believe in nurturing your skin with the best products and techniques.</p>
+    <h2>Your Daily Skincare Routine</h2>
+    <ol>
+      <li><strong>Cleanse:</strong> Start your day and end your night with a gentle cleanser to remove impurities and prepare your skin for treatment.</li>
+      <li><strong>Tone:</strong> A good toner balances your skin's pH and adds an extra layer of hydration.</li>
+      <li><strong>Serum:</strong> Target specific concerns like fine lines, hyperpigmentation, or dryness with a concentrated serum.</li>
+      <li><strong>Moisturize:</strong> Lock in hydration and protect your skin's barrier with a suitable moisturizer for your skin type.</li>
+      <li><strong>SPF (Daytime):</strong> Non-negotiable! Protect your skin from harmful UV rays, which are the leading cause of premature aging.</li>
+    </ol>
+    <h2>Key Ingredients to Look For</h2>
+    <ul>
+      <li><strong>Hyaluronic Acid:</strong> For intense hydration.</li>
+      <li><strong>Vitamin C:</strong> Brightens skin and protects against environmental damage.</li>
+      <li><strong>Retinoids:</strong> Boost cell turnover and reduce wrinkles (use at night).</li>
+      <li><strong>Niacinamide:</strong> Reduces inflammation and improves skin barrier function.</li>
+    </ul>
+    <p>Remember, consistency is key. Listen to your skin and adjust your routine as needed. For personalized advice, book a skin consultation with our estheticians.</p>
     `,
+    // New property for the skincare products image
+    skincareProductsImage: SkincareProducts,
   },
   {
     id: "4",
@@ -131,19 +132,19 @@ const articles = [
     excerpt:
       "Prenatal massage offers numerous benefits for expectant mothers, helping to alleviate discomforts associated with pregnancy.",
     content: `
-      <p>Pregnancy brings wonderful changes, but also its share of aches and pains. Prenatal massage is a therapeutic bodywork technique specifically designed to address the unique needs of expectant mothers. It’s a safe and effective way to relieve many of the common discomforts during pregnancy.</p>
-      <h2>Why Prenatal Massage?</h2>
-      <p>Our certified therapists use special cushioning systems or side-lying positions to ensure comfort and safety for both mother and baby. The focus is on relaxation, reducing stress, and targeting specific areas of discomfort.</p>
-      <h2>Key Benefits:</h2>
-      <ul>
-        <li><strong>Reduces Back and Joint Pain:</strong> Alleviates pain in the lower back, pelvis, and hips often caused by the shifting center of gravity.</li>
-        <li><strong>Improves Circulation:</strong> Helps reduce swelling (edema) in the hands, feet, and ankles by increasing blood and lymph circulation.</li>
-        <li><strong>Reduces Muscle Tension:</strong> Relaxes tense muscles, particularly in the neck, shoulders, and back.</li>
-        <li><strong>Lessens Headaches:</strong> Can help relieve tension headaches.</li>
-        <li><strong>Improves Sleep:</strong> Promotes relaxation, leading to better sleep quality.</li>
-        <li><strong>Reduces Stress and Anxiety:</strong> Provides a calming and nurturing experience during a period of significant change.</li>
-      </ul>
-      <p>Always consult with your healthcare provider before booking a prenatal massage, especially if you have any high-risk conditions.</p>
+    <p>Pregnancy brings wonderful changes, but also its share of aches and pains. Prenatal massage is a therapeutic bodywork technique specifically designed to address the unique needs of expectant mothers. It’s a safe and effective way to relieve many of the common discomforts during pregnancy.</p>
+    <h2>Why Prenatal Massage?</h2>
+    <p>Our certified therapists use special cushioning systems or side-lying positions to ensure comfort and safety for both mother and baby. The focus is on relaxation, reducing stress, and targeting specific areas of discomfort.</p>
+    <h2>Key Benefits:</h2>
+    <ul>
+      <li><strong>Reduces Back and Joint Pain:</strong> Alleviates pain in the lower back, pelvis, and hips often caused by the shifting center of gravity.</li>
+      <li><strong>Improves Circulation:</strong> Helps reduce swelling (edema) in the hands, feet, and ankles by increasing blood and lymph circulation.</li>
+      <li><strong>Reduces Muscle Tension:</strong> Relaxes tense muscles, particularly in the neck, shoulders, and back.</li>
+      <li><strong>Lessens Headaches:</strong> Can help relieve tension headaches.</li>
+      <li><strong>Improves Sleep:</strong> Promotes relaxation, leading to better sleep quality.</li>
+      <li><strong>Reduces Stress and Anxiety:</strong> Provides a calming and nurturing experience during a period of significant change.</li>
+    </ul>
+    <p>Always consult with your healthcare provider before booking a prenatal massage, especially if you have any high-risk conditions.</p>
     `,
   },
 ];

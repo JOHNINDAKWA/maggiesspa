@@ -6,8 +6,7 @@ import './ArticleDetailPage.css'; // We'll create this CSS file
 const ArticleDetailPage = () => {
   const { articleId } = useParams(); // Get the ID from the URL
 
-  // Optional: Scroll to top when component mounts/article changes
-  // MOVED THIS USEEFFECT TO THE TOP, BEFORE THE EARLY RETURN
+  // Scroll to top when component mounts/article changes
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [articleId]);
@@ -36,6 +35,30 @@ const ArticleDetailPage = () => {
         className="article-detail-content"
         dangerouslySetInnerHTML={{ __html: article.content }} // Render HTML content
       />
+
+      {/* Conditionally render the specific images for each article */}
+      {article.decorImage && (
+        <img
+          src={article.decorImage}
+          alt="Interior view of Maggie's Spa Nanyuki branch"
+          style={{ maxWidth: '100%', height: 'auto', margin: '20px 0', borderRadius: '8px' }}
+        />
+      )}
+      {article.massageBenefitsImage && (
+        <img
+          src={article.massageBenefitsImage}
+          alt="Benefits of massage"
+          style={{ maxWidth: '100%', height: 'auto', margin: '20px 0', borderRadius: '8px' }}
+        />
+      )}
+      {article.skincareProductsImage && (
+        <img
+          src={article.skincareProductsImage}
+          alt="Skincare products"
+          style={{ maxWidth: '100%', height: 'auto', margin: '20px 0', borderRadius: '8px' }}
+        />
+      )}
+
       <Link to="/articles" className="back-to-articles-bottom">Back to all articles</Link>
     </div>
   );

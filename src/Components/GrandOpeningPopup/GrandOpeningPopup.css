@@ -1,39 +1,37 @@
-/* Popup Overlay */
+:root {
+    --primary-color: #008080;
+    --secondary-color: #01a1a1;
+}
+
 .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999; /* Ensure it's on top of everything */
-    padding: 20px; /* Padding for smaller screens */
-
-    /* Animation */
+    z-index: 9999;
+    padding: 20px;
     animation: fadeIn 0.3s ease-out forwards;
 }
 
-/* Popup Content Container */
 .popup-content {
     position: relative;
     background-color: #fff;
-    border-radius: 20px; /* More rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-    max-width: 600px; /* Max width for general screens */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
     width: 100%;
-    overflow: hidden; /* Ensures rounded corners cut off image/header */
+    overflow: hidden;
     text-align: center;
     display: flex;
     flex-direction: column;
-
-    /* Animation */
     animation: scaleUp 0.3s ease-out forwards;
 }
 
-/* Close Button */
 .popup-close-btn {
     position: absolute;
     top: 15px;
@@ -51,7 +49,7 @@
     color: #555;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    z-index: 10; /* Ensure it's above other content */
+    z-index: 10;
 }
 
 .popup-close-btn:hover {
@@ -60,23 +58,20 @@
     transform: scale(1.05);
 }
 
-/* Header Section (Logo & Phone) */
 .popup-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 15px 25px;
-    background: linear-gradient(to right, #01a1a1, #008080); /* Teal gradient */
+    background: linear-gradient(to right, #01a1a1, #008080);
     color: #fff;
 }
 
 .popup-logo {
-    width: 100px; /* Adjust size */
+    width: 100px;
     height: 100px;
-    /* border-radius: 50%; */
     object-fit: cover;
-    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .popup-phone {
@@ -86,17 +81,16 @@
     letter-spacing: 0.5px;
 }
 
-/* Main Body Content */
 .popup-body {
-    padding: 25px 25px 30px 25px;
+    padding: 5px 25px 30px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .popup-title {
-    font-size: 2.2em; /* Adjust for impact */
-    font-weight: 800; /* Extra bold */
+    font-size: 2.2em;
+    font-weight: 800;
     color: #333;
     line-height: 1.1;
     margin-bottom: 8px;
@@ -104,24 +98,19 @@
 
 .popup-subtitle {
     font-size: 1.25em;
-    font-weight: 700; /* Increased font-weight for better gradient visibility */
-    letter-spacing: 0.5px; /* Slightly more letter spacing can enhance gradient on text */
-
-    /* ----- NEW GRADIENT TEXT STYLING ----- */
-    background-image: linear-gradient(to right, #005f5f, #01a1a1); /* Darker teal to your secondary teal */
-    -webkit-background-clip: text; /* Clip background to text shape (for WebKit browsers) */
-    background-clip: text; /* Standard property */
-    -webkit-text-fill-color: transparent; /* Make text transparent so gradient shows through (for WebKit browsers) */
-    color: transparent; /* Fallback for other browsers, though -webkit-text-fill-color usually handles it */
-    /* ------------------------------------- */
-
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background-image: linear-gradient(to right, #005f5f, #01a1a1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
     margin-bottom: 35px;
     position: relative;
     padding-bottom: 20px;
     display: block;
 }
 
-/* Keep the decorative line as it was, it complements the text beautifully */
 .popup-subtitle::after {
     content: '';
     position: absolute;
@@ -130,51 +119,49 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: var(--secondary-color); /* Line color can match the gradient or be distinct */
+    background-color: var(--secondary-color);
     border-radius: 2px;
 }
-/* Image Section */
+
 .popup-image-container {
     position: relative;
     width: 100%;
-    height: 320px; /* Fixed height for image container */
+    height: 280px;
     overflow: hidden;
     border-radius: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .popup-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image covers container without distortion */
-    object-position: center; /* Centers the image */
+    object-fit: cover;
+    object-position: center;
 }
 
 .popup-image-overlay {
     position: absolute;
-    inset: 0; /* Shorthand for top, right, bottom, left: 0 */
+    inset: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
 }
 
-
 .popup-countdown-heading {
-    font-size: 1.35em; /* Slightly larger */
+    font-size: 1.35em;
     font-weight: 700;
-    color: var(--primary-color); /* Using primary color for heading */
-    margin-bottom: 20px; /* Adjusted margin */
+    color: var(--primary-color);
+    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-/* Countdown Display */
 .popup-countdown {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    gap: 15px; /* Spacing between countdown items */
-    background-color: #e0f2f2; /* Light teal background */
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: #e0f2f2;
     border-radius: 12px;
     padding: 15px 20px;
     margin-bottom: 25px;
@@ -182,29 +169,29 @@
 }
 
 .countdown-item {
-    font-size: 1.8em; /* Large numbers */
+    font-size: 1.8em;
     font-weight: 700;
-    color: #006666; /* Darker teal for numbers */
+    color: #006666;
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1; /* Keep text compact */
+    line-height: 1;
 }
 
 .countdown-item small {
-    font-size: 0.4em; /* Smaller unit labels */
+    font-size: 0.4em;
     font-weight: 500;
     color: #666;
-    margin-top: 5px; /* Space between number and label */
+    margin-top: 5px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .countdown-message {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 700;
     color: #006666;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .popup-description {
@@ -214,12 +201,11 @@
     margin-bottom: 30px;
 }
 
-/* Learn More Button */
 .popup-learn-more-btn {
-    background: linear-gradient(to right, #01a1a1, #008080); /* Teal gradient */
+    background: linear-gradient(to right, #01a1a1, #008080);
     color: #fff;
     border: none;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     padding: 12px 35px;
     font-size: 1.1em;
     font-weight: 600;
@@ -230,18 +216,83 @@
 }
 
 .popup-learn-more-btn:hover {
-    background: linear-gradient(to right, #008080, #01a1a1); /* Reverse gradient on hover */
-    transform: translateY(-3px); /* Subtle lift effect */
+    background: linear-gradient(to right, #008080, #01a1a1);
+    transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Media Queries for Popup Content --- */
+@media (min-width: 768px) and (max-width: 1600px) {
+    .popup-content {
+        max-width: 500px;
+    }
 
-/* For screens smaller than 768px (common tablet portrait and mobile landscape) */
+    .popup-header {
+        padding: 10px 20px;
+    }
+
+    .popup-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .popup-phone {
+        margin-top: 1.5rem;
+        font-size: 0.9em;
+    }
+
+    .popup-body {
+        padding: 20px;
+    }
+
+    .popup-title {
+        font-size: 1.6em;
+    }
+
+    .popup-subtitle {
+        font-size: 1em;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .popup-subtitle::after {
+        width: 50px;
+        height: 2px;
+    }
+
+    .popup-image-container {
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .popup-countdown-heading {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    .popup-countdown {
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    .countdown-item {
+        font-size: 1.5em;
+    }
+
+    .popup-description {
+        font-size: 0.95em;
+        margin-bottom: 20px;
+    }
+
+    .popup-learn-more-btn {
+        padding: 9px 25px;
+        font-size: 0.95em;
+    }
+}
+
 @media (max-width: 767px) {
     .popup-content {
-        max-width: 95%; /* Increased width */
-        margin: 0 10px; /* Adjusted margin to ensure it fits */
+        max-width: 95%;
+        margin: 0 10px;
     }
 
     .popup-close-btn {
@@ -253,62 +304,62 @@
     }
 
     .popup-header {
-        flex-direction: column; /* Stack logo and phone vertically */
+        flex-direction: column;
         padding: 15px 20px;
     }
 
     .popup-logo {
-        width: 80px; /* Adjust logo size for smaller screens */
+        width: 80px;
         height: 80px;
-        margin-bottom: 10px; /* Space between logo and phone */
+        margin-bottom: 10px;
     }
 
     .popup-phone {
-        margin-top: 0; /* Remove top margin when stacked */
+        margin-top: 0;
         font-size: 0.9em;
     }
 
     .popup-body {
-        padding: 20px 20px 25px 20px; /* Adjust padding */
+        padding: 20px 20px 25px 20px;
     }
 
     .popup-title {
-        font-size: 1.8em; /* Smaller title for mobile */
+        font-size: 1.8em;
         margin-bottom: 5px;
     }
 
     .popup-subtitle {
-        font-size: 1.1em; /* Smaller subtitle */
+        font-size: 1.1em;
         margin-bottom: 25px;
         padding-bottom: 15px;
     }
 
     .popup-subtitle::after {
-        width: 50px; /* Adjust line width */
-        height: 2px; /* Adjust line thickness */
+        width: 50px;
+        height: 2px;
     }
 
     .popup-image-container {
-        height: 180px; /* Slightly reduce image height */
+        height: 180px;
         margin-bottom: 20px;
     }
 
     .popup-countdown-heading {
-        font-size: 1.2em; /* Smaller heading */
+        font-size: 1.2em;
         margin-bottom: 15px;
     }
 
     .popup-countdown {
         padding: 10px 15px;
-        gap: 10px; /* Reduce gap between countdown items */
+        gap: 10px;
     }
 
     .countdown-item {
-        font-size: 1.5em; /* Smaller numbers */
+        font-size: 1.5em;
     }
 
     .countdown-item small {
-        font-size: 0.35em; /* Smaller unit labels */
+        font-size: 0.35em;
     }
 
     .countdown-message {
@@ -320,23 +371,22 @@
     }
 
     .popup-learn-more-btn {
-        padding: 10px 30px; /* Adjust button padding */
+        padding: 10px 30px;
         font-size: 1em;
     }
 }
 
-/* For even smaller screens, typically mobile portrait */
 @media (max-width: 480px) {
     .popup-content {
-        max-width: 98%; /* Increased width for very small screens */
-        border-radius: 15px; /* Slightly less rounded corners */
+        max-width: 98%;
+        border-radius: 15px;
     }
 
     .popup-title {
         font-size: 1.6em;
     }
 
-    .popup-overlay{
+    .popup-overlay {
         padding: 5px;
     }
 
@@ -347,7 +397,7 @@
     }
 
     .popup-image-container {
-        height: 150px; /* Further reduce image height */
+        height: 150px;
         border-radius: 10px;
     }
 
@@ -356,8 +406,8 @@
     }
 
     .popup-countdown {
-        flex-direction: row; /* Keep items in a row if possible, but allow wrap */
-        justify-content: space-around; /* Distribute items more evenly */
+        flex-direction: row;
+        justify-content: space-around;
         padding: 10px;
     }
 
@@ -369,35 +419,32 @@
         font-size: 0.3em;
     }
 
-
-
     .popup-learn-more-btn {
         padding: 9px 25px;
         font-size: 0.95em;
     }
 }
 
-/* Landscape orientation for mobile devices */
 @media (max-height: 450px) and (max-width: 900px) and (orientation: landscape) {
     .popup-content {
-        max-width: 95%; /* Increased width for landscape */
-        max-height: 90vh; /* Limit height to viewport height */
-        overflow-y: auto; /* Enable scrolling if content overflows */
-        flex-direction: row; /* Arrange content side-by-side or more horizontally */
-        flex-wrap: wrap; /* Allow wrapping if items don't fit */
-        align-items: flex-start; /* Align items to the top when wrapping */
+        max-width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
     }
 
     .popup-header,
     .popup-body {
-        flex: 1 1 48%; /* Adjust flex basis to utilize more width */
-        min-width: 280px; /* Ensure a minimum width for readability */
+        flex: 1 1 48%;
+        min-width: 280px;
     }
 
     .popup-image-container {
-        height: 120px; /* Adjust image height for landscape */
-        margin-top: 15px; /* Add some top margin */
-        flex: 1 1 100%; /* Make image take full width within its flex container */
+        height: 120px;
+        margin-top: 15px;
+        flex: 1 1 100%;
     }
 
     .popup-phone {

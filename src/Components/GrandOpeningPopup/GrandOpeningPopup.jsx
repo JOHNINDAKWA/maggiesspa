@@ -104,7 +104,7 @@ const GrandOpeningPopup = ({ isOpen, onClose }) => { // onClose prop is importan
     const popupTitle = isOpened ? "Now Open!" : "Grand Opening!";
     const popupSubtitle = isOpened ? "Your new tranquil oasis in Nanyuki is ready!" : "New Branch at Shop 14 restaurant, Nanyuki!";
     const countdownHeading = isOpened ? "Visit Us Today!" : "Opening This Monday!";
-    const learnMoreText = isOpened ? "Explore Services" : "Learn More";
+    const learnMoreText = isOpened ? "Learn More" : "Learn More";
     const descriptionText = isOpened
         ? "We are thrilled to welcome you to our new branch in Nanyuki! Experience tranquility and expert care for your pregnancy and postpartum journey. Book your session now!"
         : "Experience tranquility and expert care for your pregnancy and postpartum journey in Nanyuki. Get ready for our grand opening!";
