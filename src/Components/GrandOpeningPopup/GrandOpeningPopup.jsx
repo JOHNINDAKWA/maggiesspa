@@ -105,9 +105,9 @@ const GrandOpeningPopup = ({ isOpen, onClose }) => { // onClose prop is importan
     const popupSubtitle = isOpened ? "Your new tranquil oasis in Nanyuki is ready!" : "New Branch at Shop 14 restaurant, Nanyuki!";
     const countdownHeading = isOpened ? "Visit Us Today!" : "Opening This Monday!";
     const learnMoreText = isOpened ? "Learn More" : "Learn More";
-    const descriptionText = isOpened
-        ? "We are thrilled to welcome you to our new branch in Nanyuki! Experience tranquility and expert care for your pregnancy and postpartum journey. Book your session now!"
-        : "Experience tranquility and expert care for your pregnancy and postpartum journey in Nanyuki. Get ready for our grand opening!";
+    // const descriptionText = isOpened
+    //     ? "We are thrilled to welcome you to our new branch in Nanyuki! Experience tranquility and expert care for your pregnancy and postpartum journey. Book your session now!"
+    //     : "Experience tranquility and expert care for your pregnancy and postpartum journey in Nanyuki. Get ready for our grand opening!";
 
     return (
         <div className="popup-overlay">
@@ -137,9 +137,9 @@ const GrandOpeningPopup = ({ isOpen, onClose }) => { // onClose prop is importan
                         <div className="popup-image-overlay"></div>
                     </div>
 
-                    <h3 className="popup-countdown-heading">
+                    <span className="popup-countdown-heading">
                         {countdownHeading}
-                    </h3>
+                    </span>
 
                     {/* Countdown or Open Message */}
                     <div className="popup-countdown">
@@ -149,10 +149,10 @@ const GrandOpeningPopup = ({ isOpen, onClose }) => { // onClose prop is importan
                             timerComponents.length ? timerComponents : <span className="countdown-message">Loading countdown...</span>
                         )}
                     </div>
-
+{/* 
                     <p className="popup-description">
                         {descriptionText}
-                    </p>
+                    </p> */}
 
                     {/*
                         THE CHANGE IS HERE: Add an onClick handler to the Link component
