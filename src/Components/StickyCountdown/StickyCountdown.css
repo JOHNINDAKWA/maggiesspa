@@ -1,7 +1,4 @@
-/*
- * Sticky Countdown Container
- * This is the main button that will pulse and expand on hover.
- */
+/* === Sticky Countdown Container === */
 .sticky-countdown-container {
     position: fixed;
     left: 0;
@@ -14,110 +11,119 @@
     border-radius: 0 50px 50px 0;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: width 0.3s ease, padding 0.3s ease, transform 0.3s ease, background 0.3s ease;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 60px;
-    min-width: 60px;
-    animation: pulse 2s infinite ease-in-out;
-}
-
-/* * Hover state
- * On hover, the button expands and the background gradient reverses.
- */
-.sticky-countdown-container:hover {
     width: auto;
-    padding: 10px 25px;
-    transform: translateY(-50%) scale(1.03);
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(to right, #01a1a1, #008080);
-    animation: none;
+    max-width: 90vw;
+    animation: pulse 2s infinite ease-in-out;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
+/* === Trigger Content === */
 .sticky-countdown-trigger {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 0;
     width: 100%;
 }
 
+/* === Message Text === */
 .sticky-countdown-text {
     font-weight: 600;
-    font-size: 0.9em;
-    opacity: 0;
-    visibility: hidden;
-    max-width: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease, max-width 0.3s ease;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    color: #fff;
 }
 
-.sticky-countdown-container:hover .sticky-countdown-text {
-    opacity: 1;
-    visibility: visible;
-    max-width: 200px;
-}
-
+/* === Countdown Timer === */
 .sticky-countdown-timer {
-    font-size: 0.8em;
+    font-size: 0.8rem;
     font-weight: 500;
-    opacity: 0;
-    visibility: hidden;
-    max-width: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease, max-width 0.3s ease;
     display: flex;
     align-items: center;
     gap: 5px;
+    white-space: nowrap;
+    color: #fff;
 }
 
-.sticky-countdown-container:hover .sticky-countdown-timer {
-    opacity: 1;
-    visibility: visible;
-    max-width: 150px;
+/* === Hover Effects for Desktop Only === */
+@media (hover: hover) and (pointer: fine) {
+    .sticky-countdown-container {
+        width: 60px;
+        overflow: hidden;
+        padding: 10px 15px;
+    }
+
+    .sticky-countdown-container:hover {
+        width: auto;
+        padding: 10px 25px;
+        transform: translateY(-50%) scale(1.03);
+        background: linear-gradient(to right, #01a1a1, #008080);
+        animation: none;
+    }
+
+    .sticky-countdown-text,
+    .sticky-countdown-timer {
+        opacity: 0;
+        visibility: hidden;
+        max-width: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .sticky-countdown-container:hover .sticky-countdown-text,
+    .sticky-countdown-container:hover .sticky-countdown-timer {
+        opacity: 1;
+        visibility: visible;
+        max-width: 300px;
+    }
 }
 
-/* Animations */
+/* === Pulse Animation === */
 @keyframes pulse {
-    0% {
-        transform: translateY(-50%) scale(1);
-    }
-    50% {
-        transform: translateY(-50%) scale(1.05);
-    }
-    100% {
-        transform: translateY(-50%) scale(1);
-    }
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.05); }
+    100% { transform: translateY(-50%) scale(1); }
 }
 
-/* Media Queries for Sticky Countdown */
+/* === Responsive for Tablets and Small Screens === */
 @media (max-width: 767px) {
     .sticky-countdown-container {
+        font-size: 0.85rem;
         padding: 8px 12px;
-        min-width: 50px;
-        font-size: 0.8em;
+        border-radius: 0 40px 40px 0;
     }
 
     .sticky-countdown-trigger svg {
         font-size: 18px;
     }
+
+    .sticky-countdown-text,
+    .sticky-countdown-timer {
+        font-size: 0.8rem;
+    }
 }
+
+/* === Responsive for Mobile Phones === */
 @media (max-width: 480px) {
     .sticky-countdown-container {
         top: auto;
         bottom: 20px;
-        transform: translateX(-10px);
-        border-radius: 0 10px 10px 0;
+        left: 0;
+        transform: translateX(0);
+        border-radius: 0 12px 12px 0;
         padding: 6px 10px;
-        min-width: 45px;
-        font-size: 0.7em;
+        font-size: 0.75rem;
+        animation: none;
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
     }
 
-    .sticky-countdown-container:hover {
-        transform: translateX(0);
-    }
-    
     .sticky-countdown-trigger {
-        gap: 8px;
+        gap: 6px;
+    }
+
+    .sticky-countdown-text,
+    .sticky-countdown-timer {
+        font-size: 0.75rem;
     }
 }
