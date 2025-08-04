@@ -175,11 +175,11 @@ const Footer = () => {
               © {new Date().getFullYear()} Maggie's Spa. Designed and developed
               by{" "}
               <a
-                href="https://owidigitalmedia.vercel.app/"
+                href="https://fastechinternet.co.ke/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Owimedia
+                Fastech Solutions
               </a>
               .
             </p>
