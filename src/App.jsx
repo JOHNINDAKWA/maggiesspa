@@ -16,13 +16,16 @@ import UsersPage from "./Pages/UsersPage/UsersPage";
 import Pricing from "./Pages/Pricing/Pricing";
 import ArticlesPage from "./Pages/Articles/ArticlesPage";
 import ArticleDetailPage from "./Pages/Articles/ArticleDetailPage";
+import BackendLayout from "./Components/BackendLayout/BackendLayout";
+import Inquiries from "./Pages/Inquiries/Inquiries";
+import GoogleReviews from "./Pages/GoogleReviews/GoogleReviews";
 
-// NEW: Import Articles components
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />, // Layout wraps all pages
+    element: <Layout />, // This is your public-facing layout
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
@@ -32,18 +35,27 @@ const router = createBrowserRouter([
       { path: "services/postpartum", element: <Postpartum /> },
       { path: "contact", element: <Contact /> },
       { path: "book", element: <BookingPage /> },
+      { path: "articles", element: <ArticlesPage /> },
+      { path: "articles/:articleId", element: <ArticleDetailPage /> },
+      // The login page is a standalone page without any layout
       { path: "login", element: <LoginPage /> },
+    ],
+  },
+  {
+    path: "/dashboard", // New parent route for all backend pages
+    element: <ProtectedRoute component={<BackendLayout />} />,
+    children: [
+      { index: true, element: <Appointments /> }, // Appointments as the default dashboard page
       { path: "users", element: <UsersPage /> },
       { path: "pricing", element: <Pricing /> },
+      { path: "inquiries", element: <Inquiries /> },
+      { path: "reviews", element: <GoogleReviews /> },
       { path: "reports", element: <div>Reports Page Coming Soon</div> },
       { path: "settings", element: <div>Settings Page Coming Soon</div> },
       { path: "profile", element: <div>Profile Page Coming Soon</div> },
-      { path: "appointments", element: <ProtectedRoute component={<Appointments />} /> },
-      { path: "appointments/:id", element: <ProtectedRoute component={<AppointmentDetails />} /> },
-
-      // NEW: Articles Routes
-      { path: "articles", element: <ArticlesPage /> },
-      { path: "articles/:articleId", element: <ArticleDetailPage /> }, // Dynamic route for individual articles
+      { path: "backend-services", element: <div>Profile Page Coming Soon</div> },
+      { path: "appointments", element: <Appointments /> },
+      { path: "appointments/:id", element: <AppointmentDetails /> },
     ],
   },
 ]);

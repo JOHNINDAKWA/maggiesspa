@@ -41,7 +41,7 @@
   }
   
   /* Content Container */
-  .content {
+  .contents {
     text-align: center;
     color: white;
     z-index: 2;
@@ -52,7 +52,7 @@
   }
   
   /* Header Animation */
-  .header {
+  .headers {
     font-size: 40px;
     margin-bottom: 10px;
     opacity: 0;
@@ -62,7 +62,7 @@
   }
   
   /* Description Animation */
-  .description {
+  .descriptions {
     font-size: 20px;
     margin-bottom: 20px;
     opacity: 0;
@@ -227,16 +227,16 @@
     height: 80vh;
   }
 
-  .content {
+  .contents {
     max-width: 500px;
     padding: 15px;
   }
 
-  .header {
+  .headers {
     font-size: 35px;
   }
 
-  .description {
+  .descriptions {
     font-size: 18px;
   }
 
@@ -257,13 +257,13 @@
     height: 75vh;
   }
 
-  .content {
+  .contents {
     max-width: 100%;
     padding: 10px;
     margin-top: 3rem;
   }
 
-  .header {
+  .headers {
     font-size: 36px;
   }
 
@@ -298,17 +298,17 @@
     padding-top: 20%;
   }
 
-  .content {
+  .contents {
     max-width: 100%;
     text-align: center;
     padding: 8px;
   }
 
-  .header {
+  .headers {
     font-size: 32px;
   }
 
-  .description {
+  .descriptions {
     font-size: 18px;
   }
 

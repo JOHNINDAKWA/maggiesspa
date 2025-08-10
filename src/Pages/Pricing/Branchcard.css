@@ -1,0 +1,363 @@
+/* =========================
+   Branch Cards — modernized (scoped)
+   ========================= */
+
+/* Grid: wrap nicely, equal height cards */
+.pricing-page-container .branch-cards-grid {
+  display: flex;
+  flex-wrap: wrap;              /* allow wrapping */
+  gap: 22px 22px;               /* row x column gap */
+  align-items: stretch;         /* equal heights across the row */
+  align-content: flex-start;
+}
+
+/* Card: flexible width with a comfy min/max */
+.pricing-page-container .branch-card {
+  flex: 1 1 340px;              /* grows, shrinks, base width */
+  max-width: 520px;             /* prevents over-stretch on huge screens */
+  background-color: #fff;
+  border: 1px solid rgba(1, 161, 161, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(1,161,161,0.08);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+  overflow: hidden;             /* for the accent bar */
+}
+
+/* subtle accent bar on top */
+.pricing-page-container .branch-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, #01a1a1, #22d3ee 60%, #01a1a1);
+  opacity: .22;
+}
+
+/* hover/focus polish */
+.pricing-page-container .branch-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(1,161,161,0.24);
+  box-shadow: 0 18px 48px rgba(1,161,161,0.14);
+}
+.pricing-page-container .branch-card:focus-within {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(1,161,161,0.18);
+}
+
+/* =========================
+   Card header & actions
+   ========================= */
+.pricing-page-container .branch-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px dashed rgba(1,161,161,0.22);
+}
+
+.pricing-page-container .branch-card-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #017a7a;
+  margin: 0;
+  letter-spacing: .2px;
+}
+
+/* Actions: icon chips (round) */
+.pricing-page-container .branch-card-actions {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pricing-page-container .branch-card-actions .action-btn {
+  background: #fff;
+  border: 1px solid rgba(2,20,20,0.06);
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  color: #6b7280;
+  transition: transform .08s ease, box-shadow .15s ease, border-color .2s ease, color .15s ease, background .15s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
+}
+.pricing-page-container .branch-card-actions .action-btn:hover {
+  color: #fff;
+  background-color: #01a1a1;
+  border-color: #01a1a1;
+  box-shadow: 0 8px 20px rgba(1,161,161,.2);
+  transform: translateY(-1px);
+}
+
+.action-btn-add-service{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background-color: #01a1a1;
+    color: #fff;
+    border: 1px solid #01a1a1;
+    border-radius: 16px;
+}
+
+/* Base “danger” style (not just on hover) */
+.pricing-page-container .action-btn-danger {
+  color: #b42318;
+  background: #fff7f7;
+  border-color: rgba(220,53,69,.28);
+}
+.pricing-page-container .action-btn-danger:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(220,53,69,.22);
+}
+
+/* Icon sizing */
+.pricing-page-container .branch-card-actions .action-btn svg,
+.pricing-page-container .action-btn-sm svg {
+  width: 12px;
+  height: 12px;
+}
+.pricing-page-container .action-btn-sm svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Accessible focus for all small/round buttons */
+.pricing-page-container .branch-card-actions .action-btn:focus-visible,
+.pricing-page-container .action-btn-sm:focus-visible {
+  outline: 3px solid rgba(1,161,161,.28);
+  outline-offset: 2px;
+}
+
+/* =========================
+   Services & categories
+   ========================= */
+
+.pricing-page-container .service-category-section {
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f0f6f6;
+}
+.pricing-page-container .service-category-section:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.pricing-page-container .service-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.pricing-page-container .service-category-title {
+  font-size: 1.02rem;
+  font-weight: 900;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Cluster for “Add Service” + “Delete Category” */
+.pricing-page-container .service-category-header .branch-card-actions {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* small “Add Service” pill button */
+.pricing-page-container .action-btn-sm {
+  font-size: .9rem;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: #fff;
+  background: #01a1a1;
+  border: 1px solid #01a1a1;
+  box-shadow: 0 4px 10px rgba(1,161,161,.16);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: filter .15s ease, transform .08s ease, box-shadow .15s ease;
+}
+.pricing-page-container .action-btn-sm:hover { filter: saturate(1.05); }
+.pricing-page-container .action-btn-sm:active { transform: translateY(1px); }
+
+/* If combined with danger, keep the “danger” look */
+.pricing-page-container .action-btn-sm.action-btn-danger {
+  color: #b42318;
+  background: #fff7f7;
+  border-color: rgba(220,53,69,.28);
+}
+.pricing-page-container .action-btn-sm.action-btn-danger:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+/* Optional: show a service-count badge if you set data-count in JSX */
+.pricing-page-container .service-category-title[data-count]:after {
+  content: attr(data-count);
+  margin-left: 8px;
+  font-size: .72rem;
+  font-weight: 900;
+  color: #017a7a;
+  background: #f0fafa;
+  border: 1px solid rgba(1,161,161,.18);
+  padding: 2px 8px;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+/* =========================
+   Subgroup card + header row
+   ========================= */
+.pricing-page-container .service-subgroup-card {
+  background: #fff;
+  border: 1px solid rgba(1,161,161,.14);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 18px rgba(1,161,161,.06);
+}
+
+/* Title row extracted from inline styles */
+.pricing-page-container .service-subgroup-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(1,161,161,.22);
+}
+
+.pricing-page-container .service-subgroup-title {
+  margin: 0;
+  font-size: .98rem;
+  font-weight: 900;
+  color: #374151;
+}
+
+/* The delete-subgroup button looks like a round icon */
+.pricing-page-container .service-subgroup-title-row .action-btn-sm {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+}
+
+/* =========================
+   Service list rows
+   ========================= */
+
+.pricing-page-container .service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Row layout: description | price | actions */
+.pricing-page-container .service-itemm {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f2f6f6;
+}
+.pricing-page-container .service-itemm:last-child { border-bottom: none; }
+
+/* Truncate long text gracefully */
+.pricing-page-container .service-description {
+  color: #1f2937;
+  font-size: .95rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Price pill */
+.pricing-page-container .service-price {
+  font-weight: 900;
+  font-size: .95rem;
+  color: #017a7a;
+  white-space: nowrap;
+  background: #f0fafa;
+  border: 1px solid rgba(1,161,161,.18);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* tiny icon buttons next to price */
+.pricing-page-container .service-item-actions {
+  display: inline-flex;
+  gap: 6px;
+}
+.pricing-page-container .service-item-actions .action-btn-sm {
+  background: #fff;
+  color: #6b7280;
+  border: 1px solid rgba(0,0,0,.06);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
+}
+.pricing-page-container .service-item-actions .action-btn-sm:hover {
+  background: #01a1a1;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(1,161,161,.18);
+}
+.pricing-page-container .service-item-actions .action-btn-sm.action-btn-danger:hover {
+  background: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+/* Empty helpers */
+.pricing-page-container .subgroup-empty-state,
+.pricing-page-container .service-empty-state {
+  font-size: .9rem;
+  color: #9aa3ad;
+  font-style: italic;
+  margin-left: 8px;
+  margin-top: 6px;
+}
+
+/* Empty-state item *inside* UL */
+.pricing-page-container .service-list .service-empty-state {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+/* Small utility used in JSX */
+.pricing-page-container .mt-4 { margin-top: 1rem; }
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 720px) {
+  /* stack price below description on small screens */
+  .pricing-page-container .service-itemm {
+    grid-template-columns: 1fr auto;
+    grid-auto-rows: min-content;
+  }
+  .pricing-page-container .service-price { justify-self: end; }
+
+  /* tighten card spacing */
+  .pricing-page-container .branch-cards-grid { gap: 16px; }
+  .pricing-page-container .branch-card { padding: 16px; }
+}

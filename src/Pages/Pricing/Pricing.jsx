@@ -218,34 +218,91 @@ const Pricing = () => {
     setIsConfirmDeleteModalOpen(false); // Close modal after deletion
   };
 
+
+  // Delete an entire CATEGORY (e.g., "Prenatal")
+const handleDeleteCategory = async (branchId, categoryHeading) => {
+  const updatedBranches = branches.map(branch => {
+    if (branch.id === branchId) {
+      return {
+        ...branch,
+        serviceCategories: branch.serviceCategories.filter(cat => cat.heading !== categoryHeading),
+      };
+    }
+    return branch;
+  });
+
+  await updateJsonBin(updatedBranches);
+  setIsConfirmDeleteModalOpen(false);
+};
+
+// Delete a whole SUBGROUP (e.g., "Massages" under "Prenatal")
+const handleDeleteSubgroup = async (branchId, categoryHeading, subgroupTitle) => {
+  const updatedBranches = branches.map(branch => {
+    if (branch.id === branchId) {
+      return {
+        ...branch,
+        serviceCategories: branch.serviceCategories.map(cat => {
+          if (cat.heading === categoryHeading) {
+            return {
+              ...cat,
+              subgroups: cat.subgroups.filter(sg => sg.title !== subgroupTitle),
+            };
+          }
+          return cat;
+        }),
+      };
+    }
+    return branch;
+  });
+
+  await updateJsonBin(updatedBranches);
+  setIsConfirmDeleteModalOpen(false);
+};
+
+
   // Confirmation modal handlers
   const openConfirmDeleteModal = (type, item) => {
     setItemToDelete(item);
     setIsConfirmDeleteModalOpen(true);
   };
 
-  const handleConfirmDelete = () => {
-    if (itemToDelete.type === 'branch') {
+const handleConfirmDelete = () => {
+  if (!itemToDelete) return;
+  switch (itemToDelete.type) {
+    case 'branch':
       handleDeleteBranch(itemToDelete.id);
-    } else if (itemToDelete.type === 'service') {
+      break;
+    case 'service':
       handleDeleteService(
         itemToDelete.branchId,
         itemToDelete.categoryHeading,
         itemToDelete.subgroupTitle,
         itemToDelete.serviceDescription
       );
-    }
-  };
+      break;
+    // NEW:
+    case 'category':
+      handleDeleteCategory(itemToDelete.branchId, itemToDelete.categoryHeading);
+      break;
+    // NEW:
+    case 'subgroup':
+      handleDeleteSubgroup(
+        itemToDelete.branchId,
+        itemToDelete.categoryHeading,
+        itemToDelete.subgroupTitle
+      );
+      break;
+    default:
+      setIsConfirmDeleteModalOpen(false);
+  }
+};
+
 
   return (
     <div className="pricing-page-container">
       
       <div className="top-bar-header">
        
-        <div className="breadcrumb">
-          <FaChevronLeft className="breadcrumb-icon" />
-          <a href="/appointments" className="breadcrumb-link">Back to Appointments</a>
-        </div>
 
        
         <h1 className="page-main-title">Pricing Management</h1>
@@ -290,24 +347,46 @@ const Pricing = () => {
         {/* Display Branches */}
         <div className="branch-cards-grid">
           {branches.map((branch) => (
-            <BranchCard
-              key={branch.id}
-              branch={branch}
-              onEditBranch={handleEditBranch}
-              onDeleteBranch={() => openConfirmDeleteModal('branch', { type: 'branch', id: branch.id, name: branch.name })}
-              onAddService={handleAddService}
-              onEditService={handleEditService}
-              onDeleteService={(categoryHeading, subgroupTitle, serviceDescription) =>
-                openConfirmDeleteModal('service', {
-                  type: 'service',
-                  branchId: branch.id,
-                  categoryHeading,
-                  subgroupTitle,
-                  serviceDescription,
-                  name: `${serviceDescription} from ${subgroupTitle}` 
-                })
-              }
-            />
+<BranchCard
+  key={branch.id}
+  branch={branch}
+  onEditBranch={handleEditBranch}
+  onDeleteBranch={() =>
+    openConfirmDeleteModal('branch', { type: 'branch', id: branch.id, name: branch.name })
+  }
+  onAddService={handleAddService}
+  onEditService={handleEditService}
+  onDeleteService={(categoryHeading, subgroupTitle, serviceDescription) =>
+    openConfirmDeleteModal('service', {
+      type: 'service',
+      branchId: branch.id,
+      categoryHeading,
+      subgroupTitle,
+      serviceDescription,
+      name: `${serviceDescription} from ${subgroupTitle}`,
+    })
+  }
+  // NEW: delete a CATEGORY
+  onDeleteCategory={(categoryHeading) =>
+    openConfirmDeleteModal('category', {
+      type: 'category',
+      branchId: branch.id,
+      categoryHeading,
+      name: categoryHeading,
+    })
+  }
+  // NEW: delete a SUBGROUP
+  onDeleteSubgroup={(categoryHeading, subgroupTitle) =>
+    openConfirmDeleteModal('subgroup', {
+      type: 'subgroup',
+      branchId: branch.id,
+      categoryHeading,
+      subgroupTitle,
+      name: `${subgroupTitle} (${categoryHeading})`,
+    })
+  }
+/>
+
           ))}
         </div>
       </main>

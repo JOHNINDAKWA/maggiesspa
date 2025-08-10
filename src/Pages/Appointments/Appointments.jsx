@@ -2,11 +2,63 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Appointments.css";
 import { Link } from "react-router-dom";
+import Select from "react-select";
+// If you already have a shared styles util, use this instead:
+// import { getCustomSelectStyles } from "@/utils/getCustomSelectStyles";
 
 const BIN_ID = "68139f1b8561e97a500b9e03";
 const MASTER_KEY =
   "$2a$10$v.Wz5cNjZbcvhC1nqnnYl.o9V6KJzJ7U7JnB.ZO4VwoYlh9TAvevm";
 const ITEMS_PER_PAGE = 25;
+
+const sortOptions = [
+  { value: "mostRecent", label: "Most Recent" },
+  { value: "upcoming", label: "Upcoming Appointments" },
+  { value: "oldest", label: "Oldest First" },
+];
+
+const statusOptions = [
+  { value: "", label: "All" },
+  { value: "Pending", label: "Pending" },
+  { value: "Confirmed", label: "Confirmed" },
+  { value: "Completed", label: "Completed" },
+  { value: "Cancelled", label: "Cancelled" },
+  { value: "No Show", label: "No Show" },
+];
+
+// Teal-forward react-select styles (replace with getCustomSelectStyles if you prefer)
+const selectStyles = {
+  control: (base, state) => ({
+    ...base,
+    minHeight: 38,
+    borderRadius: 10,
+    borderColor: state.isFocused ? "rgba(1,161,161,.55)" : "rgba(2,80,80,.10)",
+    boxShadow: state.isFocused ? "0 0 0 3px rgba(1,161,161,.18)" : "none",
+    ":hover": { borderColor: "rgba(1,161,161,.35)" },
+    background: "#fff",
+  }),
+  valueContainer: (b) => ({ ...b, padding: "2px 10px" }),
+  indicatorsContainer: (b) => ({ ...b, paddingRight: 6 }),
+  menu: (b) => ({
+    ...b,
+    borderRadius: 12,
+    overflow: "hidden",
+    boxShadow: "0 20px 40px rgba(2, 20, 20, .12)",
+  }),
+  option: (base, state) => ({
+    ...base,
+    padding: "8px 10px",
+    background: state.isSelected
+      ? "#01A1A1"
+      : state.isFocused
+      ? "#f0f7f7"
+      : "#fff",
+    color: state.isSelected ? "#fff" : "#1f2937",
+    cursor: "pointer",
+  }),
+  placeholder: (b) => ({ ...b, color: "#9aa3ad" }),
+  singleValue: (b) => ({ ...b, color: "#1f2937", fontWeight: 500, fontSize: 14 }),
+};
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -16,6 +68,7 @@ const Appointments = () => {
   const [selectedDate, setSelectedDate] = useState("");
   const [sortOption, setSortOption] = useState("mostRecent");
   const [selectedStatus, setSelectedStatus] = useState("");
+  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
   useEffect(() => {
     const fetchAppointments = async () => {
@@ -78,9 +131,7 @@ const Appointments = () => {
       ? new Date(appt.date).toISOString().split("T")[0] === selectedDate
       : true;
 
-    const matchesStatus = selectedStatus
-      ? appt.status === selectedStatus
-      : true;
+    const matchesStatus = selectedStatus ? appt.status === selectedStatus : true;
 
     return matchesSearch && matchesDate && matchesStatus;
   });
@@ -106,94 +157,134 @@ const Appointments = () => {
     return styles[status] || styles.Default;
   };
 
+  // Reusable filter controls (desktop sidebar + mobile dropdown)
+  const FilterControls = () => (
+    <div className="filters-content">
+      <div className="filter-group">
+        <label>Sort By</label>
+        <Select
+          inputId="sortBy"
+          options={sortOptions}
+          styles={selectStyles}
+          value={sortOptions.find((o) => o.value === sortOption)}
+          onChange={(opt) => {
+            setSortOption(opt?.value || "mostRecent");
+            setCurrentPage(1);
+          }}
+          isSearchable={false}
+        />
+      </div>
+
+      <div className="filter-group">
+        <label>Status</label>
+        <Select
+          inputId="status"
+          options={statusOptions}
+          styles={selectStyles}
+          value={statusOptions.find((o) => o.value === selectedStatus)}
+          onChange={(opt) => {
+            setSelectedStatus(opt?.value ?? "");
+            setCurrentPage(1);
+          }}
+          isClearable={false}
+        />
+      </div>
+
+      <div className="filter-group">
+        <label>Date</label>
+        <input
+          type="date"
+          value={selectedDate}
+          onChange={(e) => {
+            setSelectedDate(e.target.value);
+            setCurrentPage(1);
+          }}
+        />
+      </div>
+    </div>
+  );
+
   return (
     <div className="appointments-container">
-      {/* Search Bar */}
-      <div className="search-bar-with-user">
+      {/* Top row: Search + Mobile filter trigger (user dropdown removed) */}
+      <div className="appointments-header">
         <div className="search-bar">
           <input
             type="text"
-            placeholder="Search by name or service..."
+            placeholder="Search by name, service, or date…"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setCurrentPage(1);
+            }}
           />
         </div>
 
-        <div className="user-dropdown">
-          <span className="user-name">
-            {JSON.parse(localStorage.getItem("loggedInUser"))?.name || "Guest"}
-          </span>
-          <div className="dropdown-content">
-            <Link to="/profile">Profile</Link>
+        {/* Mobile-only: Filters & Sorting toggle */}
+        <div className="mobile-filters">
+          <button
+            className="mobile-filters-toggle"
+            onClick={() => setIsMobileFiltersOpen((v) => !v)}
+            aria-expanded={isMobileFiltersOpen}
+            aria-controls="mobileFiltersMenu"
+          >
+            Filters & Sorting ▾
+          </button>
 
-            {/* Admin-only options */}
-            {JSON.parse(localStorage.getItem("loggedInUser"))?.role ===
-              "admin" && (
-              <>
-                <Link to="/users">Users / Staff</Link>
-                <Link to="/reports">Reports</Link>
-              </>
-            )}
-
-            <Link to="/pricing">Pricing</Link>
-
-
-            <button
-              onClick={() => {
-                localStorage.removeItem("loggedInUser");
-                window.location.href = "/login";
-              }}
+          {isMobileFiltersOpen && (
+            <div
+              id="mobileFiltersMenu"
+              className="mobile-filters-menu"
+              role="menu"
             >
-              Logout
-            </button>
-          </div>
+              <FilterControls />
+              <div className="mobile-filters-actions">
+                <button
+                  className="apply-filters-btn"
+                  onClick={() => setIsMobileFiltersOpen(false)}
+                >
+                  Apply
+                </button>
+                <button
+                  className="reset-filters-btn"
+                  onClick={() => {
+                    setSelectedStatus("");
+                    setSelectedDate("");
+                    setSortOption("mostRecent");
+                    setCurrentPage(1);
+                    setIsMobileFiltersOpen(false);
+                  }}
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
+      {/* Main two-column layout */}
       <div className="appointments-layout">
-        {/* Filter Dropdown */}
-        <div className="filter-dropdown">
-          <button className="filter-toggle">Filter ▾</button>
-          <div className="filter-options">
-            <div className="filter-group">
-              <label>Sort By:</label>
-              <select
-                value={sortOption}
-                onChange={(e) => setSortOption(e.target.value)}
-              >
-                <option value="mostRecent">Most Recent</option>
-                <option value="upcoming">Upcoming Appointments</option>
-                <option value="oldest">Oldest First</option>
-              </select>
-            </div>
-
-            <div className="filter-group">
-              <label>Filter by Status:</label>
-              <select
-                value={selectedStatus}
-                onChange={(e) => setSelectedStatus(e.target.value)}
-              >
-                <option value="">All</option>
-                <option value="Pending">Pending</option>
-                <option value="Confirmed">Confirmed</option>
-                <option value="Completed">Completed</option>
-                <option value="Cancelled">Cancelled</option>
-                <option value="No Show">No Show</option>
-              </select>
-            </div>
-
-            <div className="filter-group">
-              <label>Filter by Date:</label>
-              <input
-                type="date"
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
-              />
-            </div>
+        {/* Left: persistent filters on desktop */}
+        <aside className="filters-panel" aria-label="Filters">
+          <div className="filters-panel-header">Filters & Sorting</div>
+          <FilterControls />
+          <div className="filters-panel-footer">
+            <button
+              className="reset-filters-inline"
+              onClick={() => {
+                setSelectedStatus("");
+                setSelectedDate("");
+                setSortOption("mostRecent");
+                setCurrentPage(1);
+              }}
+            >
+              Reset Filters
+            </button>
           </div>
-        </div>
+        </aside>
 
-        {/* Main Table */}
+        {/* Right: table */}
         <main className="appointments-table-container">
           {loading ? (
             <div className="loading-overlay">
@@ -202,7 +293,7 @@ const Appointments = () => {
             </div>
           ) : (
             <>
-              <table className="appointments-table">
+              <table className="appointments-table" role="table">
                 <thead>
                   <tr>
                     <th>Name</th>
@@ -240,9 +331,8 @@ const Appointments = () => {
                           {appointment.status}
                         </span>
                       </td>
-
                       <td>
-                        <Link to={`/appointments/${appointment.id}`}>
+                        <Link to={`/dashboard/appointments/${appointment.id}`}>
                           <button className="view-details-btn">
                             View Details
                           </button>

@@ -1,0 +1,177 @@
+/* Topbar.css — compact, modern, sticky */
+
+:root {
+  --teal: #01A1A1;
+  --teal-dark: #017a7a;
+  --ink-900: #1f2937;
+  --ink-700: #374151;
+  --ink-500: #6b7280;
+  --ink-300: #e5e7eb;
+  --bg: #ffffff;
+}
+
+/* Container */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Reduced height (tight, but comfortable) */
+  padding: 8px 16px;
+
+  background: var(--bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  backdrop-filter: saturate(1.1);
+}
+
+/* Left side */
+.topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Date pill */
+.topbar__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-700);
+  padding: 6px 10px;
+  background: #f6fbfb;
+  border: 1px solid #e7f5f5;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.topbar__date svg {
+  font-size: 14px;
+  color: var(--teal);
+}
+
+/* Right side */
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Icon buttons */
+.topbar__iconBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;            /* bigger tap target */
+  width: 36px;
+  border-radius: 10px;
+  background: #f7f9fa;
+  border: 1px solid #eef1f2;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  color: var(--teal);
+}
+
+.topbar__iconBtn:hover {
+  border-color: #e5eef0;
+  box-shadow: 0 2px 8px rgba(1, 161, 161, 0.12);
+}
+
+.topbar__iconBtn:active {
+  transform: translateY(1px);
+}
+
+/* Larger email icon specifically */
+.topbar__iconBtn--mail svg {
+  font-size: 20px;
+}
+
+/* Notification dot */
+.topbar__dot {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  width: 9px;
+  height: 9px;
+  background: #ef4444;    /* red */
+  border-radius: 50%;
+  border: 2px solid #fff; /* keeps it crisp on light bg */
+}
+
+/* Profile summary */
+.topbar__profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  margin-left: 2px;
+  border-left: 1px dashed #e9eef1; /* soft divider */
+}
+
+.topbar__user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.1;
+}
+
+.topbar__name {
+  font-weight: 700;
+  color: var(--ink-900);
+  font-size: 13px;
+}
+
+.topbar__role {
+  font-size: 11.5px;
+  color: var(--ink-500);
+}
+
+/* Avatar */
+.topbar__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--teal);
+  box-shadow: 0 2px 6px rgba(1, 161, 161, 0.12);
+  flex-shrink: 0;
+}
+
+.topbar__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsiveness */
+@media (max-width: 640px) {
+  .topbar {
+    padding: 6px 12px;
+    margin-right: 25%;
+  }
+
+  .topbar__user {
+    display: none; /* keep it roomy on small screens */
+  }
+
+  .topbar__date {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .topbar__iconBtn {
+    height: 34px;
+    width: 34px;
+  }
+
+  .topbar__avatar {
+    width: 34px;
+    height: 34px;
+  }
+}

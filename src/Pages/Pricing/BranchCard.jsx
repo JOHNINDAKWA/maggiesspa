@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
-import EditServiceModal from './EditServiceModal';
-import AddServiceCategoryModal from './AddServiceCategoryModal';
-import './Pricing.css'; // For general styling
-import { FaEdit, FaTrashAlt, FaPlusCircle } from 'react-icons/fa'; // Import React Icons
-import Portal from './Portal'; // Import the new Portal component
+import React, { useState } from "react";
+import EditServiceModal from "./EditServiceModal";
+import AddServiceCategoryModal from "./AddServiceCategoryModal";
+import "./Branchcard.css";
+import { FaEdit, FaTrashAlt, FaPlusCircle } from "react-icons/fa";
+import Portal from "./Portal";
 
-const BranchCard = ({ branch, onEditBranch, onDeleteBranch, onAddService, onEditService, onDeleteService }) => {
+const BranchCard = ({
+  branch,
+  onEditBranch,
+  onDeleteBranch,
+  onAddService,
+  onEditService,
+  onDeleteService,
+  onDeleteCategory,   // NEW
+  onDeleteSubgroup,   // NEW
+}) => {
   const [isEditServiceModalOpen, setIsEditServiceModalOpen] = useState(false);
-  const [serviceToEdit, setServiceToEdit] = useState(null); // { branchId, categoryHeading, subgroupTitle, service: { description, price } }
-
+  const [serviceToEdit, setServiceToEdit] = useState(null);
   const [isAddServiceCategoryModalOpen, setIsAddServiceCategoryModalOpen] = useState(false);
 
   const handleOpenEditServiceModal = (categoryHeading, subgroupTitle, service) => {
@@ -16,7 +24,7 @@ const BranchCard = ({ branch, onEditBranch, onDeleteBranch, onAddService, onEdit
       branchId: branch.id,
       categoryHeading,
       subgroupTitle,
-      service: { ...service } // Pass a copy to avoid direct state mutation
+      service: { ...service },
     });
     setIsEditServiceModalOpen(true);
   };
@@ -30,20 +38,10 @@ const BranchCard = ({ branch, onEditBranch, onDeleteBranch, onAddService, onEdit
       <div className="branch-card-header">
         <h3 className="branch-card-title">{branch.name}</h3>
         <div className="branch-card-actions">
-          {/* Edit Branch Button */}
-          <button
-            onClick={() => onEditBranch(branch)} // Now correctly using onEditBranch prop
-            className="action-btn"
-            title="Edit Branch"
-          >
+          <button onClick={() => onEditBranch(branch)} className="action-btn" title="Edit Branch">
             <FaEdit />
           </button>
-          {/* Delete Branch Button */}
-          <button
-            onClick={onDeleteBranch}
-            className="action-btn action-btn-danger"
-            title="Delete Branch"
-          >
+          <button onClick={onDeleteBranch} className="action-btn action-btn-danger" title="Delete Branch">
             <FaTrashAlt />
           </button>
         </div>
@@ -52,10 +50,7 @@ const BranchCard = ({ branch, onEditBranch, onDeleteBranch, onAddService, onEdit
       {branch.serviceCategories.length === 0 ? (
         <div className="branch-empty-state">
           <p>No services defined for this branch yet.</p>
-          <button
-            onClick={handleOpenAddServiceCategoryModal}
-            className="btn btn-sm btn-outline-primary mt-4"
-          >
+          <button onClick={handleOpenAddServiceCategoryModal} className="btn btn-sm btn-outline-primary mt-4">
             Add First Service
           </button>
         </div>
@@ -64,23 +59,55 @@ const BranchCard = ({ branch, onEditBranch, onDeleteBranch, onAddService, onEdit
           <div key={catIdx} className="service-category-section">
             <div className="service-category-header">
               <h4 className="service-category-title">{category.heading}</h4>
-              <button
-                onClick={handleOpenAddServiceCategoryModal}
-                className="action-btn action-btn-sm"
-                title="Add Service/Subgroup to this Category"
-              >
-                <FaPlusCircle className="icon-margin-right-sm" /> Add Service
-              </button>
+              <div className="branch-card-actions">
+                <button
+                  onClick={handleOpenAddServiceCategoryModal}
+                  className="action-btn-add-service"
+                  title="Add Service/Subgroup to this Category"
+                >
+                  Add Service
+                </button>
+                <button
+                  onClick={() => onDeleteCategory(category.heading)}
+                  className="action-btn action-btn-sm action-btn-danger"
+                  title="Delete Category (removes all subgroups & services)"
+                >
+                  <FaTrashAlt />
+                </button>
+              </div>
             </div>
+
             {category.subgroups.length === 0 ? (
               <p className="subgroup-empty-state">No subgroups/services in this category.</p>
             ) : (
               category.subgroups.map((subgroup, subIdx) => (
-                <div key={subIdx} className="service-subgroup-card">
-                  <h5 className="service-subgroup-title">{subgroup.title}</h5>
+                <div key={subgroup.title || subIdx} className="service-subgroup-card">
+                  <div
+                    className="service-subgroup-title-row"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginBottom: "8px",
+                      paddingBottom: "6px",
+                      borderBottom: "1px dashed rgba(1,161,161,.22)",
+                    }}
+                  >
+                    <h5 className="service-subgroup-title" style={{ margin: 0 }}>
+                      {subgroup.title}
+                    </h5>
+                    <button
+                      onClick={() => onDeleteSubgroup(category.heading, subgroup.title)}
+                      className="action-btn action-btn-sm action-btn-danger"
+                      title="Delete Subgroup (removes all services inside)"
+                    >
+                      <FaTrashAlt />
+                    </button>
+                  </div>
+
                   <ul className="service-list">
                     {subgroup.services.length === 0 ? (
-                      <p className="service-empty-state">No services in this subgroup.</p>
+                      <li className="service-empty-state">No services in this subgroup.</li>
                     ) : (
                       subgroup.services.map((service, serviceIdx) => (
                         <li key={serviceIdx} className="service-itemm">
@@ -88,14 +115,18 @@ const BranchCard = ({ branch, onEditBranch, onDeleteBranch, onAddService, onEdit
                           <span className="service-price">{service.price}</span>
                           <div className="service-item-actions">
                             <button
-                              onClick={() => handleOpenEditServiceModal(category.heading, subgroup.title, service)}
+                              onClick={() =>
+                                handleOpenEditServiceModal(category.heading, subgroup.title, service)
+                              }
                               className="action-btn action-btn-sm"
                               title="Edit Service"
                             >
                               <FaEdit />
                             </button>
                             <button
-                              onClick={() => onDeleteService(category.heading, subgroup.title, service.description)}
+                              onClick={() =>
+                                onDeleteService(category.heading, subgroup.title, service.description)
+                              }
                               className="action-btn action-btn-sm action-btn-danger"
                               title="Delete Service"
                             >
@@ -113,7 +144,6 @@ const BranchCard = ({ branch, onEditBranch, onDeleteBranch, onAddService, onEdit
         ))
       )}
 
-      {/* Modals for services - now wrapped in Portal */}
       <Portal>
         <EditServiceModal
           isOpen={isEditServiceModalOpen}
@@ -128,7 +158,7 @@ const BranchCard = ({ branch, onEditBranch, onDeleteBranch, onAddService, onEdit
           onClose={() => setIsAddServiceCategoryModalOpen(false)}
           onAddService={onAddService}
           branchId={branch.id}
-          branchServiceCategories={branch.serviceCategories} // Pass the entire service categories array
+          branchServiceCategories={branch.serviceCategories}
         />
       </Portal>
     </div>

@@ -114,7 +114,7 @@ const UsersPage = () => {
     <div className="users-page-container">
       {/* Breadcrumb link */}
       <div className="breadcrumb2">
-        <Link to="/appointments" className="breadcrumb-link2">
+        <Link to="/dashboard/appointments" className="breadcrumb-link2">
           ← Appointments
         </Link>
       </div>

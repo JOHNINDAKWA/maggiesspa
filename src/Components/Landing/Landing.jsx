@@ -76,11 +76,11 @@ const Landing = () => {
           className={`slide ${index === currentSlide ? "active" : ""}`}
           style={{ backgroundImage: `url(${slide.image})` }}
         >
-          <div className="content">
-            <h1 key={currentSlide} className="header animated">
+          <div className="contents">
+            <h1 key={currentSlide} className="headers animateds">
               {slide.header}
             </h1>
-            <p key={`desc-${currentSlide}`} className="description animated">
+            <p key={`desc-${currentSlide}`} className="descriptions animateds">
               {slide.description}
             </p>
             <Link to="/book">

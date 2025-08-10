@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
   FaUser,
@@ -30,15 +30,20 @@ const formatDate = (dateString) => {
   });
 };
 
+// Robust: handles "10:00 AM, 11:30 AM" OR "10:00 AM - 11:30 AM" (any spaces/dashes)
 const calculateDuration = (timeData) => {
-  if (!timeData) return "Unknown Duration";
-  const timeParts = timeData.split(", ");
-  if (timeParts.length !== 2) return "Invalid Duration";
+  if (!timeData || typeof timeData !== "string") return "Unknown Duration";
 
-  const [start, end] = timeParts;
+  // Grab the first two 12-hour times with AM/PM
+  const matches = timeData.match(/\b(\d{1,2}:\d{2}\s*[AP]M)\b/gi);
+  if (!matches || matches.length < 2) return "Invalid Duration";
+
+  const [start, end] = matches;
 
   const parseTime = (timeStr) => {
-    const [time, modifier] = timeStr.split(" ");
+    const parts = timeStr.trim().toUpperCase().split(/\s+/);
+    const time = parts[0]; // "10:00"
+    const modifier = parts[1]; // "AM" or "PM"
     let [hours, minutes] = time.split(":").map(Number);
     if (modifier === "PM" && hours !== 12) hours += 12;
     if (modifier === "AM" && hours === 12) hours = 0;
@@ -47,13 +52,20 @@ const calculateDuration = (timeData) => {
 
   const startMinutes = parseTime(start);
   const endMinutes = parseTime(end);
-  const durationMinutes = endMinutes - startMinutes;
 
-  return durationMinutes > 0 ? `${durationMinutes} min` : "Invalid Duration";
+  let durationMinutes = endMinutes - startMinutes;
+  // If it crosses midnight (unlikely for spa, but safe)
+  if (durationMinutes < 0) durationMinutes += 24 * 60;
+
+  if (durationMinutes <= 0) return "Invalid Duration";
+  const hrs = Math.floor(durationMinutes / 60);
+  const mins = durationMinutes % 60;
+  return hrs > 0 ? `${hrs}h ${mins}m` : `${mins}m`;
 };
 
 const AppointmentDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [appointment, setAppointment] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -133,7 +145,6 @@ const AppointmentDetails = () => {
       }));
 
       showToast(`Status updated to "${newStatus}" successfully!`);
-      console.log("Status updated in JSONBin!");
     } catch (error) {
       console.error("Error updating status:", error);
       alert("Failed to update status.");
@@ -147,9 +158,9 @@ const AppointmentDetails = () => {
       time: newTime,
     };
 
-    setAppointment(updatedAppointment); // local update
-    setShowModal(false); // close modal
-    updateAppointmentInBin(updatedAppointment); // push to JSONBin
+    setAppointment(updatedAppointment);
+    setShowModal(false);
+    updateAppointmentInBin(updatedAppointment);
   };
 
   const updateAppointmentInBin = async (updatedAppointment) => {
@@ -181,7 +192,6 @@ const AppointmentDetails = () => {
         }
       );
 
-      console.log("✅ Reschedule updated in JSONBin!");
       showToast("Appointment rescheduled successfully!");
     } catch (error) {
       console.error("Error updating appointment:", error);
@@ -191,7 +201,7 @@ const AppointmentDetails = () => {
 
   const showToast = (message) => {
     setToastMessage(message);
-    setTimeout(() => setToastMessage(""), 3000); // Hide after 3 sec
+    setTimeout(() => setToastMessage(""), 3000);
   };
 
   if (loading)
@@ -206,43 +216,26 @@ const AppointmentDetails = () => {
 
   return (
     <div className="appointment-container2">
-      <div className="appointment-card">
-        <div className="search-bar-with-user">
-          <Link to="/appointments" className="back-btn">
-            ← Back to Appointments
+      {/* Breadcrumb + actions */}
+      <div className="breadcrumb-bar">
+        <nav className="breadcrumb">
+          <Link to="/dashboard">Dashboard</Link>
+          <span className="breadcrumb-sep">/</span>
+          <Link to="/dashboard/appointments">Appointments</Link>
+          <span className="breadcrumb-sep">/</span>
+          <span className="breadcrumb-current">#{appointment.id}</span>
+        </nav>
+        <div className="breadcrumb-actions">
+          <button className="btn-ghost" onClick={() => navigate(-1)}>
+            ← Back
+          </button>
+          <Link to="/dashboard/appointments" className="btn-primary-link">
+            All Appointments
           </Link>
-
-          <div className="user-dropdown">
-            <span className="user-name">
-              {JSON.parse(localStorage.getItem("loggedInUser"))?.name ||
-                "Guest"}
-            </span>
-            <div className="dropdown-content">
-              <Link to="/profile">Profile</Link>
-
-              {/* Admin-only options */}
-              {JSON.parse(localStorage.getItem("loggedInUser"))?.role ===
-                "admin" && (
-                <>
-                  <Link to="/users">Users / Staff</Link>
-                  <Link to="/reports">Reports</Link>
-
-                   <Link to="/pricing">Pricing</Link>
-                </>
-              )}
-
-              <button
-                onClick={() => {
-                  localStorage.removeItem("loggedInUser");
-                  window.location.href = "/login";
-                }}
-              >
-                Logout
-              </button>
-            </div>
-          </div>
         </div>
+      </div>
 
+      <div className="appointment-card">
         <div className="status-selector-header">
           <h2 className="appointment-header">Appointment Details</h2>
 
@@ -340,14 +333,12 @@ const AppointmentDetails = () => {
 
         <div className="appointment-row2">
           <div className="info-item">
-            <FaLocationDot className="icon"/>
+            <FaLocationDot className="icon" />
             <span>
               <strong>Branch:</strong> {appointment.branchName}
             </span>
           </div>
-    
         </div>
-
 
         <div className="description-box">
           <TbMassage className="icon" />
@@ -364,10 +355,7 @@ const AppointmentDetails = () => {
         </div>
 
         <div className="appointment-actions">
-          <button
-            className="btn reschedule-btn"
-            onClick={handleRescheduleClick}
-          >
+          <button className="btn reschedule-btn" onClick={handleRescheduleClick}>
             Reschedule
           </button>
           <button
@@ -376,7 +364,6 @@ const AppointmentDetails = () => {
           >
             Cancel
           </button>
-
           <button
             className="btn update-status-btn"
             onClick={() => handleStatusChange("Completed")}
