@@ -175,11 +175,11 @@ const Footer = () => {
               © {new Date().getFullYear()} Maggie's Spa. Designed and developed
               by{" "}
               <a
-                href="https://fastechinternet.co.ke/"
+                href="https://adsonicagency.co.ke/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Fastech Solutions
+                Adsonicagency.co.ke
               </a>
               .
             </p>

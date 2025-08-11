@@ -10,7 +10,8 @@
 
 /* Contact Details Section */
 .contactForm-details {
-    background: #f6ebe7;
+   background: linear-gradient(180deg, #e6faf7 0%, #d3f3f0 50%, #c1ece9 100%);
+
     padding: 50px;
     width: 400px;
     display: flex;
@@ -142,46 +143,148 @@
     min-height: 100px; /* Minimum height for textarea */
 }
 
-/* Button with Wavy Background Animation */
+/* ===========================
+   Pretty CTA — teal, glossy, accessible
+   =========================== */
+
+:root {
+  --teal: #01A1A1;
+  --teal-700: #017a7a;
+  --ink-900: #0f172a;
+  --sand: #cda291; /* optional accent for secondary variant */
+}
+
 .contactForm-form button {
-    position: relative;
-    padding: 14px 25px; /* Adjusted padding */
-    font-size: 17px; /* Slightly larger font */
-    font-weight: bold;
-    border-radius: 30px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    background-color: #cda291; /* Fallback color */
-    transition: 0.3s ease-in-out;
-    width: fit-content;
-    align-self: flex-start; /* Align button to the left */
-    letter-spacing: 1px; /* Add some letter spacing */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--teal) 38%, #000 0%);
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--teal) 88%, #ffffff 12%) 0%,
+      var(--teal-700) 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .35px;
+  cursor: pointer;
+  width: fit-content;
+  align-self: flex-start;
+  box-shadow:
+    0 10px 24px rgba(1,161,161,.22),
+    inset 0 1px 0 rgba(255,255,255,.45);
+  transition:
+    transform .08s ease,
+    box-shadow .2s ease,
+    filter .2s ease,
+    border-color .2s ease;
+  overflow: hidden;
+  isolation: isolate; /* so the shine stays inside */
 }
 
-
-
-/* Create the wave effect */
+/* soft moving glow */
 .contactForm-form button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 300%;
-    background: radial-gradient(circle, #008080 25%, transparent 30%); /* Adjusted wave color to main brand teal */
-    background-size: 50% 50%;
-    animation: waveAnimation 3s infinite linear;
-    opacity: 0.5;
-    z-index: 0;
-    transition: opacity 0.3s;
+  content: "";
+  position: absolute;
+  inset: -40% -30% auto -30%;
+  height: 240%;
+  background:
+    radial-gradient(120px 80px at 20% 20%, rgba(255,255,255,.28), transparent 60%),
+    radial-gradient(120px 80px at 80% 0%,  rgba(255,255,255,.16), transparent 60%),
+    radial-gradient(140px 100px at 60% 120%, rgba(255,255,255,.14), transparent 60%);
+  filter: blur(6px);
+  transform: translate3d(0,0,0);
+  transition: transform .6s ease, opacity .25s ease;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Hover effect makes the wave more visible */
-.contactForm-form button:hover::before {
-    opacity: 0.8;
+/* diagonal sheen sweep on hover */
+.contactForm-form button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,.35) 45%,
+      rgba(255,255,255,0) 60%);
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .5s ease;
+  z-index: 1;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
 }
+
+.contactForm-form button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 16px 34px rgba(1,161,161,.28),
+    inset 0 1px 0 rgba(255,255,255,.55);
+  border-color: color-mix(in srgb, var(--teal) 55%, #000 0%);
+}
+
+.contactForm-form button:hover::before {
+  transform: translate3d(6%, -4%, 0);
+  opacity: .95;
+}
+
+.contactForm-form button:hover::after {
+  transform: translateX(140%) skewX(-12deg);
+}
+
+.contactForm-form button:active {
+  transform: translateY(1px);
+  box-shadow: 0 8px 18px rgba(1,161,161,.22);
+}
+
+.contactForm-form button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(1,161,161,.22),
+    0 10px 24px rgba(1,161,161,.24);
+}
+
+/* Disabled state */
+.contactForm-form button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Optional: sand-toned secondary variant (use <button class="secondary">) */
+.contactForm-form button.secondary {
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--sand) 86%, #fff 14%) 0%,
+      #b98672 100%);
+  border-color: color-mix(in srgb, var(--sand) 50%, #000 0%);
+  box-shadow:
+    0 10px 24px rgba(205,162,145,.22),
+    inset 0 1px 0 rgba(255,255,255,.45);
+}
+.contactForm-form button.secondary:hover {
+  box-shadow:
+    0 16px 34px rgba(205,162,145,.28),
+    inset 0 1px 0 rgba(255,255,255,.55);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .contactForm-form button,
+  .contactForm-form button::before,
+  .contactForm-form button::after {
+    transition: none !important;
+  }
+  .contactForm-form button:hover::after {
+    transform: none !important;
+  }
+}
+
 
 /* Ensure text remains above animation */
 .contactForm-form button span {

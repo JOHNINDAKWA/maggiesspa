@@ -1,6 +1,6 @@
 .footer-container {
     background-color: white;
-    padding: 40px 20px;
+    padding: 40px 20px 20px 20px;
     /* margin-top: 160px; */
     width: 1200px;
   }
@@ -151,6 +151,10 @@
     flex: 1;
     max-width: 25%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
   }
   
@@ -164,6 +168,7 @@
   .footer-middle-middle ul {
     list-style: none;
     padding: 0;
+    text-align: left;
   }
   
   .footer-middle-middle li {
@@ -208,12 +213,22 @@
   }
   
   .footer-bottom {
-    margin-top: 20px;
+    margin-top: 5px;
     font-size: 14px;
     color: #6b6b6b;
     align-items: center;
     display: flex;
     justify-content: center;
+  }
+
+  .footer-bottom a {
+    color: #01a1a1;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .footer-bottom a:hover {
+    color: #013d3d; /* Darker shade for hover effect */
   }
   .scroll-to-top-btn {
     position: fixed;

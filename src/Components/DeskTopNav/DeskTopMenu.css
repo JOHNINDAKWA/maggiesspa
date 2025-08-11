@@ -1,161 +1,161 @@
 /* Desktop Menu Styling */
 .desktop-menu {
-    width: 100%;
-    background-color: #4a2d16;
-    display: flex;
-    justify-content: center; /* This centers the ul within the desktop-menu */
-    padding: 15px 0;
-    position: relative;
-    z-index: 999;
-    transition: all 0.3s ease-in-out;
+  width: 100%;
+  background: linear-gradient(135deg, #012d2d 0%, #017e7e 50%, #012d2d 100%);
+  display: flex;
+  justify-content: center; /* This centers the ul within the desktop-menu */
+  padding: 15px 0;
+  position: relative;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
 }
 
 /* NEW: Sticky Navigation Styles */
 .desktop-menu.sticky-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    background-color: #4a2d16;
-    animation: slideDown 0.3s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #012d2d 0%, #017e7e 50%, #012d2d 100%);
+  animation: slideDown 0.8s ease-out;
 }
 
 @keyframes slideDown {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(0); }
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-
 
 /* Menu List */
 .desktop-menu ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* CHANGE THIS FROM 'end' TO 'center' */
-    gap: 20px;
-    padding: 0;
-    margin: 0 auto; /* Keep margin auto for horizontal centering within its max-width */
-    max-width: 1200px; /* Constrain width of the ul to align with content */
-    width: 100%; /* Take full width of parent */
-    /* padding-right: 20px; /* REMOVE or adjust this if you want perfect center */
-    box-sizing: border-box;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* CHANGE THIS FROM 'end' TO 'center' */
+  gap: 20px;
+  padding: 0;
+  margin: 0 auto; /* Keep margin auto for horizontal centering within its max-width */
+  max-width: 1200px; /* Constrain width of the ul to align with content */
+  width: 100%; /* Take full width of parent */
+  /* padding-right: 20px; /* REMOVE or adjust this if you want perfect center */
+  box-sizing: border-box;
 }
 
 /* Menu Items */
 .desktop-menu ul li {
-    position: relative;
+  position: relative;
 }
 /* Menu Links */
 .desktop-menu ul li a {
-    position: relative;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    display: block;
-    transition: all 0.3s ease-in-out;
-    border-radius: 20px;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  border-radius: 20px;
 }
 
 /* Underline Hover Effect */
 .desktop-menu > ul > li:not(.book-now2) > a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background: #01a1a1;
-    transition: all 0.3s ease-in-out;
-    transform: translateX(-50%);
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #01a1a1;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
 }
 
 /* Expand Underline on Hover */
 .desktop-menu ul li:not(.book-now2) a:hover::after {
-    width: 50%;
+  width: 50%;
 }
 /* Align text and icon */
 .desktop-menu ul li a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* Align dropdown icons */
 .dropdown-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: flex-start; /* Align icon and text properly */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start; /* Align icon and text properly */
 }
-
-
 
 /* Dropdown Menu */
 .dropdown {
-    display: flex;
-    justify-content: space-evenly;
-    position: absolute;
-    z-index: 5;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    background: linear-gradient(to right, #4a2d16, #5b391e, #4a2d16);
-    border-radius: 0 0 10px 10px;
-    padding: 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  background: linear-gradient(135deg, #003a3a 0%, #01a1a1 55%, #003a3a 100%);
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 /* Show dropdown on hover */
 .services:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* Dropdown Items */
 .dropdown-item {
-    display: block;
-    padding: 12px 1px;
-    background-color: transparent;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    text-align: left;
-    white-space: normal;
-    word-wrap: break-word;
-    width: 350px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.3s ease-in-out;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  display: block;
+  padding: 12px 1px;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  text-align: left;
+  white-space: normal;
+  word-wrap: break-word;
+  width: 350px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Disable Hover Lift Effect */
 .dropdown-item:hover {
-    background-color: #01a1a171;
-    color: white;
+  background-color: #01a1a1;
+  color: white;
 }
 
-
 .book-now2 a {
-    color: white;
-    padding: 10px 16px;
-    background: linear-gradient(135deg, #01a1a1, #018383);
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
+  color: white;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #01a1a1, #018383);
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
 }
 
 .book-now2 a:hover {
-    background-color: #015454;
-    transform: scale(1.02);
+  background-color: #015454;
+  transform: scale(1.02);
 }

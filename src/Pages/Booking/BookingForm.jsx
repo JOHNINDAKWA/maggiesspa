@@ -152,8 +152,8 @@ const BookingForm = ({ scrollToDetails }) => {
   return (
     <div className="form-section5">
       {showLoading && (
-        <div className="loading-overlay">
-          <div className="spinner"></div>
+        <div className="loading-overlay2">
+          <div className="spinners"></div>
         </div>
       )}
 
@@ -264,15 +264,15 @@ const BookingForm = ({ scrollToDetails }) => {
             <div className="custom-options-container">
               {getServicesForSubgroup(selectedCategory, selectedSubcategory).map((service) => (
                 <button
-                  key={service.description} // Using description as key, ensure uniqueness
+                  key={service.description} 
                   className={`custom-option-btn ${selectedService?.description === service.description ? "selected" : ""}`}
                   onClick={() => {
                     triggerLoading(() => {
                       setSelectedService(service);
                       setBookingData(prev => ({
                         ...prev,
-                        service_name: service.description, // Store full description
-                        duration: service.description, // You might want to parse duration here if needed elsewhere
+                        service_name: service.description, 
+                        duration: service.description, 
                         price: service.price,
                         selectedServiceObject: service,
                       }));

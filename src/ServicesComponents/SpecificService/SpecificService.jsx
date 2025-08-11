@@ -22,11 +22,7 @@ const SpecificService = () => {
       <div className="specific-service-banner">
         <div className="specific-banner-overlay">
           <h2>{service.title}</h2>
-          <p className="breadcrumb">
-            <span>Home</span> • <span>Our Services</span> •{" "}
-            <span className="active">{service.title}</span>
-          </p>
-        </div>
+              </div>
       </div>
 
       <div className="specific-service-container2">

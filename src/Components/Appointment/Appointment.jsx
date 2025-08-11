@@ -15,12 +15,12 @@ const Appointment = () => {
             <em>Hey Mama!</em>
             <br />
             <br />
-            You’ve made it—now it’s time to put yourself first.
+            You’ve made it and now it’s time to put yourself first.
             <br />
             <br />
             Welcome to Maggie’s Pregnancy and Postpartum Spa, your sanctuary of calm, beauty, and
             care. Whether you're pregnant, postpartum, or just need a
-            breather—we’re here for you.
+            breather, we’re here for you.
             <br />
             <br />
             From massages and facials to stretch mark care and wellness
@@ -28,7 +28,7 @@ const Appointment = () => {
             <br />
             <br />
             Because self-care isn’t selfish—it’s sacred. Go ahead and book your
-            moment of peace—you’ve earned it.
+            moment of peace...you’ve earned it.
             <br />
             <br />
             We can't wait to pamper you 💕
