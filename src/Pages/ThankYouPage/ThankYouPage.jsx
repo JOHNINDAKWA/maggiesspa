@@ -82,10 +82,10 @@ export default function ThankYouPage() {
                 <div className="bank-panel" style={{ marginTop: 12 }}>
                   <h4>Bank Details</h4>
                   <ul className="bank-list">
-                    <li><strong>Bank:</strong> {BANK_DETAILS.bankName} <button className="btn-ghost" onClick={() => copy(BANK_DETAILS.bankName)}><FiCopy /> Copy</button></li>
-                    <li><strong>Account Name:</strong> {BANK_DETAILS.accountName} <button className="btn-ghost" onClick={() => copy(BANK_DETAILS.accountName)}><FiCopy /> Copy</button></li>
-                    <li><strong>Account Number:</strong> {BANK_DETAILS.accountNumber} <button className="btn-ghost" onClick={() => copy(BANK_DETAILS.accountNumber)}><FiCopy /> Copy</button></li>
-                    <li><strong>Branch:</strong> {BANK_DETAILS.branch} <button className="btn-ghost" onClick={() => copy(BANK_DETAILS.branch)}><FiCopy /> Copy</button></li>
+                    <li><strong>Bank:</strong> {BANK_DETAILS.bankName} <button className="btn-ghost2" onClick={() => copy(BANK_DETAILS.bankName)}><FiCopy /> Copy</button></li>
+                    <li><strong>Account Name:</strong> {BANK_DETAILS.accountName} <button className="btn-ghost2" onClick={() => copy(BANK_DETAILS.accountName)}><FiCopy /> Copy</button></li>
+                    <li><strong>Account Number:</strong> {BANK_DETAILS.accountNumber} <button className="btn-ghost2" onClick={() => copy(BANK_DETAILS.accountNumber)}><FiCopy /> Copy</button></li>
+                    <li><strong>Branch:</strong> {BANK_DETAILS.branch} <button className="btn-ghost2" onClick={() => copy(BANK_DETAILS.branch)}><FiCopy /> Copy</button></li>
                     <li><strong>Amount:</strong> {formatKES(amount)}</li>
                     <li className="hint">Use your name and/or <strong>{orderId}</strong> as the reference if possible.</li>
                   </ul>
@@ -139,7 +139,7 @@ export default function ThankYouPage() {
             </div>
 
             <div className="actions">
-              <Link className="btn-ghost" to="/services">
+              <Link className="btn-ghost2" to="/services">
                 <FiArrowLeft /> Continue shopping
               </Link>
               <Link className="btn-primary" to="/">

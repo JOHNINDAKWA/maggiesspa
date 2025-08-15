@@ -156,7 +156,7 @@ export default function BookingPaymentPage() {
           <FiAlertCircle /> We couldn’t find your booking details. Please start again.
         </div>
         <div style={{ maxWidth: 640, margin: "12px auto" }}>
-          <button className="btn-ghost" onClick={() => navigate("/book")}>
+          <button className="btn-ghost2" onClick={() => navigate("/book")}>
             <FiArrowLeft /> Back to Booking
           </button>
         </div>
@@ -250,7 +250,7 @@ export default function BookingPaymentPage() {
             )}
 
             <div className="actions">
-              <button className="btn-ghost" onClick={() => navigate("/book")}>
+              <button className="btn-ghost2" onClick={() => navigate("/book")}>
                 <FiArrowLeft /> Back
               </button>
               <button

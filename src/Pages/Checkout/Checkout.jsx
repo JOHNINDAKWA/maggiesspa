@@ -449,7 +449,7 @@ export default function CheckoutPage() {
               )}
 
               <div className="actions">
-                <button className="btn-ghost" onClick={onBack}>
+                <button className="btn-ghost2" onClick={onBack}>
                   <FiArrowLeft /> Back
                 </button>
                 <button
