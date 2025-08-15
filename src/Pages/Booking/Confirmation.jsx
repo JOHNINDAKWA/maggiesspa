@@ -1,88 +1,55 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { BookingContext } from "../../Context/BookingContext";
-import emailjs from "@emailjs/browser";
+// import { formatKES } from "../../Utils/currency";
 
-const BIN_ID = "68139f1b8561e97a500b9e03"; // Your existing appointments binId
-const MASTER_KEY = "$2a$10$v.Wz5cNjZbcvhC1nqnnYl.o9V6KJzJ7U7JnB.ZO4VwoYlh9TAvevm"; // Your existing masterKey
+function parseKESToNumber(input) {
+  // handles "Ksh 7,000" or "7000" etc.
+  if (typeof input === "number") return input;
+  if (!input) return 0;
+  const cleaned = String(input).replace(/[^\d.]/g, ""); // remove non-digits
+  const val = parseFloat(cleaned);
+  return Number.isFinite(val) ? Math.round(val) : 0;
+}
 
 const Confirmation = () => {
   const { bookingData, setStep } = useContext(BookingContext);
+  const navigate = useNavigate();
   const [saving, setSaving] = useState(false);
 
-  const handleSubmit = async () => {
+  const handleProceedToPayment = async () => {
     setSaving(true);
 
     try {
-      // 1️⃣ Fetch current bin data
-      const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
-        headers: { "X-Master-Key": MASTER_KEY },
-      });
-      const data = await response.json();
-      const appointments = data.record.appointments || [];
+      // Snapshot the booking details locally and compute deposit (50%)
+      const totalAmount = parseKESToNumber(bookingData.price);
+      const depositAmount = Math.round(totalAmount * 0.5);
 
-      // 2️⃣ Create new appointment object
-      const newAppointment = {
-        id: appointments.length + 1,
-        timestamp: new Date().toISOString(),
-        branchId: bookingData.branchId, // NEW: Include branch ID
-        branchName: bookingData.branchName, // NEW: Include branch name
-        service: bookingData.service,
-        service_type: bookingData.service_type,
-        service_name: bookingData.service_name,
-        duration: bookingData.duration, // Include duration
-        price: bookingData.price, // Include price
-        date: bookingData.date,
-        time: `${bookingData.startTime} - ${bookingData.endTime}`, // Changed comma to hyphen for display clarity
-        name: bookingData.name,
-        email: bookingData.email,
-        phone: bookingData.phone,
-        note: bookingData.note || "",
-        status: "Pending",
+      const payload = {
+        booking: {
+          ...bookingData,
+          // normalize display values if needed
+          normalizedPrice: totalAmount,
+        },
+        amounts: {
+          total: totalAmount,
+          deposit: depositAmount,
+          balance: Math.max(totalAmount - depositAmount, 0),
+        },
+        status: "awaiting_payment",
+        method: null, // chosen on the next page
       };
 
-      const updatedData = {
-        ...data.record,
-        appointments: [...appointments, newAppointment],
-      };
+      // Persist so a refresh won’t lose the context
+      localStorage.setItem("booking_payment_info", JSON.stringify(payload));
 
-      // 3️⃣ Save back to bin
-      await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Master-Key": MASTER_KEY,
-        },
-        body: JSON.stringify(updatedData),
-      });
-
-      // 4️⃣ Send confirmation email via EmailJS
-      await emailjs.send(
-        "service_t44eye4", // your EmailJS service ID
-        "template_mdbjbkh", // your EmailJS template ID
-        {
-          name: bookingData.name,
-          branch: bookingData.branchName, // NEW: Add branch to email template
-          service: bookingData.service_name, // Use service_name for specific service
-          price: bookingData.price, // Include price in email template
-          date: new Date(bookingData.date).toLocaleDateString(),
-          time: `${bookingData.startTime} - ${bookingData.endTime}`,
-          phone: bookingData.phone,
-          email: bookingData.email,
-          note: bookingData.note || "N/A", // Include note in email
-          year: new Date().getFullYear(),
-        },
-        "Weoz86fayUHPPiNlY" // your EmailJS public key
-      );
-
-      // 5️⃣ Move to success screen
-      setTimeout(() => {
-        setSaving(false);
-        setStep(4);
-      }, 1000);
-    } catch (error) {
+      // Navigate to the Booking Payment page
+      navigate("/booking-payment");
+    } catch (err) {
+      console.error("Failed to prepare payment:", err);
+      alert("Something went wrong preparing payment. Please try again.");
+    } finally {
       setSaving(false);
-      alert("Error saving appointment or sending email. Please try again.");
-      console.error("Submission error:", error);
     }
   };
 
@@ -90,7 +57,7 @@ const Confirmation = () => {
     return (
       <div className="loading-overlay">
         <div className="spinner"></div>
-        <p>Processing your appointment...</p>
+        <p>Preparing your payment...</p>
       </div>
     );
   }
@@ -101,14 +68,14 @@ const Confirmation = () => {
         ← Go Back
       </button>
 
-      <h2>Now, Let's double check...</h2>
+      <h2>Now, let's double-check…</h2>
 
       <div className="confirmation-details">
-        <p><strong>Spa Location:</strong> {bookingData.branchName}</p> {/* NEW: Display branch name */}
+        <p><strong>Spa Location:</strong> {bookingData.branchName}</p>
         <p><strong>Service Area:</strong> {bookingData.service}</p>
         <p><strong>Treatment Type:</strong> {bookingData.service_type}</p>
         <p><strong>Session / Package:</strong> {bookingData.service_name}</p>
-        <p><strong>Price:</strong> {bookingData.price}</p> {/* NEW: Display price */}
+        <p><strong>Price:</strong> {bookingData.price}</p>
         <p><strong>Date:</strong> {bookingData.date ? new Date(bookingData.date).toLocaleDateString() : "N/A"}</p>
         <p><strong>Time:</strong> {bookingData.startTime} - {bookingData.endTime}</p>
         <p><strong>Name:</strong> {bookingData.name}</p>
@@ -117,7 +84,9 @@ const Confirmation = () => {
         {bookingData.note && <p><strong>Note:</strong> {bookingData.note}</p>}
       </div>
 
-      <button className="next-btn" onClick={handleSubmit}>Make Appointment</button>
+      <button className="next-btn" onClick={handleProceedToPayment}>
+        Proceed to Payment
+      </button>
     </div>
   );
 };

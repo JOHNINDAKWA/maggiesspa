@@ -123,6 +123,7 @@
     font-weight: 500;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
   }
   
   
@@ -179,3 +180,33 @@
 
   }
   
+
+  /* Accessible live region helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* Tiny toast (optional) */
+.mini-toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #01A1A1;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(1,161,161,0.25);
+  z-index: 1000;
+  font-size: 0.95rem;
+}
+
+/* Button when added/disabled */
+.prenatal-packages-v2__button.is-added,
+.prenatal-packages-v2__button:disabled {
+  opacity: 0.9;
+  background-color: #018787;
+  cursor: not-allowed;
+}

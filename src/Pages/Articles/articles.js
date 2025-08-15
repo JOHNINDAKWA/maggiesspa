@@ -5,6 +5,9 @@ import Nanyuki from "../../assets/images/articles/nanyuki-spa.jpg";
 import DecorImage from "../../assets/images/articles/decor.jpg"; // Import the decor image
 import MassageBenefitsImage from "../../assets/images/articles/massage-benefits.jpg"; // Import the massage benefits image
 import SkincareProducts from "../../assets/images/articles/skincare-products.jpg"; // Import the skincare products image
+import PrenatalMassaged from "../../assets/images/two.jpg"
+import MassageBenefitsImaged from "../../assets/images/spa-services/mag36.jpg"
+import DecorImaged from "../../assets/images/spa-services/mag23.png"
 
 // This file will contain your static article data
 const articles = [
@@ -147,6 +150,132 @@ const articles = [
     <p>Always consult with your healthcare provider before booking a prenatal massage, especially if you have any high-risk conditions.</p>
     `,
   },
+  {
+  id: "5",
+  title: "Prenatal Massage: What to Do Before Your Visit",
+  image: PrenatalMassaged,
+  alt: "Expectant mother relaxing during a prenatal massage",
+  author: "Maggie's Spa Maternity Team",
+  date: "August 15, 2025",
+  excerpt:
+    "A quick, friendly checklist to help you float into your prenatal massage feeling comfy, calm, and totally ready to glow.",
+  content: `
+    <p>You’ve booked your prenatal massage (yay!), now let’s make sure it feels as dreamy as it sounds. These tiny prep steps help your body relax faster, your therapist tailor the session better, and your nervous system say, “ahhh.”</p>
+
+    <h2>The Day Before</h2>
+    <ul>
+      <li><strong>Hydrate like a pro:</strong> Sip water through the day so your muscles and fascia are happy.</li>
+      <li><strong>Sleep early(ish):</strong> Even 30 extra minutes makes a difference.</li>
+      <li><strong>Light meals win:</strong> Go easy on super-salty or heavy foods to keep swelling in check.</li>
+    </ul>
+
+    <h2>A Few Hours Before</h2>
+    <ul>
+      <li><strong>Freshen up:</strong> A warm shower (or gentle sponge bath) cues your body to relax.</li>
+      <li><strong>Bathroom break:</strong> Empty your bladder just before you head out.</li>
+      <li><strong>Dress comfy:</strong> Loose, easy-to-change clothes are your best friends.</li>
+      <li><strong>Snack smart:</strong> A small bite (like fruit or yogurt) ≫ a heavy lunch.</li>
+    </ul>
+
+    <h2>Bring + Tell</h2>
+    <ul>
+      <li><strong>Your support pillow:</strong> If you love a specific belly/side-lying pillow, bring it along.</li>
+      <li><strong>Your preferences:</strong> Areas that ache? Pressure you love (or don’t)? Tell us everything.</li>
+      <li><strong>Any medical notes:</strong> Share updates from your provider so we can tailor your session safely.</li>
+    </ul>
+
+    <h2>Set the Mood</h2>
+    <ul>
+      <li><strong>Phone on quiet:</strong> Today is for you. Mini digital detox = maximum calm.</li>
+      <li><strong>Arrive a little early:</strong> 10–15 minutes helps you start slow and breathe.</li>
+    </ul>
+
+    <p><em>Safety first:</em> If you’re experiencing high-risk symptoms (severe swelling, bleeding, persistent abdominal pain, etc.), please consult your healthcare provider before your session.</p>
+
+    <p><a href="/book" style="color:#01a1a1; font-weight:bold; text-decoration:none;">Ready to unwind? Book your prenatal massage</a></p>
+  `,
+},
+
+{
+  id: "6",
+  title: "Before Your Postpartum Massage: Simple Checklist",
+  image: MassageBenefitsImaged,
+  alt: "New mom receiving a soothing postpartum massage",
+  author: "Maggie's Spa Recovery Team",
+  date: "August 15, 2025",
+  excerpt:
+    "Gentle prep tips to help your postpartum body (and mind) get the most from every nurturing minute on the table.",
+  content: `
+    <p>Your body is doing heroic work—healing, feeding, carrying, loving. Postpartum massage wraps all that effort in comfort and calm. Here’s how to set yourself up beautifully for your session.</p>
+
+    <h2>Before You Arrive</h2>
+    <ul>
+      <li><strong>Green-light check:</strong> If you’ve had a C-section or complications, wait for your provider’s go-ahead. Incisions should be closed and healing well.</li>
+      <li><strong>Plan your window:</strong> Choose a time that works around feeds/pumping so you’re not rushing.</li>
+      <li><strong>Hydrate + snack:</strong> Keep water nearby and have a light bite before your appointment.</li>
+      <li><strong>Pack the little things:</strong> Nursing pads, a cozy wrap, and any preferred support pillow.</li>
+    </ul>
+
+    <h2>At the Spa</h2>
+    <ul>
+      <li><strong>Speak up:</strong> Tell us about tender areas (neck/shoulders from feeding, lower back, hips) and comfortable positions.</li>
+      <li><strong>Gentle first:</strong> We’ll start softly and listen to your body every step of the way.</li>
+      <li><strong>Bathroom break:</strong> Empty your bladder before the session for deeper relaxation.</li>
+    </ul>
+
+    <h2>Extra Comfort</h2>
+    <ul>
+      <li><strong>Bring baby—or not:</strong> Totally your call. If you’re solo, consider arranging childcare so you can fully switch off.</li>
+      <li><strong>Unplug:</strong> Phone on silent. This hour belongs to you.</li>
+    </ul>
+
+    <p><em>Note:</em> If you notice fever, heavy bleeding, calf pain, or unusual symptoms, contact your provider before receiving bodywork.</p>
+
+    <p><a href="/book" style="color:#01a1a1; font-weight:bold; text-decoration:none;">Book your postpartum massage</a> and let us cocoon you in calm.</p>
+  `,
+},
+
+{
+  id: "7",
+  title: "How to Prepare for a Home Massage Visit",
+  image: DecorImaged,
+  alt: "Cozy home corner styled like a spa with towels and candles",
+  author: "Maggie's Mobile Spa Team",
+  date: "August 15, 2025",
+  excerpt:
+    "Hosting our therapist at home? Here’s a fun, simple checklist to make your living room feel like a boutique spa—minus the commute.",
+  content: `
+    <p>We bring the magic to you—table, touch, and tranquility. A few quick tweaks at home make the experience extra smooth and extra dreamy.</p>
+
+    <h2>Set the Stage</h2>
+    <ul>
+      <li><strong>Pick your nook:</strong> A quiet, private space with enough room for the massage table and easy walk-around access.</li>
+      <li><strong>Temperature check:</strong> Cozy is key. A light blanket nearby is perfect for mid-session naps.</li>
+      <li><strong>Fresh linen:</strong> Clean sheets and two towels (one for comfort, one as a backup).</li>
+      <li><strong>Lights + sound:</strong> Dim the lights, play soft music, or let us bring the vibes.</li>
+      <li><strong>Declutter a touch:</strong> A tidy corner instantly feels spa-like.</li>
+    </ul>
+
+    <h2>Before We Arrive</h2>
+    <ul>
+      <li><strong>Quick freshen up:</strong> A warm shower signals “relax mode” to your nervous system.</li>
+      <li><strong>Phone on quiet:</strong> Fewer pings, deeper calm.</li>
+      <li><strong>Pillows ready:</strong> A favorite support pillow can make side-lying or supine positions extra comfy.</li>
+      <li><strong>Kiddo plan:</strong> If possible, arrange childcare so you get uninterrupted me-time.</li>
+    </ul>
+
+    <h2>During + After</h2>
+    <ul>
+      <li><strong>Tell us your goals:</strong> Aches to target? Pressure you love? Areas to avoid? We listen.</li>
+      <li><strong>Hydrate:</strong> Sip water after your session and take five before jumping back into life.</li>
+      <li><strong>Snack lightly:</strong> A small, nourishing bite pairs beautifully with post-massage glow.</li>
+    </ul>
+
+    <p>That’s it—simple, comfy, and entirely yours.</p>
+    <p><a href="/book" style="color:#01a1a1; font-weight:bold; text-decoration:none;">Book a home service visit</a> and we’ll bring the sanctuary to your doorstep.</p>
+  `,
+}
+
 ];
 
 export default articles;

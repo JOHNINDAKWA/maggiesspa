@@ -89,7 +89,8 @@
 
 .back-to-articles {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     margin-left: 20px;
     font-weight: bold;
     color: #01a1a1;

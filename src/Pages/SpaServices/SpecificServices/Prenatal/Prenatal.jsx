@@ -110,7 +110,7 @@ const Prenatal = () => {
             </div>
           </div>
           <Link className="package-link" to="/book">
-            Get this package
+            Book Now
           </Link>
         </div>
 
@@ -161,7 +161,7 @@ const Prenatal = () => {
           </ul>
 
           <Link className="package-link" to="/book">
-            Get this package
+            Book Now
           </Link>
         </div>
 
@@ -213,7 +213,7 @@ const Prenatal = () => {
           </ul>
 
           <Link className="package-link" to="/book">
-            Get this package
+            Book Now
           </Link>
         </div>
 
@@ -263,7 +263,7 @@ const Prenatal = () => {
           </ul>
 
           <Link className="package-link" to="/book">
-            Get this package
+            Book Now
           </Link>
         </div>
       </div>

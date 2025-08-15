@@ -54,7 +54,7 @@ const Postpartum = () => {
             <li>Reduces swelling</li>
             <li>Emotional comfort</li>
           </ul>
-          <Link className="package-link" to="/book">Get this package</Link>
+          <Link className="package-link" to="/book">Book Now</Link>
 
         </div>
 
@@ -101,7 +101,7 @@ const Postpartum = () => {
             <li>Preventative treatment for postpartum depression</li>
             <li>Supports the healing of diastasis recti and abdominal muscles</li>
           </ul>
-          <Link className="package-link" to="/book">Get this package</Link>
+          <Link className="package-link" to="/book">Book Now</Link>
 
         </div>
 
@@ -146,7 +146,7 @@ const Postpartum = () => {
             <li>Helps with hormonal balance and mood stabilization</li>
           </ul>
 
-          <Link className="package-link" to="/book">Get this package</Link>
+          <Link className="package-link" to="/book">Book Now</Link>
 
         </div>
 
@@ -192,7 +192,7 @@ const Postpartum = () => {
             <li>Encourages a deeper mind-body connection</li>
             <li>Provides holistic support for the transition into motherhood</li>
           </ul>
-          <Link className="package-link" to="/book">Get this package</Link>
+          <Link className="package-link" to="/book"> Book Now</Link>
 
         </div>
       </div>

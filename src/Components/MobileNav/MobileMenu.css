@@ -83,7 +83,7 @@
   .nav-links li a {
     display: block; 
     width: 100%;
-    padding: 16px 20px;
+    padding: 10px 12px;
     border-radius: 8px;
     color: var(--text-light);
     font-size: 17px;
@@ -177,3 +177,78 @@
   .social-icons a:hover {
     color: var(--theme-color);
   }  
+
+
+  /* Right-side action cluster in header */
+.mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Header cart pill */
+.mobile-cart {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  color: var(--text-light);
+  text-decoration: none;
+  transition: background .25s ease, transform .18s ease, border-color .25s ease;
+}
+.mobile-cart:hover {
+  background: rgba(255,255,255,.12);
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.45);
+}
+
+/* Cart badge in header */
+.mobile-cart__badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #fff;
+  color: #012d2d;
+  font-size: 12px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+}
+
+/* Cart link row inside the sidebar */
+.nav-links li a.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,0.03);
+}
+.nav-links li a.cart-link:hover {
+  background-color: rgba(255,255,255,0.12);
+}
+.cart-count-badge {
+  margin-left: auto;            /* push badge to the far right */
+  min-width: 24px;
+  height: 24px;
+  padding: 0 8px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #fff;
+  color: #012d2d;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}

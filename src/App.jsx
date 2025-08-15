@@ -3,7 +3,7 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Services from "./Pages/Services/Services";
 import Contact from "./Pages/Contact/Contact";
-import Layout from "./Layout"; // Correct import of Layout
+import Layout from "./Layout";
 import SpecificService from "./ServicesComponents/SpecificService/SpecificService";
 import BookingPage from "./Pages/Booking/BookingPage";
 import Package from "./Pages/Package/Package";
@@ -20,12 +20,18 @@ import BackendLayout from "./Components/BackendLayout/BackendLayout";
 import Inquiries from "./Pages/Inquiries/Inquiries";
 import GoogleReviews from "./Pages/GoogleReviews/GoogleReviews";
 
-
+// 🛒 Cart imports
+import { CartProvider } from "./Context/CartContext";
+import CartPage from "./Pages/Cart/Cart";
+import CheckoutPage from "./Pages/Checkout/Checkout";
+import ThankYouPage from "./Pages/ThankYouPage/ThankYouPage";
+import BookingPaymentPage from "./Pages/BookingPaymentPage/BookingPaymentPage";
+import NotFound from "./Pages/NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />, // This is your public-facing layout
+    element: <Layout />, // Public-facing layout
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
@@ -37,15 +43,23 @@ const router = createBrowserRouter([
       { path: "book", element: <BookingPage /> },
       { path: "articles", element: <ArticlesPage /> },
       { path: "articles/:articleId", element: <ArticleDetailPage /> },
-      // The login page is a standalone page without any layout
       { path: "login", element: <LoginPage /> },
+
+      // 🛒 New cart route
+      { path: "cart", element: <CartPage /> },
+      { path: "checkout", element: <CheckoutPage /> },
+      { path: "thank-you", element: <ThankYouPage /> },
+      { path: "booking-payment", element: <BookingPaymentPage /> },
+
+
+      { path: "*", element: <NotFound /> }
     ],
   },
   {
-    path: "/dashboard", // New parent route for all backend pages
+    path: "/dashboard",
     element: <ProtectedRoute component={<BackendLayout />} />,
     children: [
-      { index: true, element: <Appointments /> }, // Appointments as the default dashboard page
+      { index: true, element: <Appointments /> },
       { path: "users", element: <UsersPage /> },
       { path: "pricing", element: <Pricing /> },
       { path: "inquiries", element: <Inquiries /> },
@@ -56,12 +70,19 @@ const router = createBrowserRouter([
       { path: "backend-services", element: <div>Profile Page Coming Soon</div> },
       { path: "appointments", element: <Appointments /> },
       { path: "appointments/:id", element: <AppointmentDetails /> },
+
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    // 🛒 Provide cart state to the whole app
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  );
 }
 
 export default App;

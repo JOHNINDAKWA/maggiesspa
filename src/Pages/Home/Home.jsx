@@ -22,6 +22,7 @@ import Deserve from "../../Components/Deserve/Deserve";
 import SpaPackages from './../Package/PackageSections/SpaPackages/SpaPackages';
 import Partners from "../../Components/Partners/Partners";
 import HealthDisclaimer from './../../ServicesComponents/HealthDisclaimer/HealthDisclaimer';
+import FeaturedArticles from "../../Components/FeaturedArticles/FeaturedArticles";
 
 const Home = () => {
 
@@ -46,9 +47,10 @@ const Home = () => {
       <Future/>
       {/* <HomeExplore/> */}
       <HealthDisclaimer/>
-      <SpaPackages/>
+      {/* <SpaPackages/> */}
       {/* <Membership/> */}
       {/* <HomeGallery/> */}
+      <FeaturedArticles/>
       <HomeContact/>
     </div>
   );

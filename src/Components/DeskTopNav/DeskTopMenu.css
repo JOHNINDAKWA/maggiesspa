@@ -79,6 +79,8 @@
 .desktop-menu ul li:not(.book-now2) a:hover::after {
   width: 50%;
 }
+
+
 /* Align text and icon */
 .desktop-menu ul li a {
   display: flex;
@@ -158,4 +160,60 @@
 .book-now2 a:hover {
   background-color: #015454;
   transform: scale(1.02);
+}
+
+.cart-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.cart-badge {
+  position: relative;
+  top: -1px;
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  background: #01a1a1;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* 1) Disable underline pseudo-element for the cart link */
+.desktop-menu ul li.cart-pill-main > a.cart-pill::after,
+.desktop-menu ul li.cart-pill-main > a.cart-pill:hover::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+}
+
+/* 2) Make the pill hover live on the anchor, not the <li> */
+.desktop-menu ul li.cart-pill-main > a.cart-pill {
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 3) Cart pill hover */
+.desktop-menu ul li.cart-pill-main > a.cart-pill:hover {
+  background-color: #01a1a1;
+  color: #fff;
+  border-color: #01a1a1;
+}
+
+/* optional: keep your non-cart underline only for others */
+.desktop-menu ul li:not(.cart-pill-main) a:hover::after {
+  width: 50%;
 }

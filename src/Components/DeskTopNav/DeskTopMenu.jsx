@@ -2,9 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./DeskTopMenu.css";
 import services from "../../ServicesComponents/ServiceList/ServeList"; // Import service list
+import { useCart } from '../../Context/CartContext';
+import { FaCartPlus } from "react-icons/fa";
+
 
 // Receive the isSticky prop
 const DeskTopMenu = ({ isSticky }) => {
+  const { count } = useCart();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Split services array into two halves
@@ -60,6 +64,13 @@ const DeskTopMenu = ({ isSticky }) => {
         <li><Link to="/about">About Us</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li className="book-now2"><Link to="/book">Book Now</Link></li>
+
+        <li className="cart-pill-main">
+  <Link to="/cart" className="cart-pill">
+    <FaCartPlus /> Cart{count > 0 && <span className="cart-badge">{count}</span>}
+  </Link>
+</li>
+
       </ul>
     </nav>
   );
